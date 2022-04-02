@@ -83,7 +83,7 @@ namespace TN_CSDLPT
             btnGhiKhoa.Enabled = btnPhucHoiKhoa.Enabled = true;
             panelKhoa.Enabled = true;
             kHOAGridControl.Enabled = false;
-            btnHieuChinhKhoa.Enabled = btnXoaKhoa.Enabled = btnReloadKhoa.Enabled = btnThoatKhoa.Enabled = false;
+            btnThemKhoa.Enabled = btnHieuChinhKhoa.Enabled = btnXoaKhoa.Enabled = btnReloadKhoa.Enabled = btnThoatKhoa.Enabled = false;
         }
 
         private void btnHieuChinhKhoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -94,7 +94,7 @@ namespace TN_CSDLPT
             btnGhiKhoa.Enabled = btnPhucHoiKhoa.Enabled = true;
             panelKhoa.Enabled = true;
             kHOAGridControl.Enabled = false;
-            btnHieuChinhKhoa.Enabled = btnXoaKhoa.Enabled = btnReloadKhoa.Enabled = btnThoatKhoa.Enabled = false;
+            btnThemKhoa.Enabled = btnHieuChinhKhoa.Enabled = btnXoaKhoa.Enabled = btnReloadKhoa.Enabled = btnThoatKhoa.Enabled = false;
         }
 
         private void btnXoaKhoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -132,6 +132,33 @@ namespace TN_CSDLPT
 
         private void btnGhiKhoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+
+            if (txtMaKhoa.Text.Trim().Length == 0 || txtTenKhoa.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Mã Khoa Và Tên Khoa Không Được Để Trống");
+                return;
+            }
+
+            // thiếu code mã khoa không được trùng trên các phân mảnh
+
+            try
+            {
+                bdsKhoa.EndEdit();
+                khoaTableAdapter.Connection.ConnectionString = Program.connstr;
+                khoaTableAdapter.Update(DSet.KHOA);
+                bdsKhoa.ResetCurrentItem();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi ghi Khoa: " + ex.Message);
+                khoaTableAdapter.Fill(DSet.KHOA);
+            }
+            //bật tắt các controller khác
+            btnGhiKhoa.Enabled = btnPhucHoiKhoa.Enabled = false;
+            panelKhoa.Enabled = false;
+            kHOAGridControl.Enabled = true;
+            btnHieuChinhKhoa.Enabled = btnXoaKhoa.Enabled = btnReloadKhoa.Enabled = btnThoatKhoa.Enabled = true;
 
         }
 

@@ -345,6 +345,7 @@ namespace TN_CSDLPT
             this.colMAKH.FieldName = "MAKH";
             this.colMAKH.MinWidth = 25;
             this.colMAKH.Name = "colMAKH";
+            this.colMAKH.OptionsColumn.AllowEdit = false;
             this.colMAKH.Visible = true;
             this.colMAKH.VisibleIndex = 0;
             this.colMAKH.Width = 94;
@@ -354,6 +355,7 @@ namespace TN_CSDLPT
             this.colTENKH.FieldName = "TENKH";
             this.colTENKH.MinWidth = 25;
             this.colTENKH.Name = "colTENKH";
+            this.colTENKH.OptionsColumn.AllowEdit = false;
             this.colTENKH.Visible = true;
             this.colTENKH.VisibleIndex = 1;
             this.colTENKH.Width = 94;
@@ -363,6 +365,7 @@ namespace TN_CSDLPT
             this.colMACS.FieldName = "MACS";
             this.colMACS.MinWidth = 25;
             this.colMACS.Name = "colMACS";
+            this.colMACS.OptionsColumn.AllowEdit = false;
             this.colMACS.Visible = true;
             this.colMACS.VisibleIndex = 2;
             this.colMACS.Width = 94;
