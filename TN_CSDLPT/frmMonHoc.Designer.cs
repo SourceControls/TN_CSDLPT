@@ -33,17 +33,19 @@ namespace TN_CSDLPT
             System.Windows.Forms.Label mAMHLabel;
             System.Windows.Forms.Label tENMHLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMonHoc));
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
             this.barManager = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
             this.btnSua = new DevExpress.XtraBars.BarButtonItem();
-            this.btnGhi = new DevExpress.XtraBars.BarButtonItem();
             this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
+            this.btnGhi = new DevExpress.XtraBars.BarButtonItem();
             this.btnPhucHoi = new DevExpress.XtraBars.BarButtonItem();
             this.btnReload = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
-            this.bar2 = new DevExpress.XtraBars.Bar();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -105,7 +107,6 @@ namespace TN_CSDLPT
             // 
             this.barManager.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
             this.bar1,
-            this.bar2,
             this.bar3});
             this.barManager.DockControls.Add(this.barDockControlTop);
             this.barManager.DockControls.Add(this.barDockControlBottom);
@@ -121,7 +122,6 @@ namespace TN_CSDLPT
             this.btnThoat,
             this.barButtonItem2,
             this.btnReload});
-            this.barManager.MainMenu = this.bar2;
             this.barManager.MaxItemId = 8;
             this.barManager.StatusBar = this.bar3;
             // 
@@ -129,7 +129,7 @@ namespace TN_CSDLPT
             // 
             this.bar1.BarName = "Tools";
             this.bar1.DockCol = 0;
-            this.bar1.DockRow = 1;
+            this.bar1.DockRow = 0;
             this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar1.FloatLocation = new System.Drawing.Point(59, 244);
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
@@ -159,14 +159,6 @@ namespace TN_CSDLPT
             this.btnSua.Name = "btnSua";
             this.btnSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSua_ItemClick);
             // 
-            // btnGhi
-            // 
-            this.btnGhi.Caption = "Ghi";
-            this.btnGhi.Id = 2;
-            this.btnGhi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnGhi.ImageOptions.SvgImage")));
-            this.btnGhi.Name = "btnGhi";
-            this.btnGhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGhi_ItemClick);
-            // 
             // btnXoa
             // 
             this.btnXoa.Caption = "Xóa";
@@ -174,6 +166,14 @@ namespace TN_CSDLPT
             this.btnXoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXoa.ImageOptions.SvgImage")));
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
+            // 
+            // btnGhi
+            // 
+            this.btnGhi.Caption = "Ghi";
+            this.btnGhi.Id = 2;
+            this.btnGhi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnGhi.ImageOptions.SvgImage")));
+            this.btnGhi.Name = "btnGhi";
+            this.btnGhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGhi_ItemClick);
             // 
             // btnPhucHoi
             // 
@@ -206,16 +206,6 @@ namespace TN_CSDLPT
             this.btnThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThoat.ImageOptions.SvgImage")));
             this.btnThoat.Name = "btnThoat";
             // 
-            // bar2
-            // 
-            this.bar2.BarName = "Main menu";
-            this.bar2.DockCol = 0;
-            this.bar2.DockRow = 0;
-            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar2.OptionsBar.MultiLine = true;
-            this.bar2.OptionsBar.UseWholeRow = true;
-            this.bar2.Text = "Main menu";
-            // 
             // bar3
             // 
             this.bar3.BarName = "Status bar";
@@ -235,7 +225,7 @@ namespace TN_CSDLPT
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlTop.Size = new System.Drawing.Size(1078, 51);
+            this.barDockControlTop.Size = new System.Drawing.Size(1078, 30);
             // 
             // barDockControlBottom
             // 
@@ -250,19 +240,19 @@ namespace TN_CSDLPT
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 51);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
             this.barDockControlLeft.Manager = this.barManager;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 609);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 630);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1078, 51);
+            this.barDockControlRight.Location = new System.Drawing.Point(1078, 30);
             this.barDockControlRight.Manager = this.barManager;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 609);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 630);
             // 
             // DSet
             // 
@@ -310,7 +300,14 @@ namespace TN_CSDLPT
             this.gcMONHOC.DataSource = this.bdsMonHoc;
             this.gcMONHOC.Dock = System.Windows.Forms.DockStyle.Top;
             this.gcMONHOC.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(1);
-            this.gcMONHOC.Location = new System.Drawing.Point(0, 51);
+            gridLevelNode1.RelationName = "FK_BANGDIEM_MONHOC";
+            gridLevelNode2.RelationName = "FK_BODE_MONHOC";
+            gridLevelNode3.RelationName = "FK_GIAOVIEN_DANGKY_MONHOC1";
+            this.gcMONHOC.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1,
+            gridLevelNode2,
+            gridLevelNode3});
+            this.gcMONHOC.Location = new System.Drawing.Point(0, 30);
             this.gcMONHOC.MainView = this.gridView1;
             this.gcMONHOC.MenuManager = this.barManager;
             this.gcMONHOC.Name = "gcMONHOC";
@@ -353,9 +350,9 @@ namespace TN_CSDLPT
             this.panelControl1.Controls.Add(mAMHLabel);
             this.panelControl1.Controls.Add(this.txtMAMH);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(0, 460);
+            this.panelControl1.Location = new System.Drawing.Point(0, 439);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1078, 200);
+            this.panelControl1.Size = new System.Drawing.Size(1078, 221);
             this.panelControl1.TabIndex = 6;
             // 
             // txtTENMH
@@ -433,7 +430,6 @@ namespace TN_CSDLPT
         private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.BarButtonItem btnThem;
         private DevExpress.XtraBars.BarButtonItem btnSua;
-        private DevExpress.XtraBars.Bar bar2;
         private DevExpress.XtraBars.Bar bar3;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;

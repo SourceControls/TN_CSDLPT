@@ -34,19 +34,22 @@ namespace TN_CSDLPT
             // TODO: This line of code loads data into the 'DSet.LOP' table. You can move, or remove it, as needed.
             this.lopTableAdapter.Connection.ConnectionString = Program.connstr;
             this.lopTableAdapter.Fill(this.DSet.LOP);
+            
 
 
 
             if (bdsKhoa.Count > 0)
-                maCoSo = ((DataRowView)bdsKhoa[0])["MACOSO"].ToString();
+                maCoSo = ((DataRowView)bdsKhoa[0])["MACS"].ToString();
 
 
             cbCoSo.DataSource = Program.bdsDSPM;
-            cbCoSo.DisplayMember = "TENCS";
-            cbCoSo.ValueMember = "TENSENSERVER";
+            cbCoSo.DisplayMember = "TENCN";
+            cbCoSo.ValueMember = "TENSERVER";
             cbCoSo.SelectedIndex = Program.mCoSo;
 
             //Phân quyền dùng app theo group
+            btnGhiKhoa.Enabled = btnPhucHoiKhoa.Enabled = false;
+
                 if (Program.mGroup == "TRUONG")
             {
                 cbCoSo.Enabled = true;
@@ -158,7 +161,7 @@ namespace TN_CSDLPT
 
         private void btnThoatKhoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Application.Exit();
+            this.Close();
 
         }
 

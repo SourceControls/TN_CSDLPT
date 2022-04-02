@@ -31,8 +31,10 @@ namespace TN_CSDLPT
 
        private void frmMonHoc_Load(object sender, EventArgs e)
         {
+
+            DSet.EnforceConstraints = false;
             // TODO: This line of code loads data into the 'dSet.MONHOC' table. You can move, or remove it, as needed.
-        //    this.MONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
+            //    this.MONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
             this.MONHOCTableAdapter.Fill(this.DSet.MONHOC);
 
             // TODO: This line of code loads data into the 'dSet.GIAOVIEN_DANGKY' table. You can move, or remove it, as needed.
