@@ -31,56 +31,59 @@ namespace TN_CSDLPT
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKhoa));
+            System.Windows.Forms.Label mAKHLabel;
+            System.Windows.Forms.Label tENKHLabel;
+            System.Windows.Forms.Label mACSLabel;
             this.barKhoa = new DevExpress.XtraBars.Bar();
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.label1 = new System.Windows.Forms.Label();
             this.cbCoSo = new System.Windows.Forms.ComboBox();
-            this.gcKhoa = new DevExpress.XtraGrid.GridControl();
-            this.gvKhoa = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colMAKH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTENKH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMACS = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.panelKhoa = new DevExpress.XtraEditors.PanelControl();
-            this.mACSLabel = new System.Windows.Forms.Label();
-            this.txtMaCoSo = new System.Windows.Forms.TextBox();
-            this.tENKHLabel = new System.Windows.Forms.Label();
-            this.txtTenKhoa = new System.Windows.Forms.TextBox();
-            this.mAKHLabel = new System.Windows.Forms.Label();
-            this.txtMaKhoa = new System.Windows.Forms.TextBox();
-            this.DSet = new TN_CSDLPT.DSet();
             this.bdsKhoa = new System.Windows.Forms.BindingSource(this.components);
-            this.khoaTableAdapter = new TN_CSDLPT.DSetTableAdapters.KHOATableAdapter();
-            this.tableAdapterManager = new TN_CSDLPT.DSetTableAdapters.TableAdapterManager();
+            this.DSet = new TN_CSDLPT.DSet();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barFrmKhoa = new DevExpress.XtraBars.Bar();
+            this.btnThemKhoa = new DevExpress.XtraBars.BarButtonItem();
+            this.btnHieuChinhKhoa = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXoaKhoa = new DevExpress.XtraBars.BarButtonItem();
+            this.btnGhiKhoa = new DevExpress.XtraBars.BarButtonItem();
+            this.btnReloadKhoa = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPhucHoiKhoa = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThoatKhoa = new DevExpress.XtraBars.BarButtonItem();
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.bdsLop = new System.Windows.Forms.BindingSource(this.components);
             this.lopTableAdapter = new TN_CSDLPT.DSetTableAdapters.LOPTableAdapter();
             this.bdsGiaoVien = new System.Windows.Forms.BindingSource(this.components);
             this.giaoVienTableAdapter = new TN_CSDLPT.DSetTableAdapters.GIAOVIENTableAdapter();
-            this.btnHieuChinhKhoa = new DevExpress.XtraBars.BarButtonItem();
-            this.btnThemKhoa = new DevExpress.XtraBars.BarButtonItem();
-            this.btnGhiKhoa = new DevExpress.XtraBars.BarButtonItem();
-            this.btnXoaKhoa = new DevExpress.XtraBars.BarButtonItem();
-            this.btnPhucHoiKhoa = new DevExpress.XtraBars.BarButtonItem();
-            this.btnReloadKhoa = new DevExpress.XtraBars.BarButtonItem();
-            this.btnThoatKhoa = new DevExpress.XtraBars.BarButtonItem();
-            this.barFrmKhoa = new DevExpress.XtraBars.Bar();
-            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.khoaTableAdapter = new TN_CSDLPT.DSetTableAdapters.KHOATableAdapter();
+            this.tableAdapterManager = new TN_CSDLPT.DSetTableAdapters.TableAdapterManager();
+            this.kHOAGridControl = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMAKH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTENKH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMACS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panelKhoa = new DevExpress.XtraEditors.PanelControl();
+            this.txtMaKhoa = new System.Windows.Forms.TextBox();
+            this.txtTenKhoa = new System.Windows.Forms.TextBox();
+            this.txtMaCoSo = new System.Windows.Forms.TextBox();
+            mAKHLabel = new System.Windows.Forms.Label();
+            tENKHLabel = new System.Windows.Forms.Label();
+            mACSLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gcKhoa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvKhoa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelKhoa)).BeginInit();
-            this.panelKhoa.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsKhoa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsLop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGiaoVien)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kHOAGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelKhoa)).BeginInit();
+            this.panelKhoa.SuspendLayout();
             this.SuspendLayout();
             // 
             // barKhoa
@@ -141,262 +144,15 @@ namespace TN_CSDLPT
             this.cbCoSo.Size = new System.Drawing.Size(473, 24);
             this.cbCoSo.TabIndex = 0;
             // 
-            // gcKhoa
-            // 
-            this.gcKhoa.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gcKhoa.Location = new System.Drawing.Point(0, 107);
-            this.gcKhoa.MainView = this.gvKhoa;
-            this.gcKhoa.Margin = new System.Windows.Forms.Padding(4);
-            this.gcKhoa.Name = "gcKhoa";
-            this.gcKhoa.Size = new System.Drawing.Size(1203, 500);
-            this.gcKhoa.TabIndex = 10;
-            this.gcKhoa.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvKhoa});
-            // 
-            // gvKhoa
-            // 
-            this.gvKhoa.ColumnPanelRowHeight = 0;
-            this.gvKhoa.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMAKH,
-            this.colTENKH,
-            this.colMACS});
-            this.gvKhoa.DetailHeight = 460;
-            this.gvKhoa.FooterPanelHeight = 0;
-            this.gvKhoa.GridControl = this.gcKhoa;
-            this.gvKhoa.GroupRowHeight = 0;
-            this.gvKhoa.LevelIndent = 0;
-            this.gvKhoa.Name = "gvKhoa";
-            this.gvKhoa.OptionsEditForm.ActionOnModifiedRowChange = DevExpress.XtraGrid.Views.Grid.EditFormModifiedAction.Nothing;
-            this.gvKhoa.PreviewIndent = 0;
-            this.gvKhoa.RowHeight = 0;
-            this.gvKhoa.ViewCaptionHeight = 0;
-            // 
-            // colMAKH
-            // 
-            this.colMAKH.FieldName = "MAKH";
-            this.colMAKH.MinWidth = 31;
-            this.colMAKH.Name = "colMAKH";
-            this.colMAKH.Visible = true;
-            this.colMAKH.VisibleIndex = 0;
-            this.colMAKH.Width = 121;
-            // 
-            // colTENKH
-            // 
-            this.colTENKH.FieldName = "TENKH";
-            this.colTENKH.MinWidth = 31;
-            this.colTENKH.Name = "colTENKH";
-            this.colTENKH.Visible = true;
-            this.colTENKH.VisibleIndex = 1;
-            this.colTENKH.Width = 121;
-            // 
-            // colMACS
-            // 
-            this.colMACS.FieldName = "MACS";
-            this.colMACS.MinWidth = 31;
-            this.colMACS.Name = "colMACS";
-            this.colMACS.Visible = true;
-            this.colMACS.VisibleIndex = 2;
-            this.colMACS.Width = 121;
-            // 
-            // panelKhoa
-            // 
-            this.panelKhoa.Controls.Add(this.mACSLabel);
-            this.panelKhoa.Controls.Add(this.txtMaCoSo);
-            this.panelKhoa.Controls.Add(this.tENKHLabel);
-            this.panelKhoa.Controls.Add(this.txtTenKhoa);
-            this.panelKhoa.Controls.Add(this.mAKHLabel);
-            this.panelKhoa.Controls.Add(this.txtMaKhoa);
-            this.panelKhoa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelKhoa.Enabled = false;
-            this.panelKhoa.Location = new System.Drawing.Point(0, 607);
-            this.panelKhoa.Margin = new System.Windows.Forms.Padding(4);
-            this.panelKhoa.Name = "panelKhoa";
-            this.panelKhoa.Size = new System.Drawing.Size(1203, 264);
-            this.panelKhoa.TabIndex = 11;
-            this.panelKhoa.Paint += new System.Windows.Forms.PaintEventHandler(this.panelKhoa_Paint);
-            // 
-            // mACSLabel
-            // 
-            this.mACSLabel.AutoSize = true;
-            this.mACSLabel.Location = new System.Drawing.Point(624, 72);
-            this.mACSLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.mACSLabel.Name = "mACSLabel";
-            this.mACSLabel.Size = new System.Drawing.Size(66, 17);
-            this.mACSLabel.TabIndex = 4;
-            this.mACSLabel.Text = "Mã Cơ Sở";
-            // 
-            // txtMaCoSo
-            // 
-            this.txtMaCoSo.Location = new System.Drawing.Point(718, 68);
-            this.txtMaCoSo.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMaCoSo.Name = "txtMaCoSo";
-            this.txtMaCoSo.ReadOnly = true;
-            this.txtMaCoSo.Size = new System.Drawing.Size(131, 23);
-            this.txtMaCoSo.TabIndex = 5;
-            // 
-            // tENKHLabel
-            // 
-            this.tENKHLabel.AutoSize = true;
-            this.tENKHLabel.Location = new System.Drawing.Point(304, 159);
-            this.tENKHLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.tENKHLabel.Name = "tENKHLabel";
-            this.tENKHLabel.Size = new System.Drawing.Size(66, 17);
-            this.tENKHLabel.TabIndex = 2;
-            this.tENKHLabel.Text = "Tên Khoa";
-            // 
-            // txtTenKhoa
-            // 
-            this.txtTenKhoa.Location = new System.Drawing.Point(396, 156);
-            this.txtTenKhoa.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTenKhoa.Name = "txtTenKhoa";
-            this.txtTenKhoa.Size = new System.Drawing.Size(453, 23);
-            this.txtTenKhoa.TabIndex = 3;
-            // 
-            // mAKHLabel
-            // 
-            this.mAKHLabel.AutoSize = true;
-            this.mAKHLabel.Location = new System.Drawing.Point(308, 75);
-            this.mAKHLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.mAKHLabel.Name = "mAKHLabel";
-            this.mAKHLabel.Size = new System.Drawing.Size(60, 17);
-            this.mAKHLabel.TabIndex = 0;
-            this.mAKHLabel.Text = "Mã Khoa";
-            // 
-            // txtMaKhoa
-            // 
-            this.txtMaKhoa.Location = new System.Drawing.Point(396, 72);
-            this.txtMaKhoa.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMaKhoa.Name = "txtMaKhoa";
-            this.txtMaKhoa.Size = new System.Drawing.Size(183, 23);
-            this.txtMaKhoa.TabIndex = 1;
-            // 
-            // DSet
-            // 
-            this.DSet.DataSetName = "DSet";
-            this.DSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // bdsKhoa
             // 
             this.bdsKhoa.DataMember = "KHOA";
             this.bdsKhoa.DataSource = this.DSet;
             // 
-            // khoaTableAdapter
+            // DSet
             // 
-            this.khoaTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.BANGDIEMTableAdapter = null;
-            this.tableAdapterManager.BODETableAdapter = null;
-            this.tableAdapterManager.COSOTableAdapter = null;
-            this.tableAdapterManager.GIAOVIEN_DANGKYTableAdapter = null;
-            this.tableAdapterManager.GIAOVIENTableAdapter = null;
-            this.tableAdapterManager.KHOATableAdapter = this.khoaTableAdapter;
-            this.tableAdapterManager.LOPTableAdapter = null;
-            this.tableAdapterManager.MONHOCTableAdapter = null;
-            this.tableAdapterManager.SINHVIENTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = TN_CSDLPT.DSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // bdsLop
-            // 
-            this.bdsLop.DataMember = "FK_LOP_KHOA";
-            this.bdsLop.DataSource = this.bdsKhoa;
-            // 
-            // lopTableAdapter
-            // 
-            this.lopTableAdapter.ClearBeforeFill = true;
-            // 
-            // bdsGiaoVien
-            // 
-            this.bdsGiaoVien.DataMember = "FK_GIAOVIEN_KHOA";
-            this.bdsGiaoVien.DataSource = this.bdsKhoa;
-            // 
-            // giaoVienTableAdapter
-            // 
-            this.giaoVienTableAdapter.ClearBeforeFill = true;
-            // 
-            // btnHieuChinhKhoa
-            // 
-            this.btnHieuChinhKhoa.Caption = "Hiệu Chỉnh";
-            this.btnHieuChinhKhoa.Id = 0;
-            this.btnHieuChinhKhoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnHieuChinhKhoa.ImageOptions.SvgImage")));
-            this.btnHieuChinhKhoa.Name = "btnHieuChinhKhoa";
-            this.btnHieuChinhKhoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHieuChinhKhoa_ItemClick);
-            // 
-            // btnThemKhoa
-            // 
-            this.btnThemKhoa.Caption = "Thêm";
-            this.btnThemKhoa.Id = 1;
-            this.btnThemKhoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThemKhoa.ImageOptions.SvgImage")));
-            this.btnThemKhoa.Name = "btnThemKhoa";
-            this.btnThemKhoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThemKhoa_ItemClick);
-            // 
-            // btnGhiKhoa
-            // 
-            this.btnGhiKhoa.Caption = "Ghi";
-            this.btnGhiKhoa.Id = 2;
-            this.btnGhiKhoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnGhiKhoa.ImageOptions.SvgImage")));
-            this.btnGhiKhoa.Name = "btnGhiKhoa";
-            this.btnGhiKhoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGhiKhoa_ItemClick);
-            // 
-            // btnXoaKhoa
-            // 
-            this.btnXoaKhoa.Caption = "Xóa";
-            this.btnXoaKhoa.Id = 3;
-            this.btnXoaKhoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXoaKhoa.ImageOptions.SvgImage")));
-            this.btnXoaKhoa.Name = "btnXoaKhoa";
-            this.btnXoaKhoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoaKhoa_ItemClick);
-            // 
-            // btnPhucHoiKhoa
-            // 
-            this.btnPhucHoiKhoa.Caption = "Phục Hồi";
-            this.btnPhucHoiKhoa.Id = 4;
-            this.btnPhucHoiKhoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnPhucHoiKhoa.ImageOptions.SvgImage")));
-            this.btnPhucHoiKhoa.Name = "btnPhucHoiKhoa";
-            this.btnPhucHoiKhoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhucHoiKhoa_ItemClick);
-            // 
-            // btnReloadKhoa
-            // 
-            this.btnReloadKhoa.Caption = "Reload";
-            this.btnReloadKhoa.Id = 5;
-            this.btnReloadKhoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnReloadKhoa.ImageOptions.SvgImage")));
-            this.btnReloadKhoa.Name = "btnReloadKhoa";
-            this.btnReloadKhoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReloadKhoa_ItemClick);
-            // 
-            // btnThoatKhoa
-            // 
-            this.btnThoatKhoa.Caption = "Thoát";
-            this.btnThoatKhoa.Id = 6;
-            this.btnThoatKhoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThoatKhoa.ImageOptions.SvgImage")));
-            this.btnThoatKhoa.Name = "btnThoatKhoa";
-            this.btnThoatKhoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoatKhoa_ItemClick);
-            // 
-            // barFrmKhoa
-            // 
-            this.barFrmKhoa.BarName = "Tools";
-            this.barFrmKhoa.DockCol = 0;
-            this.barFrmKhoa.DockRow = 0;
-            this.barFrmKhoa.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.barFrmKhoa.FloatLocation = new System.Drawing.Point(59, 196);
-            this.barFrmKhoa.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThemKhoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnHieuChinhKhoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXoaKhoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnGhiKhoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnReloadKhoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnPhucHoiKhoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThoatKhoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
-            this.barFrmKhoa.Text = "Tools";
-            // 
-            // barDockControlTop
-            // 
-            this.barDockControlTop.CausesValidation = false;
-            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlTop.Size = new System.Drawing.Size(1203, 30);
+            this.DSet.DataSetName = "DSet";
+            this.DSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // barManager1
             // 
@@ -416,6 +172,88 @@ namespace TN_CSDLPT
             this.btnReloadKhoa,
             this.btnThoatKhoa});
             this.barManager1.MaxItemId = 7;
+            // 
+            // barFrmKhoa
+            // 
+            this.barFrmKhoa.BarName = "Tools";
+            this.barFrmKhoa.DockCol = 0;
+            this.barFrmKhoa.DockRow = 0;
+            this.barFrmKhoa.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.barFrmKhoa.FloatLocation = new System.Drawing.Point(59, 196);
+            this.barFrmKhoa.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThemKhoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnHieuChinhKhoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXoaKhoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnGhiKhoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnReloadKhoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnPhucHoiKhoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThoatKhoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            this.barFrmKhoa.Text = "Tools";
+            // 
+            // btnThemKhoa
+            // 
+            this.btnThemKhoa.Caption = "Thêm";
+            this.btnThemKhoa.Id = 1;
+            this.btnThemKhoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThemKhoa.ImageOptions.SvgImage")));
+            this.btnThemKhoa.Name = "btnThemKhoa";
+            this.btnThemKhoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThemKhoa_ItemClick);
+            // 
+            // btnHieuChinhKhoa
+            // 
+            this.btnHieuChinhKhoa.Caption = "Hiệu Chỉnh";
+            this.btnHieuChinhKhoa.Id = 0;
+            this.btnHieuChinhKhoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnHieuChinhKhoa.ImageOptions.SvgImage")));
+            this.btnHieuChinhKhoa.Name = "btnHieuChinhKhoa";
+            this.btnHieuChinhKhoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHieuChinhKhoa_ItemClick);
+            // 
+            // btnXoaKhoa
+            // 
+            this.btnXoaKhoa.Caption = "Xóa";
+            this.btnXoaKhoa.Id = 3;
+            this.btnXoaKhoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXoaKhoa.ImageOptions.SvgImage")));
+            this.btnXoaKhoa.Name = "btnXoaKhoa";
+            this.btnXoaKhoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoaKhoa_ItemClick);
+            // 
+            // btnGhiKhoa
+            // 
+            this.btnGhiKhoa.Caption = "Ghi";
+            this.btnGhiKhoa.Id = 2;
+            this.btnGhiKhoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnGhiKhoa.ImageOptions.SvgImage")));
+            this.btnGhiKhoa.Name = "btnGhiKhoa";
+            this.btnGhiKhoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGhiKhoa_ItemClick);
+            // 
+            // btnReloadKhoa
+            // 
+            this.btnReloadKhoa.Caption = "Reload";
+            this.btnReloadKhoa.Id = 5;
+            this.btnReloadKhoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnReloadKhoa.ImageOptions.SvgImage")));
+            this.btnReloadKhoa.Name = "btnReloadKhoa";
+            this.btnReloadKhoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReloadKhoa_ItemClick);
+            // 
+            // btnPhucHoiKhoa
+            // 
+            this.btnPhucHoiKhoa.Caption = "Phục Hồi";
+            this.btnPhucHoiKhoa.Id = 4;
+            this.btnPhucHoiKhoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnPhucHoiKhoa.ImageOptions.SvgImage")));
+            this.btnPhucHoiKhoa.Name = "btnPhucHoiKhoa";
+            this.btnPhucHoiKhoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhucHoiKhoa_ItemClick);
+            // 
+            // btnThoatKhoa
+            // 
+            this.btnThoatKhoa.Caption = "Thoát";
+            this.btnThoatKhoa.Id = 6;
+            this.btnThoatKhoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThoatKhoa.ImageOptions.SvgImage")));
+            this.btnThoatKhoa.Name = "btnThoatKhoa";
+            this.btnThoatKhoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoatKhoa_ItemClick);
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4);
+            this.barDockControlTop.Size = new System.Drawing.Size(1203, 30);
             // 
             // barDockControlBottom
             // 
@@ -444,6 +282,161 @@ namespace TN_CSDLPT
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 841);
             // 
+            // bdsLop
+            // 
+            this.bdsLop.DataMember = "FK_LOP_KHOA";
+            this.bdsLop.DataSource = this.bdsKhoa;
+            // 
+            // lopTableAdapter
+            // 
+            this.lopTableAdapter.ClearBeforeFill = true;
+            // 
+            // bdsGiaoVien
+            // 
+            this.bdsGiaoVien.DataMember = "FK_GIAOVIEN_KHOA";
+            this.bdsGiaoVien.DataSource = this.bdsKhoa;
+            // 
+            // giaoVienTableAdapter
+            // 
+            this.giaoVienTableAdapter.ClearBeforeFill = true;
+            // 
+            // khoaTableAdapter
+            // 
+            this.khoaTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.BANGDIEMTableAdapter = null;
+            this.tableAdapterManager.BODETableAdapter = null;
+            this.tableAdapterManager.COSOTableAdapter = null;
+            this.tableAdapterManager.GIAOVIEN_DANGKYTableAdapter = null;
+            this.tableAdapterManager.GIAOVIENTableAdapter = this.giaoVienTableAdapter;
+            this.tableAdapterManager.KHOATableAdapter = this.khoaTableAdapter;
+            this.tableAdapterManager.LOPTableAdapter = this.lopTableAdapter;
+            this.tableAdapterManager.MONHOCTableAdapter = null;
+            this.tableAdapterManager.SINHVIENTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = TN_CSDLPT.DSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // kHOAGridControl
+            // 
+            this.kHOAGridControl.DataSource = this.bdsKhoa;
+            this.kHOAGridControl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.kHOAGridControl.Location = new System.Drawing.Point(0, 107);
+            this.kHOAGridControl.MainView = this.gridView1;
+            this.kHOAGridControl.MenuManager = this.barManager1;
+            this.kHOAGridControl.Name = "kHOAGridControl";
+            this.kHOAGridControl.Size = new System.Drawing.Size(1203, 500);
+            this.kHOAGridControl.TabIndex = 16;
+            this.kHOAGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMAKH,
+            this.colTENKH,
+            this.colMACS});
+            this.gridView1.GridControl = this.kHOAGridControl;
+            this.gridView1.Name = "gridView1";
+            // 
+            // colMAKH
+            // 
+            this.colMAKH.FieldName = "MAKH";
+            this.colMAKH.MinWidth = 25;
+            this.colMAKH.Name = "colMAKH";
+            this.colMAKH.Visible = true;
+            this.colMAKH.VisibleIndex = 0;
+            this.colMAKH.Width = 94;
+            // 
+            // colTENKH
+            // 
+            this.colTENKH.FieldName = "TENKH";
+            this.colTENKH.MinWidth = 25;
+            this.colTENKH.Name = "colTENKH";
+            this.colTENKH.Visible = true;
+            this.colTENKH.VisibleIndex = 1;
+            this.colTENKH.Width = 94;
+            // 
+            // colMACS
+            // 
+            this.colMACS.FieldName = "MACS";
+            this.colMACS.MinWidth = 25;
+            this.colMACS.Name = "colMACS";
+            this.colMACS.Visible = true;
+            this.colMACS.VisibleIndex = 2;
+            this.colMACS.Width = 94;
+            // 
+            // panelKhoa
+            // 
+            this.panelKhoa.Controls.Add(mACSLabel);
+            this.panelKhoa.Controls.Add(this.txtMaCoSo);
+            this.panelKhoa.Controls.Add(tENKHLabel);
+            this.panelKhoa.Controls.Add(this.txtTenKhoa);
+            this.panelKhoa.Controls.Add(mAKHLabel);
+            this.panelKhoa.Controls.Add(this.txtMaKhoa);
+            this.panelKhoa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelKhoa.Enabled = false;
+            this.panelKhoa.Location = new System.Drawing.Point(0, 607);
+            this.panelKhoa.Margin = new System.Windows.Forms.Padding(4);
+            this.panelKhoa.Name = "panelKhoa";
+            this.panelKhoa.Size = new System.Drawing.Size(1203, 264);
+            this.panelKhoa.TabIndex = 17;
+            // 
+            // mAKHLabel
+            // 
+            mAKHLabel.AutoSize = true;
+            mAKHLabel.Location = new System.Drawing.Point(312, 68);
+            mAKHLabel.Name = "mAKHLabel";
+            mAKHLabel.Size = new System.Drawing.Size(60, 17);
+            mAKHLabel.TabIndex = 0;
+            mAKHLabel.Text = "Mã Khoa";
+            // 
+            // txtMaKhoa
+            // 
+            this.txtMaKhoa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsKhoa, "MAKH", true));
+            this.txtMaKhoa.Location = new System.Drawing.Point(395, 65);
+            this.txtMaKhoa.Name = "txtMaKhoa";
+            this.txtMaKhoa.Size = new System.Drawing.Size(150, 23);
+            this.txtMaKhoa.TabIndex = 1;
+            // 
+            // tENKHLabel
+            // 
+            tENKHLabel.AutoSize = true;
+            tENKHLabel.Location = new System.Drawing.Point(297, 130);
+            tENKHLabel.Name = "tENKHLabel";
+            tENKHLabel.Size = new System.Drawing.Size(75, 17);
+            tENKHLabel.TabIndex = 2;
+            tENKHLabel.Text = "Tên Khoa: ";
+            tENKHLabel.Click += new System.EventHandler(this.tENKHLabel_Click);
+            // 
+            // txtTenKhoa
+            // 
+            this.txtTenKhoa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsKhoa, "TENKH", true));
+            this.txtTenKhoa.Location = new System.Drawing.Point(395, 127);
+            this.txtTenKhoa.Name = "txtTenKhoa";
+            this.txtTenKhoa.Size = new System.Drawing.Size(425, 23);
+            this.txtTenKhoa.TabIndex = 3;
+            this.txtTenKhoa.TextChanged += new System.EventHandler(this.tENKHTextBox_TextChanged);
+            // 
+            // mACSLabel
+            // 
+            mACSLabel.AutoSize = true;
+            mACSLabel.Location = new System.Drawing.Point(581, 68);
+            mACSLabel.Name = "mACSLabel";
+            mACSLabel.Size = new System.Drawing.Size(66, 17);
+            mACSLabel.TabIndex = 4;
+            mACSLabel.Text = "Mã Cơ Sở";
+            // 
+            // txtMaCoSo
+            // 
+            this.txtMaCoSo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsKhoa, "MACS", true));
+            this.txtMaCoSo.Location = new System.Drawing.Point(670, 65);
+            this.txtMaCoSo.Name = "txtMaCoSo";
+            this.txtMaCoSo.ReadOnly = true;
+            this.txtMaCoSo.Size = new System.Drawing.Size(150, 23);
+            this.txtMaCoSo.TabIndex = 5;
+            // 
             // frmKhoa
             // 
             this.Appearance.Options.UseFont = true;
@@ -451,7 +444,7 @@ namespace TN_CSDLPT
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1203, 871);
             this.Controls.Add(this.panelKhoa);
-            this.Controls.Add(this.gcKhoa);
+            this.Controls.Add(this.kHOAGridControl);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -466,16 +459,16 @@ namespace TN_CSDLPT
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gcKhoa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvKhoa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsKhoa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsGiaoVien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kHOAGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelKhoa)).EndInit();
             this.panelKhoa.ResumeLayout(false);
             this.panelKhoa.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsKhoa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsLop)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsGiaoVien)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -489,22 +482,8 @@ namespace TN_CSDLPT
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbCoSo;
-        private DevExpress.XtraGrid.GridControl gcKhoa;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvKhoa;
-        private DevExpress.XtraGrid.Columns.GridColumn colMAKH;
-        private DevExpress.XtraGrid.Columns.GridColumn colTENKH;
-        private DevExpress.XtraGrid.Columns.GridColumn colMACS;
-        private DevExpress.XtraEditors.PanelControl panelKhoa;
-        private System.Windows.Forms.Label mACSLabel;
-        private System.Windows.Forms.TextBox txtMaCoSo;
-        private System.Windows.Forms.Label tENKHLabel;
-        private System.Windows.Forms.TextBox txtTenKhoa;
-        private System.Windows.Forms.Label mAKHLabel;
-        private System.Windows.Forms.TextBox txtMaKhoa;
         private DSet DSet;
         private System.Windows.Forms.BindingSource bdsKhoa;
-        private DSetTableAdapters.KHOATableAdapter khoaTableAdapter;
-        private DSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingSource bdsLop;
         private DSetTableAdapters.LOPTableAdapter lopTableAdapter;
         private System.Windows.Forms.BindingSource bdsGiaoVien;
@@ -522,5 +501,16 @@ namespace TN_CSDLPT
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DSetTableAdapters.KHOATableAdapter khoaTableAdapter;
+        private DSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private DevExpress.XtraEditors.PanelControl panelKhoa;
+        private DevExpress.XtraGrid.GridControl kHOAGridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn colMAKH;
+        private DevExpress.XtraGrid.Columns.GridColumn colTENKH;
+        private DevExpress.XtraGrid.Columns.GridColumn colMACS;
+        private System.Windows.Forms.TextBox txtMaCoSo;
+        private System.Windows.Forms.TextBox txtTenKhoa;
+        private System.Windows.Forms.TextBox txtMaKhoa;
     }
 }

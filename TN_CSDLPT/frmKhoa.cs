@@ -34,12 +34,14 @@ namespace TN_CSDLPT
             // TODO: This line of code loads data into the 'DSet.LOP' table. You can move, or remove it, as needed.
             this.lopTableAdapter.Connection.ConnectionString = Program.connstr;
             this.lopTableAdapter.Fill(this.DSet.LOP);
-            
+
 
 
 
             if (bdsKhoa.Count > 0)
                 maCoSo = ((DataRowView)bdsKhoa[0])["MACS"].ToString();
+            else
+                return;
 
 
             cbCoSo.DataSource = Program.bdsDSPM;
@@ -80,7 +82,7 @@ namespace TN_CSDLPT
             //bật tắt các controller khác
             btnGhiKhoa.Enabled = btnPhucHoiKhoa.Enabled = true;
             panelKhoa.Enabled = true;
-            gcKhoa.Enabled = false;
+            kHOAGridControl.Enabled = false;
             btnHieuChinhKhoa.Enabled = btnXoaKhoa.Enabled = btnReloadKhoa.Enabled = btnThoatKhoa.Enabled = false;
         }
 
@@ -91,14 +93,13 @@ namespace TN_CSDLPT
             //bật tắt các controller khác
             btnGhiKhoa.Enabled = btnPhucHoiKhoa.Enabled = true;
             panelKhoa.Enabled = true;
-            gcKhoa.Enabled = false;
+            kHOAGridControl.Enabled = false;
             btnHieuChinhKhoa.Enabled = btnXoaKhoa.Enabled = btnReloadKhoa.Enabled = btnThoatKhoa.Enabled = false;
         }
 
         private void btnXoaKhoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             String maKhoa = "";
-            if (gvKhoa.GetSelectedRows().Length == 0) return;  //check xem có row được chọn không
             if (bdsGiaoVien.Count > 0)
             {
                 MessageBox.Show("Không thể xóa Khoa đã có giáo viên");
@@ -141,7 +142,7 @@ namespace TN_CSDLPT
             //bật tắt các controller khác
             btnGhiKhoa.Enabled = btnPhucHoiKhoa.Enabled = false;
             panelKhoa.Enabled = false;
-            gcKhoa.Enabled = true;
+            kHOAGridControl.Enabled = true;
             btnHieuChinhKhoa.Enabled = btnXoaKhoa.Enabled = btnReloadKhoa.Enabled = btnThoatKhoa.Enabled = true;
         }
 
@@ -165,6 +166,15 @@ namespace TN_CSDLPT
 
         }
 
+        private void tENKHLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tENKHTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
    
 }
