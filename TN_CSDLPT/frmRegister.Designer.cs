@@ -82,6 +82,7 @@ namespace TN_CSDLPT
             // 
             this.txtMatKhau.Location = new System.Drawing.Point(323, 206);
             this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.Properties.UseSystemPasswordChar = true;
             this.txtMatKhau.Size = new System.Drawing.Size(195, 20);
             this.txtMatKhau.TabIndex = 3;
             // 
