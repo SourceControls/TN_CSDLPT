@@ -15,6 +15,9 @@ namespace TN_CSDLPT
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// 
+        public static String maCoSo = "CS1";
+
         public static SqlConnection conn = new SqlConnection();
         public static String connstr;
         public static String connstrPublisher = "Data Source=MYLAPTOP;Initial Catalog=TN_CSDLPT;Integrated Security=true";
@@ -51,6 +54,21 @@ namespace TN_CSDLPT
             }
             return s.ToString();
         }
+        public static bool connectToOtherSite(String serverName)
+        {
+            if (mlogin.Equals("HTKN"))  //từ site khác về site ban đầu
+            {
+                mlogin = mloginDN;
+                password = passwordDN;
+            } 
+            else   //từ site ban đầu về site khác
+            {
+                mlogin = remoteLogin;
+                password = remotePassword;
+            }
+            Program.serverName = serverName;
+            return connectToDB() == 1;
+        }
         public static int connectToDB()
         {
             if (conn != null && conn.State == ConnectionState.Open)
@@ -62,7 +80,7 @@ namespace TN_CSDLPT
                 // Khoi tao connection string
                 connstr = "Data Source=" + Program.serverName +
                     ";Initial Catalog=" + Program.database + ";User ID=" +
-                    Program.mlogin + ";Password=" + Program.password;
+                    Program.mlogin + ";Password=" + Program.password+"; MultipleActiveResultSets = true;";
 
                 Program.conn.ConnectionString = connstr;
 

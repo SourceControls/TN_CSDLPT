@@ -382,3 +382,4 @@ G:\My Drive\All Tai Lieu\CSDLPT\TN_CSDLPT\obj\Debug\TN_CSDLPT.csproj.CoreCompile
 G:\My Drive\All Tai Lieu\CSDLPT\TN_CSDLPT\obj\Debug\TN_CSDLPT.csproj.CopyComplete
 G:\My Drive\All Tai Lieu\CSDLPT\TN_CSDLPT\obj\Debug\TN_CSDLPT.exe
 G:\My Drive\All Tai Lieu\CSDLPT\TN_CSDLPT\obj\Debug\TN_CSDLPT.pdb
+G:\My Drive\All Tai Lieu\CSDLPT\TN_CSDLPT\obj\Debug\TN_CSDLPT.frmLop.resources

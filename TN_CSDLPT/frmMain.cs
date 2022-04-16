@@ -22,7 +22,6 @@ namespace TN_CSDLPT
                     return;
                 }
             }
-
             newFrm.MdiParent = this;
             newFrm.Show();
         }
@@ -31,6 +30,10 @@ namespace TN_CSDLPT
         public frmMain()
         {
             InitializeComponent();
+            //dữ liệu ban đầu
+            openForm(new frmLogin());
+            openForm(new frmKhoa());
+
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

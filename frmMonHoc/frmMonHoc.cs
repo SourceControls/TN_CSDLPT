@@ -31,10 +31,9 @@ namespace TN_CSDLPT
 
        private void frmMonHoc_Load(object sender, EventArgs e)
         {
-
             DSet.EnforceConstraints = false;
             // TODO: This line of code loads data into the 'dSet.MONHOC' table. You can move, or remove it, as needed.
-            //    this.MONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
+        //    this.MONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
             this.MONHOCTableAdapter.Fill(this.DSet.MONHOC);
 
             // TODO: This line of code loads data into the 'dSet.GIAOVIEN_DANGKY' table. You can move, or remove it, as needed.
@@ -90,7 +89,6 @@ namespace TN_CSDLPT
             }
 
             //Bắt điều kiện không trùng các môn học khác
-
             vt = bdsMonHoc.Find("MAMH", txtMAMH.Text.Trim());
             if (vt != -1)
             {
@@ -168,7 +166,6 @@ namespace TN_CSDLPT
         private void btnPhucHoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             bdsMonHoc.CancelEdit();
-
             bdsMonHoc.Position = vitri;
             gcMONHOC.Enabled = true;
             panelControl1.Enabled = false;
@@ -197,29 +194,9 @@ namespace TN_CSDLPT
 
         }
 
-        private void mONHOCGridControl_Click(object sender, EventArgs e)
+        private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
-        }
-
-        private void mONHOCBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-
-        }
-
-        private void mAMHLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tENMHLabel_Click(object sender, EventArgs e)
-        {
-
+            this.Close();
         }
     }
 }
