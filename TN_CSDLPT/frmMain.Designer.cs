@@ -52,6 +52,9 @@ namespace TN_CSDLPT
             this.statusID = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusHoTen = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusNhom = new System.Windows.Forms.ToolStripStatusLabel();
+            this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
+            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -75,12 +78,14 @@ namespace TN_CSDLPT
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.OptionsStubGlyphs.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.ribbonControl1.OptionsStubGlyphs.UseFont = true;
+            this.ribbonControl1.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
+            this.ribbonPageCategory1});
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbHeThong,
             this.rbGiangVien,
             this.rbNghiepVu,
             this.rbBaoCao});
-            this.ribbonControl1.Size = new System.Drawing.Size(1384, 158);
+            this.ribbonControl1.Size = new System.Drawing.Size(1384, 193);
             // 
             // barButtonItem1
             // 
@@ -199,43 +204,62 @@ namespace TN_CSDLPT
             this.statusID,
             this.statusHoTen,
             this.statusNhom});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 765);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 761);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(4, 0, 74, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1384, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1384, 26);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // statusID
             // 
             this.statusID.Name = "statusID";
-            this.statusID.Size = new System.Drawing.Size(18, 17);
+            this.statusID.Size = new System.Drawing.Size(24, 20);
             this.statusID.Text = "ID";
             this.statusID.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
             // statusHoTen
             // 
             this.statusHoTen.Name = "statusHoTen";
-            this.statusHoTen.Size = new System.Drawing.Size(49, 17);
+            this.statusHoTen.Size = new System.Drawing.Size(62, 20);
             this.statusHoTen.Text = "HO TEN";
             // 
             // statusNhom
             // 
             this.statusNhom.Name = "statusNhom";
-            this.statusNhom.Size = new System.Drawing.Size(45, 17);
+            this.statusNhom.Size = new System.Drawing.Size(55, 20);
             this.statusNhom.Text = "NHOM";
+            // 
+            // ribbonPageCategory1
+            // 
+            this.ribbonPageCategory1.Name = "ribbonPageCategory1";
+            this.ribbonPageCategory1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.ribbonPage1});
+            this.ribbonPageCategory1.Text = "ribbonPageCategory1";
+            // 
+            // ribbonPage1
+            // 
+            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup7});
+            this.ribbonPage1.Name = "ribbonPage1";
+            this.ribbonPage1.Text = "ribbonPage1";
+            // 
+            // ribbonPageGroup7
+            // 
+            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
+            this.ribbonPageGroup7.Text = "ribbonPageGroup7";
             // 
             // frmMain
             // 
             this.Appearance.FontSizeDelta = 15;
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(38F, 72F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(63F, 121F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1384, 787);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.ribbonControl1);
-            this.Font = new System.Drawing.Font("Tahoma", 45F, System.Drawing.FontStyle.Bold);
+            this.Font = new System.Drawing.Font("Tahoma", 60F, System.Drawing.FontStyle.Bold);
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(12, 14, 12, 14);
             this.Name = "frmMain";
@@ -275,6 +299,9 @@ namespace TN_CSDLPT
         private DevExpress.XtraBars.BarButtonItem btnMonHoc;
         private DevExpress.XtraBars.BarButtonItem btnKhoa;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
+        private DevExpress.XtraBars.Ribbon.RibbonPageCategory ribbonPageCategory1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
     }
 }
 
