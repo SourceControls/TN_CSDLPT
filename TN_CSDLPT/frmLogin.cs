@@ -165,6 +165,7 @@ namespace TN_CSDLPT
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+            Program.fMain.closeAllForm();
             Program.fMain.btnDangKy.Enabled = false;
             Program.fMain.statusHoTen.Text = "HoTen";
             Program.fMain.statusID.Text = "ID";

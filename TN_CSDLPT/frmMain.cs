@@ -26,6 +26,14 @@ namespace TN_CSDLPT
             newFrm.Show();
         }
 
+        public void closeAllForm()
+        {
+            foreach(Form f in this.MdiChildren)
+            {
+                f.Close();
+            }
+        }
+
 
         public frmMain()
         {
@@ -59,6 +67,11 @@ namespace TN_CSDLPT
         private void btnMonHoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             openForm(new frmMonHoc());
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
