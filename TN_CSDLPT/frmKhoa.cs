@@ -15,8 +15,8 @@ namespace TN_CSDLPT
     public partial class frmKhoa : DevExpress.XtraEditors.XtraForm
     {
         private String maCoSo = Program.maCoSo;
-        private int viTri = 0;
-
+        private int viTri = 0;  //Khi ấn vào btn phục hồi thì position trong bds sẽ quay về vị trí ban đầu
+        private bool doneLoadForm = false; //Fix lỗi khi load form, cbcoso được đổ dữ liệu vào sẽ bị auto gọi hàm indexchanged
         public frmKhoa()
         {
             InitializeComponent();
@@ -50,13 +50,14 @@ namespace TN_CSDLPT
             if (Program.mGroup.ToUpper().Equals("TRUONG"))
             {
                 cbCoSo.Enabled = true;
-                btnGhiKhoa.Enabled = btnHieuChinhKhoa.Enabled = btnXoaKhoa.Enabled = false;
+                btnThemKhoa.Enabled = btnHieuChinhKhoa.Enabled = btnXoaKhoa.Enabled = false;
             }
             else
             {
-                btnGhiKhoa.Enabled = btnHieuChinhKhoa.Enabled = btnXoaKhoa.Enabled = true;
+                btnThemKhoa.Enabled = btnHieuChinhKhoa.Enabled = btnXoaKhoa.Enabled = true;
                 cbCoSo.Enabled = false;
             }
+            doneLoadForm = true; 
 
         }
 
@@ -132,9 +133,6 @@ namespace TN_CSDLPT
                 return;
             }
 
-
-          
-
             //check trùng mã trên môi trường phân tán
             String cmd = "exec sp_tim_khoa '" + txtMaKhoa.Text + "'";
             SqlDataReader myReader = Program.ExecSqlDataReader(cmd);
@@ -153,8 +151,6 @@ namespace TN_CSDLPT
                     return;
                 }
             }
-
-
 
             try
             {
@@ -213,13 +209,17 @@ namespace TN_CSDLPT
 
         private void cbCoSo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //System.Windows.Forms.ComboBox cmb = (System.Windows.Forms.ComboBox)sender;
-            //if (Program.connectToOtherSite(cmb.SelectedValue.ToString()))
-            //{
-            //    this.khoaTableAdapter.Connection.ConnectionString = Program.connstr;
-            //    this.khoaTableAdapter.Fill(this.DSet.KHOA);
-            //}
-            //MessageBox.Show(Program.connstr);
+            if (!doneLoadForm)
+                return;
+
+            //đổi site
+            System.Windows.Forms.ComboBox cmb = (System.Windows.Forms.ComboBox)sender;
+            if (Program.connectToOtherSite(cmb.SelectedValue.ToString()) == 1)
+            {
+                this.khoaTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.khoaTableAdapter.Fill(this.DSet.KHOA);
+            }
+            MessageBox.Show(Program.connstr);
 
         }
     }

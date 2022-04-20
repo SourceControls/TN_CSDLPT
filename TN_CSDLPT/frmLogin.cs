@@ -77,7 +77,7 @@ namespace TN_CSDLPT
             loaiTaiKhoan = cbLoaiTaiKhoan.SelectedValue.ToString();
 
             //set dữ liệu ban đầu:
-            txtTenDN.Text = "TH101";
+            txtTenDN.Text = "TH234";
             txtPassword.Text = "123";
             cbLoaiTaiKhoan.SelectedIndex = 1;
             btnDN_Click(sender,e);

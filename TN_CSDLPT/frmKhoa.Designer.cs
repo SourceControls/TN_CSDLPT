@@ -370,6 +370,7 @@ namespace TN_CSDLPT
             // 
             // colMAKH
             // 
+            this.colMAKH.Caption = "Mã Khoa";
             this.colMAKH.FieldName = "MAKH";
             this.colMAKH.MinWidth = 25;
             this.colMAKH.Name = "colMAKH";
@@ -380,6 +381,7 @@ namespace TN_CSDLPT
             // 
             // colTENKH
             // 
+            this.colTENKH.Caption = "Tên Khoa";
             this.colTENKH.FieldName = "TENKH";
             this.colTENKH.MinWidth = 25;
             this.colTENKH.Name = "colTENKH";
@@ -390,6 +392,7 @@ namespace TN_CSDLPT
             // 
             // colMACS
             // 
+            this.colMACS.Caption = "Mã Cơ Sở";
             this.colMACS.FieldName = "MACS";
             this.colMACS.MinWidth = 25;
             this.colMACS.Name = "colMACS";

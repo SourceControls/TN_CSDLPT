@@ -54,8 +54,10 @@ namespace TN_CSDLPT
             }
             return s.ToString();
         }
-        public static bool connectToOtherSite(String serverName)
+        public static int connectToOtherSite(String serverName)
         {
+            if (Program.serverName.Equals(serverName))  //cần thiết vì cbox bị lỗi
+                return 0;
             if (mlogin.Equals("HTKN"))  //từ site khác về site ban đầu
             {
                 mlogin = mloginDN;
@@ -67,7 +69,7 @@ namespace TN_CSDLPT
                 password = remotePassword;
             }
             Program.serverName = serverName;
-            return connectToDB() == 1;
+            return connectToDB();
         }
         public static int connectToDB()
         {
