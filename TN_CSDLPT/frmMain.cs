@@ -32,6 +32,9 @@ namespace TN_CSDLPT
             {
                 f.Close();
             }
+            this.rbGiangVien.Visible = false;
+            this.rbBaoCao.Visible = false;
+            this.rbNghiepVu.Visible = false;
         }
 
 
@@ -89,6 +92,11 @@ namespace TN_CSDLPT
         private void btnGiaoVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             openForm(new frmGiaoVien());
+        }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(new frmSinhVien());
         }
     }
 }
