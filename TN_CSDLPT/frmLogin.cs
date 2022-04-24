@@ -75,6 +75,12 @@ namespace TN_CSDLPT
             cbLoaiTaiKhoan.ValueMember = "Key";
             cbLoaiTaiKhoan.SelectedIndex = 1;
             loaiTaiKhoan = cbLoaiTaiKhoan.SelectedValue.ToString();
+
+            //set dữ liệu ban đầu:
+            txtTenDN.Text = "TH234";
+            txtPassword.Text = "123";
+            cbLoaiTaiKhoan.SelectedIndex = 1;
+            btnDN_Click(sender,e);
         }
 
         private void cbCoSo_SelectedIndexChanged(object sender, EventArgs e)

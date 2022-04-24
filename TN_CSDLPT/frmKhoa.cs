@@ -8,14 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace TN_CSDLPT
 {
     public partial class frmKhoa : DevExpress.XtraEditors.XtraForm
     {
-        private String maCoSo = "";
-        private int viTri = 0;
-
+        private String maCoSo = Program.maCoSo;
+        private int viTri = 0;  //Khi ấn vào btn phục hồi thì position trong bds sẽ quay về vị trí ban đầu
+        private bool doneLoadForm = false; //Fix lỗi khi load form, cbcoso được đổ dữ liệu vào sẽ bị auto gọi hàm indexchanged
         public frmKhoa()
         {
             InitializeComponent();
@@ -36,13 +37,7 @@ namespace TN_CSDLPT
             this.lopTableAdapter.Fill(this.DSet.LOP);
 
 
-
-
-            if (bdsKhoa.Count > 0)
-                maCoSo = ((DataRowView)bdsKhoa[0])["MACS"].ToString();
-            else
-                return;
-
+            maCoSo = Program.maCoSo;
 
             cbCoSo.DataSource = Program.bdsDSPM;
             cbCoSo.DisplayMember = "TENCN";
@@ -52,30 +47,25 @@ namespace TN_CSDLPT
             //Phân quyền dùng app theo group
             btnGhiKhoa.Enabled = btnPhucHoiKhoa.Enabled = false;
 
-                if (Program.mGroup == "TRUONG")
+            if (Program.mGroup.ToUpper().Equals("TRUONG"))
             {
                 cbCoSo.Enabled = true;
-                btnGhiKhoa.Enabled = btnHieuChinhKhoa.Enabled = btnXoaKhoa.Enabled = false;
+                btnThemKhoa.Enabled = btnHieuChinhKhoa.Enabled = btnXoaKhoa.Enabled = false;
             }
             else
             {
-                btnGhiKhoa.Enabled = btnHieuChinhKhoa.Enabled = btnXoaKhoa.Enabled = true;
+                btnThemKhoa.Enabled = btnHieuChinhKhoa.Enabled = btnXoaKhoa.Enabled = true;
                 cbCoSo.Enabled = false;
             }
-        }
-
-        private void panelKhoa_Paint(object sender, PaintEventArgs e)
-        {
+            doneLoadForm = true; 
 
         }
 
-        private void panelControl1_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
 
         private void btnThemKhoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            viTri = bdsKhoa.Position;
             bdsKhoa.AddNew();
             txtMaCoSo.Text = maCoSo;
 
@@ -89,7 +79,7 @@ namespace TN_CSDLPT
         private void btnHieuChinhKhoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             viTri = bdsKhoa.Position;
-
+         
             //bật tắt các controller khác
             btnGhiKhoa.Enabled = btnPhucHoiKhoa.Enabled = true;
             panelKhoa.Enabled = true;
@@ -99,6 +89,11 @@ namespace TN_CSDLPT
 
         private void btnXoaKhoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (bdsKhoa.Count == 0)
+            {
+                MessageBox.Show("Không còn dữ liệu để xóa");
+                return;
+            }
             String maKhoa = "";
             if (bdsGiaoVien.Count > 0)
             {
@@ -114,8 +109,8 @@ namespace TN_CSDLPT
             {
                 try
                 {
-                    bdsKhoa.RemoveCurrent();
                     maKhoa = ((DataRowView)bdsKhoa[bdsKhoa.Position])["MAKH"].ToString();
+                    bdsKhoa.RemoveCurrent();
                     khoaTableAdapter.Connection.ConnectionString = Program.connstr;
                     khoaTableAdapter.Update(DSet.KHOA);
                 }
@@ -127,7 +122,6 @@ namespace TN_CSDLPT
                     return;
                 }
             }
-            if (bdsKhoa.Count == 0) btnXoaKhoa.Enabled = false;
         }
 
         private void btnGhiKhoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -139,7 +133,24 @@ namespace TN_CSDLPT
                 return;
             }
 
-            // thiếu code mã khoa không được trùng trên các phân mảnh
+            //check trùng mã trên môi trường phân tán
+            String cmd = "exec sp_tim_khoa '" + txtMaKhoa.Text + "'";
+            SqlDataReader myReader = Program.ExecSqlDataReader(cmd);
+            if (myReader.HasRows)
+            {
+                //check trùng trên site hiện tại
+                int vTri = bdsKhoa.Find("MAKH", txtMaKhoa.Text.Trim());
+                if(vTri == -1)  //nếu không trùng trên site hiện tại, tức là trùng trên site khác
+                {
+                    MessageBox.Show("Mã Khoa Bị Trùng Trên Site Khác");
+                    return;
+                }
+                if (vTri != -1 && vTri != bdsKhoa.Position)  //nếu trùng trên site hiện tại và không trùng với mẫu tin đang sửa
+                {
+                    MessageBox.Show("Mã Khoa Bị Trùng! Hãy Đặt Mã Khác");
+                    return;
+                }
+            }
 
             try
             {
@@ -147,7 +158,6 @@ namespace TN_CSDLPT
                 khoaTableAdapter.Connection.ConnectionString = Program.connstr;
                 khoaTableAdapter.Update(DSet.KHOA);
                 bdsKhoa.ResetCurrentItem();
-
             }
             catch (Exception ex)
             {
@@ -158,25 +168,27 @@ namespace TN_CSDLPT
             btnGhiKhoa.Enabled = btnPhucHoiKhoa.Enabled = false;
             panelKhoa.Enabled = false;
             kHOAGridControl.Enabled = true;
-            btnHieuChinhKhoa.Enabled = btnXoaKhoa.Enabled = btnReloadKhoa.Enabled = btnThoatKhoa.Enabled = true;
+            btnHieuChinhKhoa.Enabled = btnXoaKhoa.Enabled = btnReloadKhoa.Enabled = btnThoatKhoa.Enabled = btnThemKhoa.Enabled = true;
 
         }
 
         private void btnPhucHoiKhoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            btnReloadKhoa_ItemClick(sender, e);
             bdsKhoa.CancelEdit();
-            if (btnThemKhoa.Enabled == false) bdsKhoa.Position = viTri;
+            bdsKhoa.Position = viTri;
             //bật tắt các controller khác
             btnGhiKhoa.Enabled = btnPhucHoiKhoa.Enabled = false;
             panelKhoa.Enabled = false;
             kHOAGridControl.Enabled = true;
-            btnHieuChinhKhoa.Enabled = btnXoaKhoa.Enabled = btnReloadKhoa.Enabled = btnThoatKhoa.Enabled = true;
+            btnHieuChinhKhoa.Enabled = btnXoaKhoa.Enabled = btnReloadKhoa.Enabled = btnThoatKhoa.Enabled = btnThemKhoa.Enabled = true;
         }
 
         private void btnReloadKhoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             try
             {
+                this.khoaTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.khoaTableAdapter.Fill(DSet.KHOA);
 
             }
@@ -193,13 +205,21 @@ namespace TN_CSDLPT
 
         }
 
-        private void tENKHLabel_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void tENKHTextBox_TextChanged(object sender, EventArgs e)
+        private void cbCoSo_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (!doneLoadForm)
+                return;
+
+            //đổi site
+            System.Windows.Forms.ComboBox cmb = (System.Windows.Forms.ComboBox)sender;
+            if (Program.connectToOtherSite(cmb.SelectedValue.ToString()) == 1)
+            {
+                this.khoaTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.khoaTableAdapter.Fill(this.DSet.KHOA);
+            }
+            MessageBox.Show(Program.connstr);
 
         }
 

@@ -15,9 +15,12 @@ namespace TN_CSDLPT
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// 
+        public static String maCoSo = "CS1";
+
         public static SqlConnection conn = new SqlConnection();
         public static String connstr;
-        public static String connstrPublisher = "Data Source=DESKTOP-OJUM6M0;Initial Catalog=TN_CSDLPT;Integrated Security=true";
+        public static String connstrPublisher = "Data Source=MYLAPTOP;Initial Catalog=TN_CSDLPT;Integrated Security=true";
         public static SqlDataReader myReader;
         public static String serverName = "";
         public static String username = "";
@@ -51,6 +54,23 @@ namespace TN_CSDLPT
             }
             return s.ToString();
         }
+        public static int connectToOtherSite(String serverName)
+        {
+            if (Program.serverName.Equals(serverName))  //cần thiết vì cbox bị lỗi
+                return 0;
+            if (mlogin.Equals("HTKN"))  //từ site khác về site ban đầu
+            {
+                mlogin = mloginDN;
+                password = passwordDN;
+            } 
+            else   //từ site ban đầu về site khác
+            {
+                mlogin = remoteLogin;
+                password = remotePassword;
+            }
+            Program.serverName = serverName;
+            return connectToDB();
+        }
         public static int connectToDB()
         {
             if (conn != null && conn.State == ConnectionState.Open)
@@ -62,7 +82,7 @@ namespace TN_CSDLPT
                 // Khoi tao connection string
                 connstr = "Data Source=" + Program.serverName +
                     ";Initial Catalog=" + Program.database + ";User ID=" +
-                    Program.mlogin + ";Password=" + Program.password;
+                    Program.mlogin + ";Password=" + Program.password+"; MultipleActiveResultSets = true;";
 
                 Program.conn.ConnectionString = connstr;
 

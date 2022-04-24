@@ -22,7 +22,6 @@ namespace TN_CSDLPT
                     return;
                 }
             }
-
             newFrm.MdiParent = this;
             newFrm.Show();
         }
@@ -33,16 +32,18 @@ namespace TN_CSDLPT
             {
                 f.Close();
             }
-            this.rbGiangVien.Visible = false;
-            this.rbBaoCao.Visible = false;
-            this.rbNghiepVu.Visible = false;
         }
 
 
         public frmMain()
         {
             InitializeComponent();
+            //dữ liệu ban đầu
             openForm(new frmLogin());
+            //openForm(new frmKhoa());
+            openForm(new frmLop());
+
+
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -77,7 +78,17 @@ namespace TN_CSDLPT
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            openForm(new frmLop());
+        }
+
+        private void btnSinhVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
             openForm(new frmSinhVien());
+        }
+
+        private void btnGiaoVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(new frmGiaoVien());
         }
     }
 }

@@ -26,8 +26,8 @@ namespace TN_CSDLPT.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-OJUM6M0;Initial Catalog=TN_CSDLPT;Persist Security Info=True;" +
-            "User ID=sa;Password=123;PoolBlockingPeriod=Auto")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MYLAPTOP;Initial Catalog=TN_CSDLPT;Persist Security Info=True;User ID" +
+            "=sa;Password=123;PoolBlockingPeriod=Auto")]
         public string TN_CSDLPTConnectionString {
             get {
                 return ((string)(this["TN_CSDLPTConnectionString"]));

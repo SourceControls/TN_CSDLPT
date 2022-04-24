@@ -99,6 +99,7 @@ namespace TN_CSDLPT
             tENMHLabel.Size = new System.Drawing.Size(68, 19);
             tENMHLabel.TabIndex = 2;
             tENMHLabel.Text = "TENMH:";
+            tENMHLabel.Click += new System.EventHandler(this.tENMHLabel_Click);
             // 
             // barManager
             // 
@@ -201,6 +202,7 @@ namespace TN_CSDLPT
             this.barButtonItem2.Caption = "In danh sách môn học";
             this.barButtonItem2.Id = 6;
             this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // btnThoat
             // 
@@ -278,6 +280,7 @@ namespace TN_CSDLPT
             // 
             this.bdsMonHoc.DataMember = "MONHOC";
             this.bdsMonHoc.DataSource = this.DSet;
+            this.bdsMonHoc.CurrentChanged += new System.EventHandler(this.mONHOCBindingSource_CurrentChanged);
             // 
             // MONHOCTableAdapter
             // 
@@ -317,6 +320,7 @@ namespace TN_CSDLPT
             this.gcMONHOC.TabIndex = 5;
             this.gcMONHOC.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gcMONHOC.Click += new System.EventHandler(this.mONHOCGridControl_Click);
             // 
             // gridView1
             // 
@@ -373,6 +377,7 @@ namespace TN_CSDLPT
             this.txtMAMH.Name = "txtMAMH";
             this.txtMAMH.Size = new System.Drawing.Size(281, 28);
             this.txtMAMH.TabIndex = 1;
+            this.txtMAMH.EditValueChanged += new System.EventHandler(this.txtMAMH_EditValueChanged);
             // 
             // bdsBangDiem
             // 
