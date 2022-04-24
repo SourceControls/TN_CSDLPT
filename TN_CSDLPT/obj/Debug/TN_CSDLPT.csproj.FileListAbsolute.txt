@@ -478,3 +478,4 @@ D:\Project_PT\TN_CSDLPT\obj\Debug\TN_CSDLPT.csproj.CoreCompileInputs.cache
 D:\Project_PT\TN_CSDLPT\obj\Debug\TN_CSDLPT.csproj.CopyComplete
 D:\Project_PT\TN_CSDLPT\obj\Debug\TN_CSDLPT.exe
 D:\Project_PT\TN_CSDLPT\obj\Debug\TN_CSDLPT.pdb
+D:\Project_PT\TN_CSDLPT\obj\Debug\TN_CSDLPT.frmSinhVien.resources

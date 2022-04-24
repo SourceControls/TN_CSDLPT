@@ -33,12 +33,16 @@ namespace TN_CSDLPT
             {
                 f.Close();
             }
+            this.rbGiangVien.Visible = false;
+            this.rbBaoCao.Visible = false;
+            this.rbNghiepVu.Visible = false;
         }
 
 
         public frmMain()
         {
             InitializeComponent();
+            openForm(new frmLogin());
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -69,6 +73,11 @@ namespace TN_CSDLPT
         private void frmMain_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(new frmSinhVien());
         }
     }
 }

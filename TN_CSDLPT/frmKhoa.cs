@@ -202,6 +202,16 @@ namespace TN_CSDLPT
         {
 
         }
+
+        private void cbCoSo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kHOAGridControl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
    
 }

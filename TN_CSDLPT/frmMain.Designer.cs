@@ -37,12 +37,14 @@ namespace TN_CSDLPT
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.btnMonHoc = new DevExpress.XtraBars.BarButtonItem();
             this.btnKhoa = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.rbHeThong = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbGiangVien = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbNghiepVu = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbBaoCao = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -68,10 +70,11 @@ namespace TN_CSDLPT
             this.btnDangKy,
             this.barButtonItem2,
             this.btnMonHoc,
-            this.btnKhoa});
+            this.btnKhoa,
+            this.barButtonItem3});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(12, 14, 12, 14);
-            this.ribbonControl1.MaxItemId = 8;
+            this.ribbonControl1.MaxItemId = 9;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.OptionsStubGlyphs.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.ribbonControl1.OptionsStubGlyphs.UseFont = true;
@@ -123,6 +126,14 @@ namespace TN_CSDLPT
             this.btnKhoa.Name = "btnKhoa";
             this.btnKhoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKhoa_ItemClick);
             // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Sinh viên";
+            this.barButtonItem3.Id = 8;
+            this.barButtonItem3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem3.ImageOptions.SvgImage")));
+            this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
+            // 
             // rbHeThong
             // 
             this.rbHeThong.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -145,7 +156,8 @@ namespace TN_CSDLPT
             // 
             this.rbGiangVien.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup3,
-            this.ribbonPageGroup6});
+            this.ribbonPageGroup6,
+            this.ribbonPageGroup7});
             this.rbGiangVien.Name = "rbGiangVien";
             this.rbGiangVien.Text = "Giảng Viên";
             this.rbGiangVien.Visible = false;
@@ -159,7 +171,11 @@ namespace TN_CSDLPT
             // 
             this.ribbonPageGroup6.ItemLinks.Add(this.btnMonHoc);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
-            this.ribbonPageGroup6.Text = "ribbonPageGroup6";
+            // 
+            // ribbonPageGroup7
+            // 
+            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             // 
             // rbNghiepVu
             // 
@@ -229,13 +245,13 @@ namespace TN_CSDLPT
             // 
             this.Appearance.FontSizeDelta = 15;
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(38F, 72F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(76F, 145F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1384, 787);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.ribbonControl1);
-            this.Font = new System.Drawing.Font("Tahoma", 45F, System.Drawing.FontStyle.Bold);
+            this.Font = new System.Drawing.Font("Tahoma", 90F, System.Drawing.FontStyle.Bold);
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(12, 14, 12, 14);
             this.Name = "frmMain";
@@ -275,6 +291,8 @@ namespace TN_CSDLPT
         private DevExpress.XtraBars.BarButtonItem btnMonHoc;
         private DevExpress.XtraBars.BarButtonItem btnKhoa;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
     }
 }
 

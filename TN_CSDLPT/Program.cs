@@ -130,6 +130,7 @@ namespace TN_CSDLPT
             Application.SetCompatibleTextRenderingDefault(false);
             fMain = new frmMain();
             Application.Run(fMain);
+            //Application.Run(new frmSinhVien());
 
         }
     }

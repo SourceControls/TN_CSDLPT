@@ -73,7 +73,7 @@ namespace TN_CSDLPT
             cbLoaiTaiKhoan.DataSource = new BindingSource(cbLoaiTaiKhoanSource, null);
             cbLoaiTaiKhoan.DisplayMember = "Value";
             cbLoaiTaiKhoan.ValueMember = "Key";
-            cbLoaiTaiKhoan.SelectedIndex = 0;
+            cbLoaiTaiKhoan.SelectedIndex = 1;
             loaiTaiKhoan = cbLoaiTaiKhoan.SelectedValue.ToString();
         }
 
