@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,8 +15,11 @@ namespace TN_CSDLPT
     public partial class frmSinhVien : DevExpress.XtraEditors.XtraForm
     {
         private static int viTri;
-        private static String maLop;
-        private static String maSV;
+        private static string maLop;
+        private static string maSV;
+        private static int slLop;
+        private static int slSv;
+        private static bool isAssignSlSv = true;
         public frmSinhVien()
         {
             InitializeComponent();
@@ -34,15 +38,12 @@ namespace TN_CSDLPT
             this.tableAdapterManager.UpdateAll(this.DSet);
         }
 
-        private void frmSinhVien_Load(object sender, EventArgs e)
+        private void initBDS()
         {
-            
-            this.DSet.EnforceConstraints = false;
-
             this.kHOATableAdapter.Connection.ConnectionString = Program.connstr;
             this.kHOATableAdapter.Fill(this.DSet.KHOA);
 
-           this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
             this.lOPTableAdapter.Fill(this.DSet.LOP);
 
             this.gIAOVIEN_DANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
@@ -50,6 +51,14 @@ namespace TN_CSDLPT
 
             this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
             this.sINHVIENTableAdapter.Fill(this.DSet.SINHVIEN);
+        }
+
+        private void frmSinhVien_Load(object sender, EventArgs e)
+        {
+            
+            this.DSet.EnforceConstraints = false;
+
+            initBDS();
 
             if (bdsLop.Count == 0) btnXoaLop.Enabled = false;
 
@@ -58,7 +67,7 @@ namespace TN_CSDLPT
             cbCoSo.ValueMember = "TENSERVER";
             cbCoSo.SelectedIndex = Program.mCoSo;
 
-            if(Program.mGroup == "TRUONG" || Program.mGroup == "GIANGVIEN")
+            if(Program.mGroup.ToUpper().Equals("TRUONG") || Program.mGroup.ToUpper().Equals("GIANGVIEN"))
             {
                 cbCoSo.Enabled = true;
             } else
@@ -66,10 +75,11 @@ namespace TN_CSDLPT
                 cbCoSo.Enabled = false;
             }
 
-            if(Program.mGroup == "TRUONG")
+            if(Program.mGroup.ToUpper().Equals("TRUONG"))
             {
                 btnThemLop.Enabled = btnHieuChinhLop.Enabled =
                 btnXoaLop.Enabled = btnGhiLop.Enabled = btnPhucHoiLop.Enabled = false;
+                contextMenuStrip1.Enabled = false;
             } else
             {
                 btnGhiLop.Enabled = btnPhucHoiLop.Enabled = false;
@@ -80,10 +90,14 @@ namespace TN_CSDLPT
                 MessageBox.Show("Không có khoa, phải có ít nhất một khoa tồn tại!");
                 return;
             }
+
+            panelLop.Enabled = false;
+            slLop = bdsLop.Count;
         }
 
         private void btnThemKhoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            viTri = bdsLop.Position;
             bdsLop.AddNew();
 
             //bật tắt các controller khác
@@ -108,7 +122,7 @@ namespace TN_CSDLPT
 
         private void btnHieuChinhLop_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            viTri = bdsKhoa.Position;
+            viTri = bdsLop.Position;
 
             //bật tắt các controller khácbtnGhiLop.Enabled = btnPhucHoiLop.Enabled = true;
             btnGhiLop.Enabled = btnPhucHoiLop.Enabled = true;
@@ -158,23 +172,26 @@ namespace TN_CSDLPT
                 MessageBox.Show("Mã lớp và Tên lớp Không Được Để Trống");
                 return;
             }
-/*
-            String cmd = "exec sp_kt_ton_tai_lop '" + edtMaLop.Text.Trim() + "'";
-            Program.myReader = Program.ExecSqlDataReader(cmd);
-            int isTonTai = Program.myReader.GetInt32(0);
 
-            if (isTonTai == 1)
+            if(bdsLop.Find("MALOP",edtMaLop.Text.Trim()) != -1)
             {
                 MessageBox.Show("Lớp đã tồn tại!");
                 return;
-            }*/
+            }
 
+
+            string cmd = "exec [sp_kt_ton_tai_lop] '" + edtMaLop.Text.Trim() + "'";
+            if(bdsLop.Count != slLop && Program.ExecSqlNonQuery(cmd) == 1)
+            {
+                return;
+            }
             try
             {
                 bdsLop.EndEdit();
                 lOPTableAdapter.Connection.ConnectionString = Program.connstr;
                 lOPTableAdapter.Update(DSet.LOP);
                 bdsLop.ResetCurrentItem();
+                slLop = bdsLop.Count;
 
             }
             catch (Exception ex)
@@ -183,10 +200,10 @@ namespace TN_CSDLPT
                 lOPTableAdapter.Fill(DSet.LOP);
             }
             //bật tắt các controller khác
-            btnGhiLop.Enabled = btnPhucHoiLop.Enabled = false;
-            panelLop.Enabled = false;
-            gcLop.Enabled = true;
-            btnHieuChinhLop.Enabled = btnXoaLop.Enabled = btnReloadLop.Enabled = btnThoatLop.Enabled = true;
+            btnGhiLop.Enabled = btnPhucHoiLop.Enabled = panelLop.Enabled = false;
+            btnHieuChinhLop.Enabled = btnXoaLop.Enabled = 
+                btnReloadLop.Enabled = btnThoatLop.Enabled = 
+                gcLop.Enabled = btnThemLop.Enabled = true;
         }
 
         private void btnReloadLop_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -205,7 +222,12 @@ namespace TN_CSDLPT
         private void btnPhucHoiLop_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             bdsLop.CancelEdit();
-            if (btnThemLop.Enabled == false) bdsLop.Position = viTri;
+            while(slLop < bdsLop.Count)
+            {
+                bdsLop.RemoveAt(bdsLop.Count - 1);
+            }
+            bdsLop.Position = viTri;
+
             //bật tắt các controller khác
             btnGhiLop.Enabled = btnPhucHoiLop.Enabled = false;
             panelLop.Enabled = false;
@@ -216,9 +238,13 @@ namespace TN_CSDLPT
 
         private void cbTenKhoa_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+            if (cbTenKhoa.SelectedValue == null || 
+                cbTenKhoa.SelectedValue.ToString() == "System.Data.DataRowView")
+            {
+                return;
+            }
             try
             {
-                if (cbTenKhoa.SelectedValue == null) return;
                 txtMaKhoa.Text = cbTenKhoa.SelectedValue.ToString();
             } catch (Exception)
             {
@@ -233,31 +259,57 @@ namespace TN_CSDLPT
                 MessageBox.Show("Phải có ít nhất một lớp!");
                 return;
             }
+            // Trường hợp new nhiều dòng thì chỉ gán 1 lần duy nhất
+            if(isAssignSlSv)
+            {
+                slSv = bdsSinhVien.Count;
+                isAssignSlSv = false;
+            }
             bdsSinhVien.AddNew();
             ((DataRowView)bdsSinhVien[bdsSinhVien.Position])["MALOP"] = edtMaLop.Text;
         }
 
         private void ghiSinhViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            String masv = ((DataRowView)bdsSinhVien[bdsSinhVien.Position])["MASV"].ToString();
-            String ho = ((DataRowView)bdsSinhVien[bdsSinhVien.Position])["HO"].ToString();
-            String ten = ((DataRowView)bdsSinhVien[bdsSinhVien.Position])["TEN"].ToString();
-            if (masv.Trim().Length == 0 || ho.Trim().Length == 0 || ten.Trim().Length == 0 )
+            if (bdsSinhVien.Count == 0)
             {
-                MessageBox.Show("Bạn cần nhập đầy đủ các trường Mã sinh viên, họ, tên!");
                 return;
             }
+
+            string masv="";
+            string ho="";
+            string ten="";
+
+            string cmd;
+            for(int i = slSv; i < bdsSinhVien.Count; i++)
+            {
+                masv = ((DataRowView)bdsSinhVien[i])["MASV"].ToString().Trim();
+                ho = ((DataRowView)bdsSinhVien[i])["HO"].ToString();
+                ten = ((DataRowView)bdsSinhVien[i])["TEN"].ToString();
+                if (masv.Trim().Length == 0 || ho.Trim().Length == 0 || ten.Trim().Length == 0)
+                {
+                    MessageBox.Show("Bạn cần nhập đầy đủ các trường Mã sinh viên, họ, tên!");
+                    return;
+                }
+                cmd = "exec sp_kt_ton_tai_sinh_vien '" + masv + "'";
+                if (Program.ExecSqlNonQuery(cmd) == 1)
+                {
+                    return;
+                }
+            }
+           
             try
             {
                 bdsSinhVien.EndEdit();
                 sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
                 sINHVIENTableAdapter.Update(DSet.SINHVIEN);
                 bdsSinhVien.ResetCurrentItem();
-
+                slSv = bdsSinhVien.Count;
+                isAssignSlSv = true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi ghi Lớp: " + ex.Message);
+                MessageBox.Show("Lỗi ghi sinh viên: " + ex.Message);
                 sINHVIENTableAdapter.Fill(DSet.SINHVIEN);
             }
         }
@@ -265,10 +317,17 @@ namespace TN_CSDLPT
         private void xoáSinhViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (bdsSinhVien.Count == 0) return;
+            // Trường hợp dòng trống
+            if(((DataRowView) bdsSinhVien[bdsSinhVien.Position])["MASV"].ToString().Trim().Length == 0)
+            {
+                bdsSinhVien.RemoveCurrent();
+                return;
+            }
             if (MessageBox.Show("Xác nhận xóa sinh viên? ", "Xác Nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 try
                 {
+                    // Lưu mã để phục hồi vị trí khi bị lỗi
                     maSV = ((DataRowView)bdsSinhVien[bdsSinhVien.Position])["MASV"].ToString();
                     bdsSinhVien.RemoveCurrent();
                     sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
@@ -287,6 +346,17 @@ namespace TN_CSDLPT
         private void phụcHồiToolStripMenuItem_Click(object sender, EventArgs e)
         {
             bdsSinhVien.CancelEdit();
+        }
+
+        private void cbCoSo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbCoSo.SelectedValue.ToString() == "System.Data.DataRowView")
+            {
+                return;
+            }
+            Program.mCoSo = cbCoSo.SelectedIndex;
+            Program.connectToOtherSite(cbCoSo.SelectedValue.ToString());
+            initBDS();
         }
     }
 }
