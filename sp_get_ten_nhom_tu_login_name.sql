@@ -14,3 +14,4 @@ begin
 	where uid=(select groupuid from sys.sysmembers 
 		where memberuid=(select uid from sys.sysusers where name=@user_name))
 end
+--test github
