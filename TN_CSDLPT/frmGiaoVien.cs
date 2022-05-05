@@ -274,5 +274,10 @@ namespace TN_CSDLPT
                 GIAOVIENTableAdapter.Fill(DSet.GIAOVIEN);
             }
         }
+
+        private void gcKHOA_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

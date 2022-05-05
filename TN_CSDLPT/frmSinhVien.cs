@@ -40,6 +40,7 @@ namespace TN_CSDLPT
 
         private void initBDS()
         {
+            this.DSet.EnforceConstraints = false;
             this.kHOATableAdapter.Connection.ConnectionString = Program.connstr;
             this.kHOATableAdapter.Fill(this.DSet.KHOA);
 
@@ -55,9 +56,6 @@ namespace TN_CSDLPT
 
         private void frmSinhVien_Load(object sender, EventArgs e)
         {
-            
-            this.DSet.EnforceConstraints = false;
-
             initBDS();
 
             if (bdsLop.Count == 0) btnXoaLop.Enabled = false;

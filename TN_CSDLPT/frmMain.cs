@@ -42,9 +42,11 @@ namespace TN_CSDLPT
         {
             InitializeComponent();
             //dữ liệu ban đầu
-            openForm(new frmLogin());
+            /*
+            openForm(new frmLogin());*/
             //openForm(new frmKhoa());
-            openForm(new frmLop());
+            /*
+            openForm(new frmLop());*/
 
 
         }
@@ -94,9 +96,9 @@ namespace TN_CSDLPT
             openForm(new frmGiaoVien());
         }
 
-        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void barButtonItem3_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            openForm(new frmSinhVien());
+            openForm(new frmBangDiemMonHoc());
         }
     }
 }

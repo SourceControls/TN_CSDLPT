@@ -68,12 +68,12 @@ namespace TN_CSDLPT
             this.cbCoSo = new System.Windows.Forms.ComboBox();
             this.lOPGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMALOP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTENLOP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.bdsSinhVien = new System.Windows.Forms.BindingSource(this.components);
             this.panelNhapLieu = new System.Windows.Forms.Panel();
             this.SINHVIENTableAdapter = new TN_CSDLPT.DSetTableAdapters.SINHVIENTableAdapter();
-            this.colTENLOP = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMALOP = new DevExpress.XtraGrid.Columns.GridColumn();
             mALOPLabel = new System.Windows.Forms.Label();
             tENLOPLabel = new System.Windows.Forms.Label();
             tENKHLabel = new System.Windows.Forms.Label();
@@ -95,27 +95,27 @@ namespace TN_CSDLPT
             // mALOPLabel
             // 
             mALOPLabel.AutoSize = true;
-            mALOPLabel.Location = new System.Drawing.Point(257, 34);
+            mALOPLabel.Location = new System.Drawing.Point(220, 28);
             mALOPLabel.Name = "mALOPLabel";
-            mALOPLabel.Size = new System.Drawing.Size(52, 17);
+            mALOPLabel.Size = new System.Drawing.Size(41, 13);
             mALOPLabel.TabIndex = 12;
             mALOPLabel.Text = "Mã Lớp";
             // 
             // tENLOPLabel
             // 
             tENLOPLabel.AutoSize = true;
-            tENLOPLabel.Location = new System.Drawing.Point(257, 107);
+            tENLOPLabel.Location = new System.Drawing.Point(220, 87);
             tENLOPLabel.Name = "tENLOPLabel";
-            tENLOPLabel.Size = new System.Drawing.Size(58, 17);
+            tENLOPLabel.Size = new System.Drawing.Size(45, 13);
             tENLOPLabel.TabIndex = 13;
             tENLOPLabel.Text = "Tên Lớp";
             // 
             // tENKHLabel
             // 
             tENKHLabel.AutoSize = true;
-            tENKHLabel.Location = new System.Drawing.Point(497, 35);
+            tENKHLabel.Location = new System.Drawing.Point(426, 28);
             tENKHLabel.Name = "tENKHLabel";
-            tENKHLabel.Size = new System.Drawing.Size(39, 17);
+            tENKHLabel.Size = new System.Drawing.Size(31, 13);
             tENKHLabel.TabIndex = 19;
             tENKHLabel.Text = "Khoa";
             // 
@@ -244,35 +244,31 @@ namespace TN_CSDLPT
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlTop.Size = new System.Drawing.Size(1097, 30);
+            this.barDockControlTop.Size = new System.Drawing.Size(940, 24);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 771);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 614);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1097, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(940, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 741);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 590);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1097, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(940, 24);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 741);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 590);
             // 
             // DSet
             // 
@@ -305,29 +301,32 @@ namespace TN_CSDLPT
             // txtMaLop
             // 
             this.txtMaLop.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLop, "MALOP", true));
-            this.txtMaLop.Location = new System.Drawing.Point(326, 31);
+            this.txtMaLop.Location = new System.Drawing.Point(279, 25);
+            this.txtMaLop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaLop.MenuManager = this.barManager1;
             this.txtMaLop.Name = "txtMaLop";
-            this.txtMaLop.Size = new System.Drawing.Size(125, 22);
+            this.txtMaLop.Size = new System.Drawing.Size(107, 20);
             this.txtMaLop.TabIndex = 13;
             // 
             // txtTenLop
             // 
             this.txtTenLop.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLop, "TENLOP", true));
-            this.txtTenLop.Location = new System.Drawing.Point(326, 104);
+            this.txtTenLop.Location = new System.Drawing.Point(279, 84);
+            this.txtTenLop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTenLop.MenuManager = this.barManager1;
             this.txtTenLop.Name = "txtTenLop";
-            this.txtTenLop.Size = new System.Drawing.Size(436, 22);
+            this.txtTenLop.Size = new System.Drawing.Size(374, 20);
             this.txtTenLop.TabIndex = 14;
             // 
             // txtMaKhoa
             // 
             this.txtMaKhoa.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLop, "MAKH", true));
-            this.txtMaKhoa.Location = new System.Drawing.Point(768, 32);
+            this.txtMaKhoa.Location = new System.Drawing.Point(658, 26);
+            this.txtMaKhoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaKhoa.MenuManager = this.barManager1;
             this.txtMaKhoa.Name = "txtMaKhoa";
             this.txtMaKhoa.Properties.ReadOnly = true;
-            this.txtMaKhoa.Size = new System.Drawing.Size(61, 22);
+            this.txtMaKhoa.Size = new System.Drawing.Size(52, 20);
             this.txtMaKhoa.TabIndex = 15;
             this.txtMaKhoa.EditValueChanged += new System.EventHandler(this.txtMaKhoa_EditValueChanged);
             // 
@@ -343,9 +342,10 @@ namespace TN_CSDLPT
             // cbKhoa
             // 
             this.cbKhoa.FormattingEnabled = true;
-            this.cbKhoa.Location = new System.Drawing.Point(566, 31);
+            this.cbKhoa.Location = new System.Drawing.Point(485, 25);
+            this.cbKhoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbKhoa.Name = "cbKhoa";
-            this.cbKhoa.Size = new System.Drawing.Size(196, 24);
+            this.cbKhoa.Size = new System.Drawing.Size(169, 21);
             this.cbKhoa.TabIndex = 25;
             this.cbKhoa.SelectedIndexChanged += new System.EventHandler(this.cbKhoa_SelectedIndexChanged);
             // 
@@ -354,29 +354,27 @@ namespace TN_CSDLPT
             this.panelControl1.Controls.Add(this.label1);
             this.panelControl1.Controls.Add(this.cbCoSo);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 30);
-            this.panelControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.panelControl1.Location = new System.Drawing.Point(0, 24);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1097, 77);
+            this.panelControl1.Size = new System.Drawing.Size(940, 63);
             this.panelControl1.TabIndex = 30;
+            this.panelControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(80, 26);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(69, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 17);
+            this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Cơ sở:";
             // 
             // cbCoSo
             // 
             this.cbCoSo.FormattingEnabled = true;
-            this.cbCoSo.Location = new System.Drawing.Point(136, 26);
-            this.cbCoSo.Margin = new System.Windows.Forms.Padding(4);
+            this.cbCoSo.Location = new System.Drawing.Point(117, 21);
             this.cbCoSo.Name = "cbCoSo";
-            this.cbCoSo.Size = new System.Drawing.Size(473, 24);
+            this.cbCoSo.Size = new System.Drawing.Size(406, 21);
             this.cbCoSo.TabIndex = 0;
             this.cbCoSo.SelectedIndexChanged += new System.EventHandler(this.cbCoSo_SelectedIndexChanged);
             // 
@@ -384,6 +382,7 @@ namespace TN_CSDLPT
             // 
             this.lOPGridControl.DataSource = this.bdsLop;
             this.lOPGridControl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lOPGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             gridLevelNode4.RelationName = "FK_GIAOVIEN_DANGKY_LOP";
             gridLevelNode6.RelationName = "FK_BANGDIEM_SINHVIEN1";
             gridLevelNode5.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
@@ -392,11 +391,12 @@ namespace TN_CSDLPT
             this.lOPGridControl.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode4,
             gridLevelNode5});
-            this.lOPGridControl.Location = new System.Drawing.Point(0, 107);
+            this.lOPGridControl.Location = new System.Drawing.Point(0, 87);
             this.lOPGridControl.MainView = this.gridView1;
+            this.lOPGridControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lOPGridControl.MenuManager = this.barManager1;
             this.lOPGridControl.Name = "lOPGridControl";
-            this.lOPGridControl.Size = new System.Drawing.Size(1097, 500);
+            this.lOPGridControl.Size = new System.Drawing.Size(940, 300);
             this.lOPGridControl.TabIndex = 31;
             this.lOPGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -407,19 +407,42 @@ namespace TN_CSDLPT
             this.colMALOP,
             this.colTENLOP,
             this.colMAKH});
+            this.gridView1.DetailHeight = 284;
             this.gridView1.GridControl = this.lOPGridControl;
             this.gridView1.Name = "gridView1";
+            // 
+            // colMALOP
+            // 
+            this.colMALOP.Caption = "Mã Lớp";
+            this.colMALOP.FieldName = "MALOP";
+            this.colMALOP.MinWidth = 21;
+            this.colMALOP.Name = "colMALOP";
+            this.colMALOP.OptionsColumn.ReadOnly = true;
+            this.colMALOP.Visible = true;
+            this.colMALOP.VisibleIndex = 0;
+            this.colMALOP.Width = 305;
+            // 
+            // colTENLOP
+            // 
+            this.colTENLOP.Caption = "Tên Lớp";
+            this.colTENLOP.FieldName = "TENLOP";
+            this.colTENLOP.MinWidth = 21;
+            this.colTENLOP.Name = "colTENLOP";
+            this.colTENLOP.OptionsColumn.ReadOnly = true;
+            this.colTENLOP.Visible = true;
+            this.colTENLOP.VisibleIndex = 1;
+            this.colTENLOP.Width = 300;
             // 
             // colMAKH
             // 
             this.colMAKH.Caption = "Mã Khoa";
             this.colMAKH.FieldName = "MAKH";
-            this.colMAKH.MinWidth = 25;
+            this.colMAKH.MinWidth = 21;
             this.colMAKH.Name = "colMAKH";
             this.colMAKH.OptionsColumn.ReadOnly = true;
             this.colMAKH.Visible = true;
             this.colMAKH.VisibleIndex = 2;
-            this.colMAKH.Width = 361;
+            this.colMAKH.Width = 309;
             // 
             // bdsSinhVien
             // 
@@ -437,9 +460,10 @@ namespace TN_CSDLPT
             this.panelNhapLieu.Controls.Add(tENKHLabel);
             this.panelNhapLieu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelNhapLieu.Enabled = false;
-            this.panelNhapLieu.Location = new System.Drawing.Point(0, 607);
+            this.panelNhapLieu.Location = new System.Drawing.Point(0, 387);
+            this.panelNhapLieu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelNhapLieu.Name = "panelNhapLieu";
-            this.panelNhapLieu.Size = new System.Drawing.Size(1097, 164);
+            this.panelNhapLieu.Size = new System.Drawing.Size(940, 227);
             this.panelNhapLieu.TabIndex = 33;
             this.panelNhapLieu.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -447,33 +471,11 @@ namespace TN_CSDLPT
             // 
             this.SINHVIENTableAdapter.ClearBeforeFill = true;
             // 
-            // colTENLOP
-            // 
-            this.colTENLOP.Caption = "Tên Lớp";
-            this.colTENLOP.FieldName = "TENLOP";
-            this.colTENLOP.MinWidth = 25;
-            this.colTENLOP.Name = "colTENLOP";
-            this.colTENLOP.OptionsColumn.ReadOnly = true;
-            this.colTENLOP.Visible = true;
-            this.colTENLOP.VisibleIndex = 1;
-            this.colTENLOP.Width = 350;
-            // 
-            // colMALOP
-            // 
-            this.colMALOP.Caption = "Mã Lớp";
-            this.colMALOP.FieldName = "MALOP";
-            this.colMALOP.MinWidth = 25;
-            this.colMALOP.Name = "colMALOP";
-            this.colMALOP.OptionsColumn.ReadOnly = true;
-            this.colMALOP.Visible = true;
-            this.colMALOP.VisibleIndex = 0;
-            this.colMALOP.Width = 356;
-            // 
             // frmLop
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1097, 771);
+            this.ClientSize = new System.Drawing.Size(940, 614);
             this.Controls.Add(this.panelNhapLieu);
             this.Controls.Add(this.lOPGridControl);
             this.Controls.Add(this.panelControl1);
@@ -481,6 +483,7 @@ namespace TN_CSDLPT
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmLop";
             this.Text = "frmLop";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

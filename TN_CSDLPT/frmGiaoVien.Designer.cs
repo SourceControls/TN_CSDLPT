@@ -110,7 +110,7 @@ namespace TN_CSDLPT
             mAKHLabel.AutoSize = true;
             mAKHLabel.Location = new System.Drawing.Point(28, 42);
             mAKHLabel.Name = "mAKHLabel";
-            mAKHLabel.Size = new System.Drawing.Size(58, 19);
+            mAKHLabel.Size = new System.Drawing.Size(39, 13);
             mAKHLabel.TabIndex = 0;
             mAKHLabel.Text = "MAKH:";
             // 
@@ -119,7 +119,7 @@ namespace TN_CSDLPT
             tENKHLabel.AutoSize = true;
             tENKHLabel.Location = new System.Drawing.Point(28, 96);
             tENKHLabel.Name = "tENKHLabel";
-            tENKHLabel.Size = new System.Drawing.Size(65, 19);
+            tENKHLabel.Size = new System.Drawing.Size(43, 13);
             tENKHLabel.TabIndex = 2;
             tENKHLabel.Text = "TENKH:";
             // 
@@ -128,7 +128,7 @@ namespace TN_CSDLPT
             mACSLabel.AutoSize = true;
             mACSLabel.Location = new System.Drawing.Point(383, 48);
             mACSLabel.Name = "mACSLabel";
-            mACSLabel.Size = new System.Drawing.Size(57, 19);
+            mACSLabel.Size = new System.Drawing.Size(39, 13);
             mACSLabel.TabIndex = 4;
             mACSLabel.Text = "MACS:";
             // 
@@ -246,34 +246,34 @@ namespace TN_CSDLPT
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(5);
-            this.barDockControlTop.Size = new System.Drawing.Size(1787, 34);
+            this.barDockControlTop.Size = new System.Drawing.Size(1384, 24);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 954);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 736);
             this.barDockControlBottom.Manager = this.barManager;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(5);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1787, 20);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1384, 20);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 34);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(5);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 920);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 712);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1787, 34);
+            this.barDockControlRight.Location = new System.Drawing.Point(1384, 24);
             this.barDockControlRight.Manager = this.barManager;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(5);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 920);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 712);
             // 
             // barButtonItem2
             // 
@@ -287,9 +287,9 @@ namespace TN_CSDLPT
             this.panelControl1.Controls.Add(this.cmbCoSo);
             this.panelControl1.Controls.Add(this.label1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 34);
+            this.panelControl1.Location = new System.Drawing.Point(0, 24);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1787, 52);
+            this.panelControl1.Size = new System.Drawing.Size(1384, 52);
             this.panelControl1.TabIndex = 5;
             // 
             // cmbCoSo
@@ -297,7 +297,7 @@ namespace TN_CSDLPT
             this.cmbCoSo.FormattingEnabled = true;
             this.cmbCoSo.Location = new System.Drawing.Point(95, 14);
             this.cmbCoSo.Name = "cmbCoSo";
-            this.cmbCoSo.Size = new System.Drawing.Size(253, 27);
+            this.cmbCoSo.Size = new System.Drawing.Size(253, 21);
             this.cmbCoSo.TabIndex = 1;
             // 
             // label1
@@ -305,7 +305,7 @@ namespace TN_CSDLPT
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(28, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 19);
+            this.label1.Size = new System.Drawing.Size(34, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Cơ sở";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -354,15 +354,16 @@ namespace TN_CSDLPT
             // 
             this.gcKHOA.DataSource = this.bdsKhoa;
             this.gcKHOA.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gcKHOA.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
-            this.gcKHOA.Location = new System.Drawing.Point(0, 86);
+            this.gcKHOA.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.gcKHOA.Location = new System.Drawing.Point(0, 76);
             this.gcKHOA.MainView = this.gridView1;
             this.gcKHOA.MenuManager = this.barManager;
             this.gcKHOA.Name = "gcKHOA";
-            this.gcKHOA.Size = new System.Drawing.Size(1787, 220);
+            this.gcKHOA.Size = new System.Drawing.Size(1384, 220);
             this.gcKHOA.TabIndex = 10;
             this.gcKHOA.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gcKHOA.Click += new System.EventHandler(this.gcKHOA_Click);
             // 
             // gridView1
             // 
@@ -412,9 +413,9 @@ namespace TN_CSDLPT
             this.panelKhoa.Controls.Add(mAKHLabel);
             this.panelKhoa.Controls.Add(this.txtMAKH);
             this.panelKhoa.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelKhoa.Location = new System.Drawing.Point(0, 306);
+            this.panelKhoa.Location = new System.Drawing.Point(0, 296);
             this.panelKhoa.Name = "panelKhoa";
-            this.panelKhoa.Size = new System.Drawing.Size(638, 648);
+            this.panelKhoa.Size = new System.Drawing.Size(638, 440);
             this.panelKhoa.TabIndex = 11;
             // 
             // txtMACS
@@ -423,7 +424,7 @@ namespace TN_CSDLPT
             this.txtMACS.Location = new System.Drawing.Point(446, 45);
             this.txtMACS.Name = "txtMACS";
             this.txtMACS.ReadOnly = true;
-            this.txtMACS.Size = new System.Drawing.Size(163, 27);
+            this.txtMACS.Size = new System.Drawing.Size(163, 21);
             this.txtMACS.TabIndex = 5;
             this.txtMACS.TextChanged += new System.EventHandler(this.txtMACS_TextChanged);
             // 
@@ -432,7 +433,7 @@ namespace TN_CSDLPT
             this.txtTENKH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsKhoa, "TENKH", true));
             this.txtTENKH.Location = new System.Drawing.Point(106, 93);
             this.txtTENKH.Name = "txtTENKH";
-            this.txtTENKH.Size = new System.Drawing.Size(213, 27);
+            this.txtTENKH.Size = new System.Drawing.Size(213, 21);
             this.txtTENKH.TabIndex = 3;
             // 
             // txtMAKH
@@ -440,7 +441,7 @@ namespace TN_CSDLPT
             this.txtMAKH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsKhoa, "MAKH", true));
             this.txtMAKH.Location = new System.Drawing.Point(106, 39);
             this.txtMAKH.Name = "txtMAKH";
-            this.txtMAKH.Size = new System.Drawing.Size(213, 27);
+            this.txtMAKH.Size = new System.Drawing.Size(213, 21);
             this.txtMAKH.TabIndex = 1;
             // 
             // bdsGiaoVien
@@ -452,12 +453,12 @@ namespace TN_CSDLPT
             // 
             this.gcGIAOVIEN.DataSource = this.bdsGiaoVien;
             this.gcGIAOVIEN.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcGIAOVIEN.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
-            this.gcGIAOVIEN.Location = new System.Drawing.Point(638, 306);
+            this.gcGIAOVIEN.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.gcGIAOVIEN.Location = new System.Drawing.Point(638, 296);
             this.gcGIAOVIEN.MainView = this.gridView2;
             this.gcGIAOVIEN.MenuManager = this.barManager;
             this.gcGIAOVIEN.Name = "gcGIAOVIEN";
-            this.gcGIAOVIEN.Size = new System.Drawing.Size(1149, 648);
+            this.gcGIAOVIEN.Size = new System.Drawing.Size(746, 440);
             this.gcGIAOVIEN.TabIndex = 11;
             this.gcGIAOVIEN.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -537,26 +538,26 @@ namespace TN_CSDLPT
             this.xoaToolStripMenuItem,
             this.ghiToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(241, 133);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(105, 70);
             // 
             // themToolStripMenuItem
             // 
             this.themToolStripMenuItem.Name = "themToolStripMenuItem";
-            this.themToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
+            this.themToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.themToolStripMenuItem.Text = "Thêm";
             this.themToolStripMenuItem.Click += new System.EventHandler(this.thêmToolStripMenuItem_Click);
             // 
             // xoaToolStripMenuItem
             // 
             this.xoaToolStripMenuItem.Name = "xoaToolStripMenuItem";
-            this.xoaToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
+            this.xoaToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.xoaToolStripMenuItem.Text = "Xóa";
             this.xoaToolStripMenuItem.Click += new System.EventHandler(this.xóaToolStripMenuItem_Click);
             // 
             // ghiToolStripMenuItem
             // 
             this.ghiToolStripMenuItem.Name = "ghiToolStripMenuItem";
-            this.ghiToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
+            this.ghiToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.ghiToolStripMenuItem.Text = "Ghi";
             this.ghiToolStripMenuItem.Click += new System.EventHandler(this.ghiToolStripMenuItem_Click);
             // 
@@ -572,9 +573,9 @@ namespace TN_CSDLPT
             // frmGiaoVien
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1787, 974);
+            this.ClientSize = new System.Drawing.Size(1384, 756);
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.gcGIAOVIEN);
             this.Controls.Add(this.panelKhoa);

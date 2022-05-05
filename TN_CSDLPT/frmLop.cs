@@ -36,14 +36,15 @@ namespace TN_CSDLPT
         {
 
             DSet.EnforceConstraints = false;
-            this.SINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.SINHVIENTableAdapter.Fill(this.DSet.SINHVIEN);
+            
             this.KHOATableAdapter.Connection.ConnectionString = Program.connstr;
             this.KHOATableAdapter.Fill(this.DSet.KHOA);
 
-
             this.LOPTableAdapter.Connection.ConnectionString = Program.connstr;
             this.LOPTableAdapter.Fill(this.DSet.LOP);
+
+            this.SINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.SINHVIENTableAdapter.Fill(this.DSet.SINHVIEN);
 
             //thiết lập cb cơ sở
             maCoSo = Program.maCoSo;
@@ -246,5 +247,9 @@ namespace TN_CSDLPT
             this.Close();
         }
 
+        private void panelControl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
