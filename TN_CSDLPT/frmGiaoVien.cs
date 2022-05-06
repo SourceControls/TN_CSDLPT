@@ -150,6 +150,7 @@ namespace TN_CSDLPT
         {
             string str = "exec sp_tim_kiem_khoa '" + txtMAKH.Text + "'";
             SqlDataReader myReader = Program.ExecSqlDataReader(str);
+            myReader.Read();
 
             String kq = myReader.GetString(0);
             if (kq == "1")
