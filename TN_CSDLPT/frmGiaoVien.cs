@@ -14,7 +14,7 @@ namespace TN_CSDLPT
 {
     public partial class frmGiaoVien : DevExpress.XtraEditors.XtraForm
     {
-        private String maCoSo = "";
+        private String maCoSo = Program.maCoSo;
         private int vitri = 0;
         public frmGiaoVien()
         {
@@ -92,7 +92,7 @@ namespace TN_CSDLPT
         {
             vitri = bdsKhoa.Position;
             bdsKhoa.AddNew();
-            txtMACS.Text = cmbCoSo.SelectedText;
+            txtMACS.Text = maCoSo;
 
             //bật tắt các controller khác
             btnGhi.Enabled = btnPhucHoi.Enabled = true;
