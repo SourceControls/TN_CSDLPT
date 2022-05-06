@@ -65,7 +65,7 @@ namespace TN_CSDLPT
 
             //Phân quyền dùng app theo group
          
-            if (Program.mGroup == "TRUONG" || Program.mGroup == "GIANGVIEN")
+            if (Program.mGroup.ToUpper().Equals("TRUONG")|| Program.mGroup.ToUpper().Equals("GIANGVIEN"))
             {
                 cmbCoSo.Enabled = true;
                 btnThem.Enabled = btnGhi.Enabled = btnSua.Enabled = btnXoa.Enabled = btnPhucHoi.Enabled = false;
