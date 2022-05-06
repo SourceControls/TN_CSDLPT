@@ -49,7 +49,7 @@ namespace TN_CSDLPT
             this.BANGDIEMTableAdapter.Connection.ConnectionString = Program.connstr;
             this.BANGDIEMTableAdapter.Fill(this.DSet.BANGDIEM);
            
-            if(Program.mGroup == "TRUONG" || Program.mGroup == "GIANGVIEN") //Được lấy từ form đăng nhập do người đăng nhập thuộc nhóm nào.
+            if(Program.mGroup.ToUpper().Equals("TRUONG") || Program.mGroup.ToUpper().Equals("GIANGVIEN")) //Được lấy từ form đăng nhập do người đăng nhập thuộc nhóm nào.
              {
                   btnThem.Enabled = btnSua.Enabled = btnGhi.Enabled = btnXoa.Enabled = btnPhucHoi.Enabled = false;
                   panelMonHoc.Enabled = false;
