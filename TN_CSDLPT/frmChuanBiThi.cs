@@ -54,7 +54,7 @@ namespace TN_CSDLPT
             cmbCoSo.ValueMember = "TENSERVER";
             cmbCoSo.SelectedIndex = Program.mCoSo;
 
-            if (Program.mGroup == "TRUONG") //Được lấy từ form đăng nhập do người đăng nhập thuộc nhóm nào.
+            if (Program.mGroup.ToUpper().Equals("TRUONG")) //Được lấy từ form đăng nhập do người đăng nhập thuộc nhóm nào.
             {
                 cmbCoSo.Enabled = true;
                 btnThem.Enabled = btnSua.Enabled = btnGhi.Enabled = btnXoa.Enabled = btnPhucHoi.Enabled = false;
@@ -68,7 +68,7 @@ namespace TN_CSDLPT
                 panelGVDK.Enabled = false;
 
                 //Giảng viên chỉ được xóa, sửa của mình 
-                if (Program.mGroup == "GIANGVIEN")
+                if (Program.mGroup.ToUpper().Equals("GIANGVIEN"))
                 {
                     for (int i = 1; i <= bdsGVDK.Count; i++)
                     {
