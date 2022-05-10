@@ -74,6 +74,7 @@
       <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -97,6 +98,18 @@
     </Compile>
     <Compile Include="frmBangDiemMonHoc.Designer.cs">
       <DependentUpon>frmBangDiemMonHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChuanBiThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChuanBiThi.Designer.cs">
+      <DependentUpon>frmChuanBiThi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDanhSachDKThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDanhSachDKThi.Designer.cs">
+      <DependentUpon>frmDanhSachDKThi.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGiaoVien.cs">
       <SubType>Form</SubType>
@@ -160,6 +173,12 @@
     <Compile Include="XrptBangDiemMonHoc.Designer.cs">
       <DependentUpon>XrptBangDiemMonHoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="xrptDanhSachDKThi.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="xrptDanhSachDKThi.Designer.cs">
+      <DependentUpon>xrptDanhSachDKThi.cs</DependentUpon>
+    </Compile>
     <Compile Include="XrptKetQuaBaiThi.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -168,6 +187,13 @@
     </Compile>
     <EmbeddedResource Include="frmBangDiemMonHoc.resx">
       <DependentUpon>frmBangDiemMonHoc.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChuanBiThi.resx">
+      <DependentUpon>frmChuanBiThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDanhSachDKThi.resx">
+      <DependentUpon>frmDanhSachDKThi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGiaoVien.resx">
       <DependentUpon>frmGiaoVien.cs</DependentUpon>
@@ -209,6 +235,9 @@
     <EmbeddedResource Include="XrptBangDiemMonHoc.resx">
       <DependentUpon>XrptBangDiemMonHoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="xrptDanhSachDKThi.resx">
+      <DependentUpon>xrptDanhSachDKThi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XrptKetQuaBaiThi.resx">
       <DependentUpon>XrptKetQuaBaiThi.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,7 +247,6 @@
     </None>
     <None Include="DSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="DSet.xss">

@@ -45,15 +45,14 @@ namespace TN_CSDLPT
             //dữ liệu ban đầu
 
             openForm(new frmLogin());
+            openForm(new frmBangDiemMonHoc());
 
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             openForm(new frmLogin());
-            XrptKetQuaBaiThi x = new XrptKetQuaBaiThi();
-            ReportPrintTool rpt = new ReportPrintTool(x);
-            rpt.ShowPreviewDialog();
+
         }
 
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)
@@ -104,6 +103,11 @@ namespace TN_CSDLPT
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             openForm(new frmDanhSachDKThi());
+        }
+
+        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(new frmNhapDe());
         }
     }
 }

@@ -1,10 +1,4 @@
-﻿using DevExpress.XtraReports.UI;
-using System;
-using System.Collections;
-using System.ComponentModel;
-using System.Drawing;
-
-namespace TN_CSDLPT
+﻿namespace TN_CSDLPT
 {
     public partial class XrptKetQuaBaiThi : DevExpress.XtraReports.UI.XtraReport
     {
@@ -33,18 +27,18 @@ namespace TN_CSDLPT
 
 
         }
-        //public XptXemKetQuaBaiThi(string masv,string mamh, string lan)
-        //{
-        //    this.sqlDataSource1.Connection.ConnectionString = Program.connstr;
-        //    this.sqlDataSource1.Queries[0].Parameters[0].Value = masv;
-        //    this.sqlDataSource1.Queries[0].Parameters[1].Value = mamh;
-        //    this.sqlDataSource1.Queries[0].Parameters[2].Value = lan;
-        //    this.sqlDataSource1.Queries[1].Parameters[0].Value = masv;
-        //    this.sqlDataSource1.Queries[1].Parameters[1].Value = mamh;
-        //    this.sqlDataSource1.Queries[1].Parameters[2].Value = lan;
-        //    this.sqlDataSource1.Fill();
-        //    InitializeComponent();
-        //}
+        public XrptKetQuaBaiThi(string masv, string mamh, int lan)
+        {
+            InitializeComponent();
+            this.sqlDataSource1.Connection.ConnectionString = Program.connstr;
+            this.sqlDataSource1.Queries[0].Parameters[0].Value = masv;
+            this.sqlDataSource1.Queries[0].Parameters[1].Value = mamh;
+            this.sqlDataSource1.Queries[0].Parameters[2].Value = lan;
+            this.sqlDataSource1.Queries[1].Parameters[0].Value = masv;
+            this.sqlDataSource1.Queries[1].Parameters[1].Value = mamh;
+            this.sqlDataSource1.Queries[1].Parameters[2].Value = lan;
+            this.sqlDataSource1.Fill();
+        }
 
     }
 }

@@ -781,3 +781,6 @@ D:\Learn\College\HK6\Cơ Sở Dữ Liệu Phân Tán\TN_CSDLPT\TN_CSDLPT\obj\Deb
 D:\Learn\College\HK6\Cơ Sở Dữ Liệu Phân Tán\TN_CSDLPT\TN_CSDLPT\obj\Debug\TN_CSDLPT.pdb
 D:\Learn\College\HK6\Cơ Sở Dữ Liệu Phân Tán\TN_CSDLPT\TN_CSDLPT\obj\Debug\TN_CSDLPT.frmNhapDe.resources
 D:\Learn\College\HK6\Cơ Sở Dữ Liệu Phân Tán\TN_CSDLPT\TN_CSDLPT\obj\Debug\TN_CSDLPT.XrptKetQuaBaiThi.resources
+D:\Learn\College\HK6\Cơ Sở Dữ Liệu Phân Tán\TN_CSDLPT\TN_CSDLPT\obj\Debug\TN_CSDLPT.frmChuanBiThi.resources
+D:\Learn\College\HK6\Cơ Sở Dữ Liệu Phân Tán\TN_CSDLPT\TN_CSDLPT\obj\Debug\TN_CSDLPT.frmDanhSachDKThi.resources
+D:\Learn\College\HK6\Cơ Sở Dữ Liệu Phân Tán\TN_CSDLPT\TN_CSDLPT\obj\Debug\TN_CSDLPT.xrptDanhSachDKThi.resources
