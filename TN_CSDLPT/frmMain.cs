@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraReports.UI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -42,18 +43,17 @@ namespace TN_CSDLPT
         {
             InitializeComponent();
             //dữ liệu ban đầu
-            /*
-            openForm(new frmLogin());*/
-            //openForm(new frmKhoa());
-            /*
-            openForm(new frmLop());*/
 
+            openForm(new frmLogin());
 
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             openForm(new frmLogin());
+            XrptKetQuaBaiThi x = new XrptKetQuaBaiThi();
+            ReportPrintTool rpt = new ReportPrintTool(x);
+            rpt.ShowPreviewDialog();
         }
 
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)

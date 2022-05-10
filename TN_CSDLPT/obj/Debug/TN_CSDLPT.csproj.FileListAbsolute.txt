@@ -779,3 +779,5 @@ D:\Learn\College\HK6\Cơ Sở Dữ Liệu Phân Tán\TN_CSDLPT\TN_CSDLPT\obj\Deb
 D:\Learn\College\HK6\Cơ Sở Dữ Liệu Phân Tán\TN_CSDLPT\TN_CSDLPT\obj\Debug\TN_CSDLPT.csproj.CopyComplete
 D:\Learn\College\HK6\Cơ Sở Dữ Liệu Phân Tán\TN_CSDLPT\TN_CSDLPT\obj\Debug\TN_CSDLPT.exe
 D:\Learn\College\HK6\Cơ Sở Dữ Liệu Phân Tán\TN_CSDLPT\TN_CSDLPT\obj\Debug\TN_CSDLPT.pdb
+D:\Learn\College\HK6\Cơ Sở Dữ Liệu Phân Tán\TN_CSDLPT\TN_CSDLPT\obj\Debug\TN_CSDLPT.frmNhapDe.resources
+D:\Learn\College\HK6\Cơ Sở Dữ Liệu Phân Tán\TN_CSDLPT\TN_CSDLPT\obj\Debug\TN_CSDLPT.XrptKetQuaBaiThi.resources

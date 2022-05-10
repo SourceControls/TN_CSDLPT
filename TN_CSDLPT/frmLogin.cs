@@ -19,6 +19,7 @@ namespace TN_CSDLPT
         public frmLogin()
         {
             InitializeComponent();
+
         }
         private void getDSPM(String cmd)
         {
@@ -76,11 +77,7 @@ namespace TN_CSDLPT
             cbLoaiTaiKhoan.SelectedIndex = 1;
             loaiTaiKhoan = cbLoaiTaiKhoan.SelectedValue.ToString();
 
-            //set dữ liệu ban đầu:
-          /*  txtTenDN.Text = "TH234";
-            txtPassword.Text = "123";*/
-           /* cbLoaiTaiKhoan.SelectedIndex = 1;
-            btnDN_Click(sender,e);*/
+            btnDN_Click(sender, e);
         }
 
         private void cbCoSo_SelectedIndexChanged(object sender, EventArgs e)
