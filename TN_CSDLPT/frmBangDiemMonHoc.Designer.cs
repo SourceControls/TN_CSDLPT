@@ -130,7 +130,6 @@ namespace TN_CSDLPT
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Môn học";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // cbLanThi
             // 
@@ -152,7 +151,6 @@ namespace TN_CSDLPT
             this.label4.Size = new System.Drawing.Size(39, 13);
             this.label4.TabIndex = 8;
             this.label4.Text = "Lần thi";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // btnPreview
             // 

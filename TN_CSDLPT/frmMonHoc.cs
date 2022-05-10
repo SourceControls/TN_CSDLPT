@@ -14,7 +14,7 @@ namespace TN_CSDLPT
     public partial class frmMonHoc : DevExpress.XtraEditors.XtraForm
     {
         private object tableAdapterManager;
-        int vitri = 0;
+        private int vitri = 0;
         public frmMonHoc()
         {
             InitializeComponent();
@@ -31,39 +31,44 @@ namespace TN_CSDLPT
 
        private void frmMonHoc_Load(object sender, EventArgs e)
         {
+
             DSet.EnforceConstraints = false;
             // TODO: This line of code loads data into the 'dSet.MONHOC' table. You can move, or remove it, as needed.
-        //    this.MONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.MONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
             this.MONHOCTableAdapter.Fill(this.DSet.MONHOC);
 
             // TODO: This line of code loads data into the 'dSet.GIAOVIEN_DANGKY' table. You can move, or remove it, as needed.
-        //    this.GIAOVIEN_DANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.GIAOVIEN_DANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
             this.GIAOVIEN_DANGKYTableAdapter.Fill(this.DSet.GIAOVIEN_DANGKY);
 
             // TODO: This line of code loads data into the 'dSet.BODE' table. You can move, or remove it, as needed.
-        //    this.BODETableAdapter.Connection.ConnectionString = Program.connstr;
+            this.BODETableAdapter.Connection.ConnectionString = Program.connstr;
             this.BODETableAdapter.Fill(this.DSet.BODE);
 
             // TODO: This line of code loads data into the 'dSet.BANGDIEM' table. You can move, or remove it, as needed.
-        //    this.BANGDIEMTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.BANGDIEMTableAdapter.Connection.ConnectionString = Program.connstr;
             this.BANGDIEMTableAdapter.Fill(this.DSet.BANGDIEM);
            
-            /* if(Program.mGroup == "Truong") //Được lấy từ form đăng nhập do người đăng nhập thuộc nhóm nào.
+            if(Program.mGroup.ToUpper().Equals("TRUONG") || Program.mGroup.ToUpper().Equals("GIANGVIEN")) //Được lấy từ form đăng nhập do người đăng nhập thuộc nhóm nào.
              {
-                  btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnGhi.Enabled = btnPhucHoi.Enabled = false;
-              }
-              else
-              {*/
-                  btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnPhucHoi.Enabled = true;
-                  btnGhi.Enabled = false;
-            //}
+                  btnThem.Enabled = btnSua.Enabled = btnGhi.Enabled = btnXoa.Enabled = btnPhucHoi.Enabled = false;
+                  panelMonHoc.Enabled = false;
+            }
+            else
+            {
+                  btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = true;
+                  btnGhi.Enabled = btnPhucHoi.Enabled = false;
+                  panelMonHoc.Enabled = false;
+            }
+            if (bdsMonHoc.Count == 0) btnSua.Enabled = btnXoa.Enabled = false;
+
         }
 
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             vitri = bdsMonHoc.Position;
-            panelControl1.Enabled = true;
+            panelMonHoc.Enabled = true;
             bdsMonHoc.AddNew();
 
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = false;
@@ -73,7 +78,6 @@ namespace TN_CSDLPT
 
         private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            int vt = -1;
             if (txtMAMH.Text.Trim() == "")
             {
                 MessageBox.Show("Mã môn học không được thiếu!", "", MessageBoxButtons.OK);
@@ -87,10 +91,9 @@ namespace TN_CSDLPT
                 txtTENMH.Focus();
                 return;
             }
-
+            int viTri = bdsMonHoc.Find("MAMH", txtMAMH.Text.Trim());
             //Bắt điều kiện không trùng các môn học khác
-            vt = bdsMonHoc.Find("MAMH", txtMAMH.Text.Trim());
-            if (vt != -1)
+            if (viTri != -1 && bdsMonHoc.Position != viTri)
             {
                 MessageBox.Show("Môn học này đã tồn tại!", "", MessageBoxButtons.OK);
                 return;
@@ -99,24 +102,24 @@ namespace TN_CSDLPT
             {
                 bdsMonHoc.EndEdit();
                 bdsMonHoc.ResetCurrentItem();
-            //    this.MONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.MONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.MONHOCTableAdapter.Update(this.DSet.MONHOC);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi ghi môn học\n" + ex.Message, "", MessageBoxButtons.OK);
-                return;
-            }
+                MONHOCTableAdapter.Fill(DSet.MONHOC);
+            }             
             gcMONHOC.Enabled = true;
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = true;
             btnGhi.Enabled = btnPhucHoi.Enabled = false;
 
-            panelControl1.Enabled = false;
+            panelMonHoc.Enabled = false;
         }
         private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             vitri = bdsMonHoc.Position;
-            panelControl1.Enabled = true;
+            panelMonHoc.Enabled = true;
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = false;
             btnGhi.Enabled = btnPhucHoi.Enabled = true;
             gcMONHOC.Enabled = false;
@@ -124,7 +127,7 @@ namespace TN_CSDLPT
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            String maMH = ((DataRowView)bdsMonHoc[bdsMonHoc.Position])["MAMH"].ToString();
+            String maMH = "";
             if(bdsGVDK.Count > 0)
             {
                 MessageBox.Show("Không thể xóa môn học này vì đã được giảng viên đăng ký", "", MessageBoxButtons.OK);
@@ -147,9 +150,9 @@ namespace TN_CSDLPT
             {
                 try
                 {
-                  //  maMH = ((DataRowView)bdsMonHoc[bdsMonHoc.Position])["MAMH"].ToString();
+                    maMH = ((DataRowView)bdsMonHoc[bdsMonHoc.Position])["MAMH"].ToString();
                     bdsMonHoc.RemoveCurrent();
-                //    this.MONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.MONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
                     this.MONHOCTableAdapter.Update(this.DSet.MONHOC);
                 }
                 catch (Exception ex)
@@ -168,7 +171,7 @@ namespace TN_CSDLPT
             bdsMonHoc.CancelEdit();
             bdsMonHoc.Position = vitri;
             gcMONHOC.Enabled = true;
-            panelControl1.Enabled = false;
+            panelMonHoc.Enabled = false;
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = true;
             btnGhi.Enabled = btnPhucHoi.Enabled = false;
         }
@@ -194,9 +197,29 @@ namespace TN_CSDLPT
 
         }
 
-        private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void mONHOCGridControl_Click(object sender, EventArgs e)
         {
-            this.Close();
+
+        }
+
+        private void mONHOCBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void mAMHLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tENMHLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
