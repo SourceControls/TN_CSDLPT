@@ -75,7 +75,7 @@ namespace TN_CSDLPT
                 //Giảng viên chỉ được xóa, sửa của mình 
                 if (Program.mGroup.ToUpper().Equals("GIANGVIEN"))
                 {
-                    for (int i = 1; i <= bdsGVDK.Count; i++)
+                    for (int i = 0; i < bdsGVDK.Count; i++)
                     {
                         if (((DataRowView)bdsGVDK[i])["MAGV"].ToString().Trim() == Program.username)
                         {
