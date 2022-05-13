@@ -27,6 +27,8 @@ namespace TN_CSDLPT
         private void initBDS()
         {
             this.DSet.EnforceConstraints = false;
+
+            this.kHOATableAdapter.Connection.ConnectionString = Program.connstr;
             this.kHOATableAdapter.Fill(this.DSet.KHOA);
 
             this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
@@ -49,7 +51,7 @@ namespace TN_CSDLPT
             cbCoSo.ValueMember = "TENSERVER";
             cbCoSo.SelectedIndex = Program.mCoSo;
 
-            if (Program.mGroup.ToUpper().Equals("TRUONG") || Program.mGroup.ToUpper().Equals("GIANGVIEN"))
+            if (Program.mGroup.ToUpper().Equals("TRUONG"))
             {
                 cbCoSo.Enabled = true;
             }
@@ -159,6 +161,11 @@ namespace TN_CSDLPT
             MessageBox.Show(cbLop.SelectedValue.ToString() + "  " + cbMonHoc.SelectedValue.ToString());
             sP_DSSV_CO_BAI_THIGridControl.DataSource = DSet.SP_DSSV_CO_BAI_THI;
             this.sP_DSSV_CO_BAI_THITableAdapter.Fill(this.DSet.SP_DSSV_CO_BAI_THI, cbLop.SelectedValue.ToString(), cbMonHoc.SelectedValue.ToString(), int.Parse(cbLanThi.Text));
+        }
+
+        private void panelControl1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

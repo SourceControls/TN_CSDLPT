@@ -57,7 +57,6 @@ namespace TN_CSDLPT
             this.tableAdapterManager = new TN_CSDLPT.DSetTableAdapters.TableAdapterManager();
             this.bdsGV_DK = new System.Windows.Forms.BindingSource(this.components);
             this.bdsKhoa = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsSinhVien = new System.Windows.Forms.BindingSource(this.components);
             this.sINHVIENTableAdapter = new TN_CSDLPT.DSetTableAdapters.SINHVIENTableAdapter();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.thêmSinhViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,14 +75,17 @@ namespace TN_CSDLPT
             this.cbTenKhoa = new System.Windows.Forms.ComboBox();
             this.edtTenLop = new DevExpress.XtraEditors.TextEdit();
             this.edtMaLop = new DevExpress.XtraEditors.TextEdit();
-            this.gcSinhVien = new DevExpress.XtraGrid.GridControl();
+            this.bdsSinhVien = new System.Windows.Forms.BindingSource(this.components);
+            this.sINHVIENGridControl = new DevExpress.XtraGrid.GridControl();
             this.gvSinhVien = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMASV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMALOP1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGAYSINH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDIACHI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMALOP1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.bdsBangDiem = new System.Windows.Forms.BindingSource(this.components);
+            this.bANGDIEMTableAdapter = new TN_CSDLPT.DSetTableAdapters.BANGDIEMTableAdapter();
             mAKHLabel = new System.Windows.Forms.Label();
             tENKHLabel = new System.Windows.Forms.Label();
             tENLOPLabel = new System.Windows.Forms.Label();
@@ -95,7 +97,6 @@ namespace TN_CSDLPT
             ((System.ComponentModel.ISupportInitialize)(this.bdsLop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGV_DK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsKhoa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsSinhVien)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcLop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvLop)).BeginInit();
@@ -103,8 +104,10 @@ namespace TN_CSDLPT
             this.panelLop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.edtTenLop.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtMaLop.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcSinhVien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsSinhVien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sINHVIENGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvSinhVien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsBangDiem)).BeginInit();
             this.SuspendLayout();
             // 
             // mAKHLabel
@@ -185,7 +188,7 @@ namespace TN_CSDLPT
             this.btnThemLop.Id = 1;
             this.btnThemLop.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThemLop.ImageOptions.SvgImage")));
             this.btnThemLop.Name = "btnThemLop";
-            this.btnThemLop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThemKhoa_ItemClick);
+            this.btnThemLop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThemLop_ItemClick);
             // 
             // btnHieuChinhLop
             // 
@@ -242,7 +245,7 @@ namespace TN_CSDLPT
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlTop.Size = new System.Drawing.Size(1024, 24);
+            this.barDockControlTop.Size = new System.Drawing.Size(1150, 24);
             // 
             // barDockControlBottom
             // 
@@ -251,7 +254,7 @@ namespace TN_CSDLPT
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 756);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1024, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1150, 0);
             // 
             // barDockControlLeft
             // 
@@ -266,7 +269,7 @@ namespace TN_CSDLPT
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1024, 24);
+            this.barDockControlRight.Location = new System.Drawing.Point(1150, 24);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 732);
@@ -279,7 +282,7 @@ namespace TN_CSDLPT
             this.panelControl1.Location = new System.Drawing.Point(0, 24);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1024, 53);
+            this.panelControl1.Size = new System.Drawing.Size(1150, 53);
             this.panelControl1.TabIndex = 6;
             // 
             // label1
@@ -340,11 +343,6 @@ namespace TN_CSDLPT
             this.bdsKhoa.DataMember = "KHOA";
             this.bdsKhoa.DataSource = this.DSet;
             // 
-            // bdsSinhVien
-            // 
-            this.bdsSinhVien.DataMember = "FK_SINHVIEN_LOP";
-            this.bdsSinhVien.DataSource = this.bdsLop;
-            // 
             // sINHVIENTableAdapter
             // 
             this.sINHVIENTableAdapter.ClearBeforeFill = true;
@@ -404,7 +402,7 @@ namespace TN_CSDLPT
             this.gcLop.MainView = this.gvLop;
             this.gcLop.MenuManager = this.barManager1;
             this.gcLop.Name = "gcLop";
-            this.gcLop.Size = new System.Drawing.Size(1024, 342);
+            this.gcLop.Size = new System.Drawing.Size(1150, 342);
             this.gcLop.TabIndex = 17;
             this.gcLop.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvLop});
@@ -420,28 +418,28 @@ namespace TN_CSDLPT
             // 
             // colMALOP
             // 
-            this.colMALOP.Caption = "Mã lớp";
             this.colMALOP.FieldName = "MALOP";
             this.colMALOP.Name = "colMALOP";
             this.colMALOP.OptionsColumn.AllowEdit = false;
+            this.colMALOP.OptionsColumn.AllowFocus = false;
             this.colMALOP.Visible = true;
             this.colMALOP.VisibleIndex = 0;
             // 
             // colTENLOP
             // 
-            this.colTENLOP.Caption = "Tên lớp";
             this.colTENLOP.FieldName = "TENLOP";
             this.colTENLOP.Name = "colTENLOP";
             this.colTENLOP.OptionsColumn.AllowEdit = false;
+            this.colTENLOP.OptionsColumn.AllowFocus = false;
             this.colTENLOP.Visible = true;
             this.colTENLOP.VisibleIndex = 1;
             // 
             // colMAKH
             // 
-            this.colMAKH.Caption = "Mã khoa";
             this.colMAKH.FieldName = "MAKH";
             this.colMAKH.Name = "colMAKH";
             this.colMAKH.OptionsColumn.AllowEdit = false;
+            this.colMAKH.OptionsColumn.AllowFocus = false;
             this.colMAKH.Visible = true;
             this.colMAKH.VisibleIndex = 2;
             // 
@@ -458,7 +456,7 @@ namespace TN_CSDLPT
             this.panelLop.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLop.Location = new System.Drawing.Point(0, 419);
             this.panelLop.Name = "panelLop";
-            this.panelLop.Size = new System.Drawing.Size(474, 337);
+            this.panelLop.Size = new System.Drawing.Size(613, 337);
             this.panelLop.TabIndex = 18;
             // 
             // txtMaKhoa
@@ -472,10 +470,10 @@ namespace TN_CSDLPT
             // 
             // cbTenKhoa
             // 
-            this.cbTenKhoa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsKhoa, "TENKH", true));
             this.cbTenKhoa.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bdsLop, "MAKH", true));
             this.cbTenKhoa.DataSource = this.bdsKhoa;
             this.cbTenKhoa.DisplayMember = "TENKH";
+            this.cbTenKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTenKhoa.FormattingEnabled = true;
             this.cbTenKhoa.Location = new System.Drawing.Point(82, 109);
             this.cbTenKhoa.Name = "cbTenKhoa";
@@ -502,30 +500,35 @@ namespace TN_CSDLPT
             this.edtMaLop.Size = new System.Drawing.Size(121, 20);
             this.edtMaLop.TabIndex = 18;
             // 
-            // gcSinhVien
+            // bdsSinhVien
             // 
-            this.gcSinhVien.DataSource = this.bdsSinhVien;
-            this.gcSinhVien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcSinhVien.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
-            this.gcSinhVien.Location = new System.Drawing.Point(474, 419);
-            this.gcSinhVien.MainView = this.gvSinhVien;
-            this.gcSinhVien.MenuManager = this.barManager1;
-            this.gcSinhVien.Name = "gcSinhVien";
-            this.gcSinhVien.Size = new System.Drawing.Size(550, 337);
-            this.gcSinhVien.TabIndex = 18;
-            this.gcSinhVien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.bdsSinhVien.DataMember = "FK_SINHVIEN_LOP";
+            this.bdsSinhVien.DataSource = this.bdsLop;
+            // 
+            // sINHVIENGridControl
+            // 
+            this.sINHVIENGridControl.DataSource = this.bdsSinhVien;
+            this.sINHVIENGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sINHVIENGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sINHVIENGridControl.Location = new System.Drawing.Point(613, 419);
+            this.sINHVIENGridControl.MainView = this.gvSinhVien;
+            this.sINHVIENGridControl.MenuManager = this.barManager1;
+            this.sINHVIENGridControl.Name = "sINHVIENGridControl";
+            this.sINHVIENGridControl.Size = new System.Drawing.Size(537, 337);
+            this.sINHVIENGridControl.TabIndex = 22;
+            this.sINHVIENGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvSinhVien});
             // 
             // gvSinhVien
             // 
             this.gvSinhVien.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMASV,
-            this.colMALOP1,
             this.colHO,
             this.colTEN,
             this.colNGAYSINH,
-            this.colDIACHI});
-            this.gvSinhVien.GridControl = this.gcSinhVien;
+            this.colDIACHI,
+            this.colMALOP1});
+            this.gvSinhVien.GridControl = this.sINHVIENGridControl;
             this.gvSinhVien.Name = "gvSinhVien";
             // 
             // colMASV
@@ -536,16 +539,6 @@ namespace TN_CSDLPT
             this.colMASV.Visible = true;
             this.colMASV.VisibleIndex = 0;
             // 
-            // colMALOP1
-            // 
-            this.colMALOP1.Caption = "Mã lớp";
-            this.colMALOP1.FieldName = "MALOP";
-            this.colMALOP1.Name = "colMALOP1";
-            this.colMALOP1.OptionsColumn.AllowEdit = false;
-            this.colMALOP1.Visible = true;
-            this.colMALOP1.VisibleIndex = 5;
-            this.colMALOP1.Width = 52;
-            // 
             // colHO
             // 
             this.colHO.Caption = "Họ";
@@ -553,7 +546,6 @@ namespace TN_CSDLPT
             this.colHO.Name = "colHO";
             this.colHO.Visible = true;
             this.colHO.VisibleIndex = 1;
-            this.colHO.Width = 98;
             // 
             // colTEN
             // 
@@ -562,7 +554,6 @@ namespace TN_CSDLPT
             this.colTEN.Name = "colTEN";
             this.colTEN.Visible = true;
             this.colTEN.VisibleIndex = 2;
-            this.colTEN.Width = 98;
             // 
             // colNGAYSINH
             // 
@@ -571,7 +562,6 @@ namespace TN_CSDLPT
             this.colNGAYSINH.Name = "colNGAYSINH";
             this.colNGAYSINH.Visible = true;
             this.colNGAYSINH.VisibleIndex = 3;
-            this.colNGAYSINH.Width = 98;
             // 
             // colDIACHI
             // 
@@ -580,7 +570,24 @@ namespace TN_CSDLPT
             this.colDIACHI.Name = "colDIACHI";
             this.colDIACHI.Visible = true;
             this.colDIACHI.VisibleIndex = 4;
-            this.colDIACHI.Width = 104;
+            // 
+            // colMALOP1
+            // 
+            this.colMALOP1.Caption = "Mã lơp";
+            this.colMALOP1.FieldName = "MALOP";
+            this.colMALOP1.MinWidth = 70;
+            this.colMALOP1.Name = "colMALOP1";
+            this.colMALOP1.Visible = true;
+            this.colMALOP1.VisibleIndex = 5;
+            // 
+            // bdsBangDiem
+            // 
+            this.bdsBangDiem.DataMember = "FK_BANGDIEM_SINHVIEN1";
+            this.bdsBangDiem.DataSource = this.bdsSinhVien;
+            // 
+            // bANGDIEMTableAdapter
+            // 
+            this.bANGDIEMTableAdapter.ClearBeforeFill = true;
             // 
             // frmSinhVien
             // 
@@ -588,9 +595,9 @@ namespace TN_CSDLPT
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1024, 756);
+            this.ClientSize = new System.Drawing.Size(1150, 756);
             this.ContextMenuStrip = this.contextMenuStrip1;
-            this.Controls.Add(this.gcSinhVien);
+            this.Controls.Add(this.sINHVIENGridControl);
             this.Controls.Add(this.panelLop);
             this.Controls.Add(this.gcLop);
             this.Controls.Add(this.panelControl1);
@@ -612,7 +619,6 @@ namespace TN_CSDLPT
             ((System.ComponentModel.ISupportInitialize)(this.bdsLop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGV_DK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsKhoa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsSinhVien)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcLop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvLop)).EndInit();
@@ -621,8 +627,10 @@ namespace TN_CSDLPT
             this.panelLop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.edtTenLop.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtMaLop.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcSinhVien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsSinhVien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sINHVIENGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvSinhVien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsBangDiem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -650,7 +658,6 @@ namespace TN_CSDLPT
         private DSet DSet;
         private DSetTableAdapters.LOPTableAdapter lOPTableAdapter;
         private DSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingSource bdsSinhVien;
         private DSetTableAdapters.SINHVIENTableAdapter sINHVIENTableAdapter;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem thêmSinhViênToolStripMenuItem;
@@ -667,17 +674,20 @@ namespace TN_CSDLPT
         private DevExpress.XtraEditors.TextEdit edtMaLop;
         private DevExpress.XtraGrid.GridControl gcLop;
         private DevExpress.XtraGrid.Views.Grid.GridView gvLop;
-        private DevExpress.XtraGrid.GridControl gcSinhVien;
+        private System.Windows.Forms.ToolStripMenuItem phụcHồiToolStripMenuItem;
+        private DevExpress.XtraGrid.Columns.GridColumn colMALOP;
+        private DevExpress.XtraGrid.Columns.GridColumn colTENLOP;
+        private DevExpress.XtraGrid.Columns.GridColumn colMAKH;
+        private DevExpress.XtraGrid.GridControl sINHVIENGridControl;
+        private System.Windows.Forms.BindingSource bdsSinhVien;
         private DevExpress.XtraGrid.Views.Grid.GridView gvSinhVien;
         private DevExpress.XtraGrid.Columns.GridColumn colMASV;
-        private DevExpress.XtraGrid.Columns.GridColumn colMALOP1;
         private DevExpress.XtraGrid.Columns.GridColumn colHO;
         private DevExpress.XtraGrid.Columns.GridColumn colTEN;
         private DevExpress.XtraGrid.Columns.GridColumn colNGAYSINH;
         private DevExpress.XtraGrid.Columns.GridColumn colDIACHI;
-        private DevExpress.XtraGrid.Columns.GridColumn colMALOP;
-        private DevExpress.XtraGrid.Columns.GridColumn colTENLOP;
-        private DevExpress.XtraGrid.Columns.GridColumn colMAKH;
-        private System.Windows.Forms.ToolStripMenuItem phụcHồiToolStripMenuItem;
+        private DevExpress.XtraGrid.Columns.GridColumn colMALOP1;
+        private System.Windows.Forms.BindingSource bdsBangDiem;
+        private DSetTableAdapters.BANGDIEMTableAdapter bANGDIEMTableAdapter;
     }
 }

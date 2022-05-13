@@ -77,7 +77,6 @@ namespace TN_CSDLPT
             cbLoaiTaiKhoan.SelectedIndex = 1;
             loaiTaiKhoan = cbLoaiTaiKhoan.SelectedValue.ToString();
 
-            btnDN_Click(sender, e);
         }
 
         private void cbCoSo_SelectedIndexChanged(object sender, EventArgs e)
@@ -137,12 +136,19 @@ namespace TN_CSDLPT
             Program.fMain.statusID.Text = Program.username;
             Program.fMain.statusHoTen.Text = Program.mHoTen;
             Program.fMain.statusNhom.Text = Program.mGroup;
+            visibleRibbon();
             if(Program.mGroup != "SinhVien" && Program.mGroup != "GiangVien") 
                 Program.fMain.btnDangKy.Enabled = true;
             else
+            {
                 Program.fMain.btnDangKy.Enabled = false;
-            visibleRibbon();
-
+                Program.fMain.rbBaoCao.Visible = false;
+            }
+            foreach(Form f in Program.fMain.MdiChildren)
+            {
+                if (f.GetType() == typeof(frmLogin)) continue;
+                f.Close();
+            }
         }
 
         private void cbLoaiTaiKhoan_SelectedIndexChanged(object sender, EventArgs e)

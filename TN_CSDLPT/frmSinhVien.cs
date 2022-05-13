@@ -20,6 +20,7 @@ namespace TN_CSDLPT
         private static int slLop;
         private static int slSv;
         private static bool isAssignSlSv = true;
+        private static string defaultPassword = "123";
         public frmSinhVien()
         {
             InitializeComponent();
@@ -52,10 +53,14 @@ namespace TN_CSDLPT
 
             this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
             this.sINHVIENTableAdapter.Fill(this.DSet.SINHVIEN);
+
+            this.bANGDIEMTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.bANGDIEMTableAdapter.Fill(this.DSet.BANGDIEM);
         }
 
         private void frmSinhVien_Load(object sender, EventArgs e)
         {
+            
             initBDS();
 
             if (bdsLop.Count == 0) btnXoaLop.Enabled = false;
@@ -93,10 +98,11 @@ namespace TN_CSDLPT
             slLop = bdsLop.Count;
         }
 
-        private void btnThemKhoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnThemLop_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             viTri = bdsLop.Position;
             bdsLop.AddNew();
+            cbTenKhoa.SelectedIndex = 0;
 
             //bật tắt các controller khác
             btnGhiLop.Enabled = btnPhucHoiLop.Enabled = true;
@@ -284,6 +290,8 @@ namespace TN_CSDLPT
                 masv = ((DataRowView)bdsSinhVien[i])["MASV"].ToString().Trim();
                 ho = ((DataRowView)bdsSinhVien[i])["HO"].ToString();
                 ten = ((DataRowView)bdsSinhVien[i])["TEN"].ToString();
+                
+
                 if (masv.Trim().Length == 0 || ho.Trim().Length == 0 || ten.Trim().Length == 0)
                 {
                     MessageBox.Show("Bạn cần nhập đầy đủ các trường Mã sinh viên, họ, tên!");
@@ -304,6 +312,7 @@ namespace TN_CSDLPT
                 bdsSinhVien.ResetCurrentItem();
                 slSv = bdsSinhVien.Count;
                 isAssignSlSv = true;
+                MessageBox.Show("Thêm sinh viên thành công!");
             }
             catch (Exception ex)
             {
@@ -319,6 +328,11 @@ namespace TN_CSDLPT
             if(((DataRowView) bdsSinhVien[bdsSinhVien.Position])["MASV"].ToString().Trim().Length == 0)
             {
                 bdsSinhVien.RemoveCurrent();
+                return;
+            }
+            if(bdsBangDiem.Count > 0)
+            {
+                MessageBox.Show("Không thể xoá sinh viên vì đã có điểm!");
                 return;
             }
             if (MessageBox.Show("Xác nhận xóa sinh viên? ", "Xác Nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)

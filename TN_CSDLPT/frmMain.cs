@@ -42,10 +42,6 @@ namespace TN_CSDLPT
         public frmMain()
         {
             InitializeComponent();
-            //dữ liệu ban đầu
-
-            openForm(new frmLogin());
-            openForm(new frmBangDiemMonHoc());
 
         }
 
@@ -77,7 +73,7 @@ namespace TN_CSDLPT
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -108,6 +104,11 @@ namespace TN_CSDLPT
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             openForm(new frmNhapDe());
+        }
+
+        private void ribbonControl1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

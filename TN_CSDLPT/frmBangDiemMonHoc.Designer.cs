@@ -75,10 +75,10 @@ namespace TN_CSDLPT
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(85, 19);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Location = new System.Drawing.Point(73, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 17);
+            this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Cơ sở:";
             // 
@@ -86,10 +86,10 @@ namespace TN_CSDLPT
             // 
             this.cbCoSo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCoSo.FormattingEnabled = true;
-            this.cbCoSo.Location = new System.Drawing.Point(164, 14);
-            this.cbCoSo.Margin = new System.Windows.Forms.Padding(5);
+            this.cbCoSo.Location = new System.Drawing.Point(141, 11);
+            this.cbCoSo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbCoSo.Name = "cbCoSo";
-            this.cbCoSo.Size = new System.Drawing.Size(551, 24);
+            this.cbCoSo.Size = new System.Drawing.Size(473, 21);
             this.cbCoSo.TabIndex = 2;
             this.cbCoSo.SelectedIndexChanged += new System.EventHandler(this.cbCoSo_SelectedIndexChanged);
             // 
@@ -99,10 +99,9 @@ namespace TN_CSDLPT
             this.cbLop.DisplayMember = "TENLOP";
             this.cbLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLop.FormattingEnabled = true;
-            this.cbLop.Location = new System.Drawing.Point(164, 86);
-            this.cbLop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbLop.Location = new System.Drawing.Point(141, 70);
             this.cbLop.Name = "cbLop";
-            this.cbLop.Size = new System.Drawing.Size(226, 24);
+            this.cbLop.Size = new System.Drawing.Size(194, 21);
             this.cbLop.TabIndex = 4;
             this.cbLop.ValueMember = "MALOP";
             this.cbLop.SelectedIndexChanged += new System.EventHandler(this.cbLop_SelectedIndexChanged);
@@ -120,9 +119,9 @@ namespace TN_CSDLPT
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(88, 90);
+            this.label2.Location = new System.Drawing.Point(75, 73);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 17);
+            this.label2.Size = new System.Drawing.Size(24, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Lớp";
             // 
@@ -132,10 +131,9 @@ namespace TN_CSDLPT
             this.cbMonHoc.DisplayMember = "TENMH";
             this.cbMonHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMonHoc.FormattingEnabled = true;
-            this.cbMonHoc.Location = new System.Drawing.Point(486, 86);
-            this.cbMonHoc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbMonHoc.Location = new System.Drawing.Point(417, 70);
             this.cbMonHoc.Name = "cbMonHoc";
-            this.cbMonHoc.Size = new System.Drawing.Size(229, 24);
+            this.cbMonHoc.Size = new System.Drawing.Size(197, 21);
             this.cbMonHoc.TabIndex = 5;
             this.cbMonHoc.ValueMember = "MAMH";
             this.cbMonHoc.SelectedIndexChanged += new System.EventHandler(this.cbMonHoc_SelectedIndexChanged);
@@ -148,9 +146,9 @@ namespace TN_CSDLPT
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(424, 90);
+            this.label3.Location = new System.Drawing.Point(363, 73);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 17);
+            this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Môn học";
             // 
@@ -161,27 +159,25 @@ namespace TN_CSDLPT
             this.cbLanThi.Items.AddRange(new object[] {
             "1",
             "2"});
-            this.cbLanThi.Location = new System.Drawing.Point(164, 135);
-            this.cbLanThi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbLanThi.Location = new System.Drawing.Point(141, 110);
             this.cbLanThi.Name = "cbLanThi";
-            this.cbLanThi.Size = new System.Drawing.Size(140, 24);
+            this.cbLanThi.Size = new System.Drawing.Size(121, 21);
             this.cbLanThi.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(88, 138);
+            this.label4.Location = new System.Drawing.Point(75, 112);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 17);
+            this.label4.Size = new System.Drawing.Size(39, 13);
             this.label4.TabIndex = 8;
             this.label4.Text = "Lần thi";
             // 
             // btnPreview
             // 
-            this.btnPreview.Location = new System.Drawing.Point(249, 215);
-            this.btnPreview.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnPreview.Location = new System.Drawing.Point(213, 175);
             this.btnPreview.Name = "btnPreview";
-            this.btnPreview.Size = new System.Drawing.Size(87, 28);
+            this.btnPreview.Size = new System.Drawing.Size(75, 23);
             this.btnPreview.TabIndex = 9;
             this.btnPreview.Text = "Preview";
             this.btnPreview.UseVisualStyleBackColor = true;
@@ -189,10 +185,9 @@ namespace TN_CSDLPT
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(586, 215);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCancel.Location = new System.Drawing.Point(502, 175);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(87, 28);
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -223,9 +218,9 @@ namespace TN_CSDLPT
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(411, 150);
+            this.label5.Location = new System.Drawing.Point(352, 122);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 17);
+            this.label5.Size = new System.Drawing.Size(53, 13);
             this.label5.TabIndex = 12;
             this.label5.Text = "Tùy Chọn";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -237,10 +232,9 @@ namespace TN_CSDLPT
             this.cbTuyChon.Items.AddRange(new object[] {
             "Bảng Điểm Môn Học",
             "Chi Tiết Bài Thi"});
-            this.cbTuyChon.Location = new System.Drawing.Point(486, 143);
-            this.cbTuyChon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbTuyChon.Location = new System.Drawing.Point(417, 116);
             this.cbTuyChon.Name = "cbTuyChon";
-            this.cbTuyChon.Size = new System.Drawing.Size(229, 24);
+            this.cbTuyChon.Size = new System.Drawing.Size(197, 21);
             this.cbTuyChon.TabIndex = 11;
             this.cbTuyChon.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -261,16 +255,17 @@ namespace TN_CSDLPT
             this.panelControl1.Controls.Add(this.cbLanThi);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(975, 266);
+            this.panelControl1.Size = new System.Drawing.Size(836, 216);
             this.panelControl1.TabIndex = 14;
+            this.panelControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
             // 
             // btnTaiDSSV
             // 
-            this.btnTaiDSSV.Location = new System.Drawing.Point(721, 140);
-            this.btnTaiDSSV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnTaiDSSV.Location = new System.Drawing.Point(618, 114);
             this.btnTaiDSSV.Name = "btnTaiDSSV";
-            this.btnTaiDSSV.Size = new System.Drawing.Size(87, 28);
+            this.btnTaiDSSV.Size = new System.Drawing.Size(75, 23);
             this.btnTaiDSSV.TabIndex = 13;
             this.btnTaiDSSV.Text = "Tải DSSV";
             this.btnTaiDSSV.UseVisualStyleBackColor = true;
@@ -299,10 +294,12 @@ namespace TN_CSDLPT
             this.sP_DSSV_CO_BAI_THIGridControl.DataMember = "SP_DSSV_CO_BAI_THI";
             this.sP_DSSV_CO_BAI_THIGridControl.DataSource = this.dSet1;
             this.sP_DSSV_CO_BAI_THIGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sP_DSSV_CO_BAI_THIGridControl.Location = new System.Drawing.Point(0, 266);
+            this.sP_DSSV_CO_BAI_THIGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.sP_DSSV_CO_BAI_THIGridControl.Location = new System.Drawing.Point(0, 216);
             this.sP_DSSV_CO_BAI_THIGridControl.MainView = this.gridView1;
+            this.sP_DSSV_CO_BAI_THIGridControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sP_DSSV_CO_BAI_THIGridControl.Name = "sP_DSSV_CO_BAI_THIGridControl";
-            this.sP_DSSV_CO_BAI_THIGridControl.Size = new System.Drawing.Size(975, 347);
+            this.sP_DSSV_CO_BAI_THIGridControl.Size = new System.Drawing.Size(836, 282);
             this.sP_DSSV_CO_BAI_THIGridControl.TabIndex = 15;
             this.sP_DSSV_CO_BAI_THIGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -318,6 +315,7 @@ namespace TN_CSDLPT
             this.colMASV,
             this.colHOTEN,
             this.colDIEM});
+            this.gridView1.DetailHeight = 284;
             this.gridView1.GridControl = this.sP_DSSV_CO_BAI_THIGridControl;
             this.gridView1.Name = "gridView1";
             // 
@@ -325,21 +323,21 @@ namespace TN_CSDLPT
             // 
             this.colMASV.Caption = "Mã Sinh Viên";
             this.colMASV.FieldName = "MASV";
-            this.colMASV.MinWidth = 25;
+            this.colMASV.MinWidth = 21;
             this.colMASV.Name = "colMASV";
             this.colMASV.Visible = true;
             this.colMASV.VisibleIndex = 0;
-            this.colMASV.Width = 94;
+            this.colMASV.Width = 81;
             // 
             // colHOTEN
             // 
             this.colHOTEN.Caption = "Họ Tên";
             this.colHOTEN.FieldName = "HOTEN";
-            this.colHOTEN.MinWidth = 25;
+            this.colHOTEN.MinWidth = 21;
             this.colHOTEN.Name = "colHOTEN";
             this.colHOTEN.Visible = true;
             this.colHOTEN.VisibleIndex = 1;
-            this.colHOTEN.Width = 94;
+            this.colHOTEN.Width = 81;
             // 
             // colDIEM
             // 
@@ -347,20 +345,19 @@ namespace TN_CSDLPT
             this.colDIEM.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.colDIEM.Caption = "Điểm";
             this.colDIEM.FieldName = "DIEM";
-            this.colDIEM.MinWidth = 25;
+            this.colDIEM.MinWidth = 21;
             this.colDIEM.Name = "colDIEM";
             this.colDIEM.Visible = true;
             this.colDIEM.VisibleIndex = 2;
-            this.colDIEM.Width = 94;
+            this.colDIEM.Width = 81;
             // 
             // frmBangDiemMonHoc
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(975, 613);
+            this.ClientSize = new System.Drawing.Size(836, 498);
             this.Controls.Add(this.sP_DSSV_CO_BAI_THIGridControl);
             this.Controls.Add(this.panelControl1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmBangDiemMonHoc";
             this.Text = "Bảng điểm môn học";
             this.Load += new System.EventHandler(this.frmBangDiemMonHoc_Load);

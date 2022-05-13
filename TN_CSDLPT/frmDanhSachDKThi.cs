@@ -50,7 +50,7 @@ namespace TN_CSDLPT
             cbCoSo.ValueMember = "TENSERVER";
             cbCoSo.SelectedIndex = Program.mCoSo;
 
-            if (Program.mGroup.ToUpper().Equals("TRUONG") || Program.mGroup.ToUpper().Equals("GIANGVIEN"))
+            if (Program.mGroup.ToUpper().Equals("TRUONG"))
             {
                 cbCoSo.Enabled = true;
             }
