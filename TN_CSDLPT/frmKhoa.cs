@@ -78,6 +78,11 @@ namespace TN_CSDLPT
 
         private void btnHieuChinhKhoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if(bdsKhoa.Count <= 0)
+            {
+                MessageBox.Show("Không có khoa để hiệu chỉnh");
+                return;
+            }
             viTri = bdsKhoa.Position;
          
             //bật tắt các controller khác
@@ -154,6 +159,22 @@ namespace TN_CSDLPT
 
             try
             {
+                //check Input
+                String tenKhoa = txtTenKhoa.Text.Trim();
+                String maKhoa = txtMaKhoa.Text.Trim();
+                while (tenKhoa.Contains("  "))
+                {
+                    tenKhoa.Replace("  ", " ");
+
+                }
+                while (maKhoa.Contains("  "))
+                {
+                    maKhoa.Replace("  ", " ");
+
+                }
+                txtTenKhoa.Text = tenKhoa;
+                txtMaKhoa.Text = maKhoa;
+
                 bdsKhoa.EndEdit();
                 khoaTableAdapter.Connection.ConnectionString = Program.connstr;
                 khoaTableAdapter.Update(DSet.KHOA);
@@ -190,6 +211,7 @@ namespace TN_CSDLPT
             {
                 this.khoaTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.khoaTableAdapter.Fill(DSet.KHOA);
+
 
             }
             catch (Exception ex)

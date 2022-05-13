@@ -86,7 +86,7 @@ namespace TN_CSDLPT
 
         private void visibleRibbon()
         {
-            Program.fMain.rbNghiepVu.Visible = true;
+            //Program.fMain.rbNghiepVu.Visible = true;
             Program.fMain.rbGiangVien.Visible = true;
             Program.fMain.rbBaoCao.Visible = true;
         }

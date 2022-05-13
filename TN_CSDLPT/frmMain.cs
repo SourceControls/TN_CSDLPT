@@ -35,7 +35,7 @@ namespace TN_CSDLPT
             }
             this.rbGiangVien.Visible = false;
             this.rbBaoCao.Visible = false;
-            this.rbNghiepVu.Visible = false;
+            //this.rbNghiepVu.Visible = false;
         }
 
 
@@ -106,9 +106,15 @@ namespace TN_CSDLPT
             openForm(new frmNhapDe());
         }
 
+<<<<<<< Updated upstream
         private void ribbonControl1_Click(object sender, EventArgs e)
         {
 
+=======
+        private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(new frmChuanBiThi());
+>>>>>>> Stashed changes
         }
     }
 }

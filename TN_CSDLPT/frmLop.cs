@@ -81,16 +81,31 @@ namespace TN_CSDLPT
 
         private void cbKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+ 
             System.Windows.Forms.ComboBox cmb = (System.Windows.Forms.ComboBox)sender;
-            if(cmb.SelectedValue!=null)
-            txtMaKhoa.Text = cmb.SelectedValue.ToString();
+            try
+            {
+                if (cmb.SelectedValue != null & !cmb.SelectedValue.ToString().Equals("System.Data.DataRowView"))
+                {
+                    txtMaKhoa.Text = cmb.SelectedValue.ToString();
+                }
+            }            
+            catch { }
         }
 
         private void txtMaKhoa_EditValueChanged(object sender, EventArgs e)
         {
-         
-            if(cbKhoa.Items.Count != 0)
-            cbKhoa.SelectedValue = txtMaKhoa.Text;
+
+            try
+            {
+                cbKhoa.SelectedValue = txtMaKhoa.Text;
+
+            }
+            catch
+            {
+
+            }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -100,6 +115,12 @@ namespace TN_CSDLPT
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if(bdsKhoa.Count == 0)
+            {
+                MessageBox.Show("Chưa Có Khoa, Không Thể Thêm Lớp");
+                return;
+            }
+            cbKhoa.SelectedIndex = -1;
             viTri = bdsLop.Position;
             bdsLop.AddNew();
             cbCoSo.SelectedIndex = 0;
@@ -112,6 +133,12 @@ namespace TN_CSDLPT
 
         private void btnHieuChinh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+
+            if (bdsLop.Count <= 0)
+            {
+                MessageBox.Show("Không còn lớp để hiệu chỉnh");
+                return;
+            }
             viTri = bdsLop.Position;
 
             //bật tắt các controller khác
@@ -180,8 +207,25 @@ namespace TN_CSDLPT
                 }
             }
 
+
             try
             {
+                //check Input
+                String tenLop = txtTenLop.Text.Trim();
+                String maLop = txtMaLop.Text.Trim();
+                while(tenLop.Contains("  "))
+                {
+                    tenLop.Replace("  ", " ");
+
+                }
+                while(maLop.Contains("  "))
+                {
+                    maLop.Replace("  ", " ");
+
+                }
+                txtTenLop.Text = tenLop;
+                txtMaLop.Text = maLop;
+
                 bdsLop.EndEdit();
                 LOPTableAdapter.Connection.ConnectionString = Program.connstr;
                 LOPTableAdapter.Update(DSet.LOP);
@@ -219,6 +263,10 @@ namespace TN_CSDLPT
             {
                 this.LOPTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.LOPTableAdapter.Fill(DSet.LOP);
+
+                this.KHOATableAdapter.Fill(DSet.KHOA);
+
+
 
             }
             catch (Exception ex)

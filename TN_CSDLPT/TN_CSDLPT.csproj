@@ -88,7 +88,7 @@
     <Compile Include="DSet.cs">
       <DependentUpon>DSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DSet.Designer.cs">
+    <Compile Include="DSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DSet.xsd</DependentUpon>
@@ -248,6 +248,7 @@
     <None Include="DSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>DSet2.Designer.cs</LastGenOutput>
     </None>
     <None Include="DSet.xss">
       <DependentUpon>DSet.xsd</DependentUpon>

@@ -54,8 +54,11 @@ namespace TN_CSDLPT
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+<<<<<<< Updated upstream
             this.rbNghiepVu = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+=======
+>>>>>>> Stashed changes
             this.rbBaoCao = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -65,6 +68,12 @@ namespace TN_CSDLPT
             this.statusID = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusHoTen = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusNhom = new System.Windows.Forms.ToolStripStatusLabel();
+<<<<<<< Updated upstream
+=======
+            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+>>>>>>> Stashed changes
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -88,20 +97,27 @@ namespace TN_CSDLPT
             this.barButtonItem3,
             this.barButtonItem4,
             this.barButtonItem5,
-            this.barButtonItem6});
+            this.barButtonItem6,
+            this.barButtonItem7});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(12, 14, 12, 14);
-            this.ribbonControl1.MaxItemId = 15;
+            this.ribbonControl1.MaxItemId = 16;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.OptionsStubGlyphs.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.ribbonControl1.OptionsStubGlyphs.UseFont = true;
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbHeThong,
             this.rbGiangVien,
+<<<<<<< Updated upstream
             this.rbNghiepVu,
             this.rbBaoCao});
             this.ribbonControl1.Size = new System.Drawing.Size(1384, 158);
             this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
+=======
+            this.rbBaoCao,
+            this.ribbonPage1});
+            this.ribbonControl1.Size = new System.Drawing.Size(1384, 193);
+>>>>>>> Stashed changes
             // 
             // barButtonItem1
             // 
@@ -255,6 +271,7 @@ namespace TN_CSDLPT
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
             // 
             // ribbonPageGroup12
+<<<<<<< Updated upstream
             // 
             this.ribbonPageGroup12.ItemLinks.Add(this.barButtonItem6);
             this.ribbonPageGroup12.Name = "ribbonPageGroup12";
@@ -269,8 +286,12 @@ namespace TN_CSDLPT
             this.rbNghiepVu.Visible = false;
             // 
             // ribbonPageGroup4
+=======
+>>>>>>> Stashed changes
             // 
-            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
+            this.ribbonPageGroup12.ItemLinks.Add(this.barButtonItem6);
+            this.ribbonPageGroup12.Name = "ribbonPageGroup12";
+            this.ribbonPageGroup12.Text = "ribbonPageGroup12";
             // 
             // rbBaoCao
             // 
@@ -336,11 +357,38 @@ namespace TN_CSDLPT
             this.statusNhom.Size = new System.Drawing.Size(45, 17);
             this.statusNhom.Text = "NHOM";
             // 
+<<<<<<< Updated upstream
+=======
+            // ribbonPage1
+            // 
+            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup13});
+            this.ribbonPage1.Name = "ribbonPage1";
+            this.ribbonPage1.Text = "Thi";
+            // 
+            // ribbonPageGroup13
+            // 
+            this.ribbonPageGroup13.ItemLinks.Add(this.barButtonItem7);
+            this.ribbonPageGroup13.Name = "ribbonPageGroup13";
+            this.ribbonPageGroup13.Text = "ribbonPageGroup13";
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = "barButtonItem7";
+            this.barButtonItem7.Id = 15;
+            this.barButtonItem7.Name = "barButtonItem7";
+            this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick);
+            // 
+>>>>>>> Stashed changes
             // frmMain
             // 
             this.Appearance.FontSizeDelta = 15;
             this.Appearance.Options.UseFont = true;
+<<<<<<< Updated upstream
             this.AutoScaleDimensions = new System.Drawing.SizeF(139F, 265F);
+=======
+            this.AutoScaleDimensions = new System.Drawing.SizeF(174F, 332F);
+>>>>>>> Stashed changes
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1384, 787);
@@ -377,10 +425,8 @@ namespace TN_CSDLPT
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         public DevExpress.XtraBars.BarButtonItem btnDangKy;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         public DevExpress.XtraBars.Ribbon.RibbonPage rbGiangVien;
-        public DevExpress.XtraBars.Ribbon.RibbonPage rbNghiepVu;
         public DevExpress.XtraBars.Ribbon.RibbonPage rbBaoCao;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem btnMonHoc;
@@ -399,6 +445,9 @@ namespace TN_CSDLPT
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup12;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup13;
     }
 }
 

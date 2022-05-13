@@ -59,7 +59,7 @@ namespace TN_CSDLPT
             {
                 cbCoSo.Enabled = false;
             }
-
+            cbTuyChon.SelectedIndex = 0;
             cbLanThi.SelectedIndex = 0;
         }
 
@@ -79,7 +79,6 @@ namespace TN_CSDLPT
 
             if(cbTuyChon.SelectedIndex == 0) //xem danh sách điểm
             {
-                return;
                 XrptBangDiemMonHoc rptBDMH = new XrptBangDiemMonHoc(maLop, maMonHoc, int.Parse(cbLanThi.Text.ToString()));
                 rptBDMH.lbHeaderBangDiemMonHoc.Text = "DANH SÁCH ĐIỂM KẾT THÚC MÔN CỦA LỚP " + cbLop.Text.ToString().ToUpper()
                         + " MÔN HỌC " + cbMonHoc.Text.ToString() + " LẦN " + cbLanThi.Text.ToString();
