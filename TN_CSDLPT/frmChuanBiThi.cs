@@ -79,6 +79,10 @@ namespace TN_CSDLPT
                     {
                         if (((DataRowView)bdsGVDK[i])["MAGV"].ToString().Trim() == Program.username)
                         {
+                            btnXoa.Enabled = btnSua.Enabled = true;
+                        }
+                        else
+                        {
                             btnXoa.Enabled = btnSua.Enabled = false;
                         }
                     }
