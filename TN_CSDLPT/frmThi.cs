@@ -104,7 +104,7 @@ namespace TN_CSDLPT
             //}
             if (Program.mGroup.ToUpper().Equals("GIANGVIEN") || Program.mGroup.ToUpper().Equals("COSO"))
             {
-                String strLenh = "exec Tim_Thong_Tin_Thi N'" + cmbTenMH.SelectedValue.ToString()
+                String strLenh = "exec sp_tim_thong_tin_thi N'" + cmbTenMH.SelectedValue.ToString()
                           + "', N'" + dateNgayThi.DateTime.ToString("yyyy-MM-dd HH:mm:ss")
                           + "', " + spinLan.Value;
                 Program.myReader = Program.ExecSqlDataReader(strLenh);
