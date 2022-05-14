@@ -19,6 +19,7 @@ namespace TN_CSDLPT
         private int thoiGian = 0;
         private String trinhDo = "";
         private bool timeOut = false;
+        private string maLop = "";
         int maBD = 0;
         public frmThi()
         {
@@ -37,31 +38,39 @@ namespace TN_CSDLPT
         {
             DSet.EnforceConstraints = false;
 
-            // TODO: This line of code loads data into the 'dSet.MONHOC' table. You can move, or remove it, as needed.
             this.MONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
             this.MONHOCTableAdapter.Fill(this.DSet.MONHOC);
-            
+
+            lb2.Text = Program.username;
             if (Program.mGroup.ToUpper().Equals("GIANGVIEN") || Program.mGroup.ToUpper().Equals("COSO"))
             {
+                this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.lOPTableAdapter.Fill(this.DSet.LOP);
                 lb1.Text = "MÃ GIÁO VIÊN:";
                 lb5.Text = "TÊN GIÁO VIÊN:";
-                lb2.Text = Program.username;
                 lb6.Text = Program.mHoTen;
                 lb3.Visible = lb4.Visible
                     = lb7.Visible = lb8.Visible = false;
-                giay = 10;
-                lb10.Text = "00:10";
-                btnBatDau.Enabled = true;
-                panelGVDK.Enabled = true;
-                cmbTenMH.SelectedIndex = 0;
+               /*
+                lb10.Text = "00:10";*/
+            
             }
-            else
+            else if(Program.mGroup.ToUpper().Equals("SINHVIEN"))
             {
-                //Còn thiếu ghi thông tin sinh viên
-                panelGVDK.Enabled = true;
-                btnBatDau.Enabled = false;
-                cmbTenMH.SelectedIndex = 0;
+                cbLop.Enabled = false;
+                string strLenh = "exec sp_lay_tt_lop_tu_masv '" + Program.username + "'";
+                Program.myReader = Program.ExecSqlDataReader(strLenh);
+                if (Program.myReader == null || !Program.myReader.Read()) return;
+                
+                maLop = Program.myReader.GetString(0);
+                string tenLop = Program.myReader.GetString(1);
+                lb4.Text = Program.mHoTen;
+                lb6.Text = maLop;
+                lb8.Text = tenLop;
             }
+            btnBatDau.Enabled = false;
+            panelGVDK.Enabled = true;
+            cmbTenMH.SelectedIndex = 0;
         }
 
         private bool kiemTraTruocKhiTim()
@@ -102,37 +111,41 @@ namespace TN_CSDLPT
             //    date_NgayThi.Focus();
             //    return;
             //}
-            if (Program.mGroup.ToUpper().Equals("GIANGVIEN") || Program.mGroup.ToUpper().Equals("COSO"))
+            if (Program.mGroup.ToUpper().Equals("GIANGVIEN") || Program.mGroup.ToUpper().Equals("COSO") || Program.mGroup.ToUpper().Equals("SINHVIEN"))
             {
-                String strLenh = "exec sp_tim_thong_tin_thi N'" + cmbTenMH.SelectedValue.ToString()
-                          + "', N'" + dateNgayThi.DateTime.ToString("yyyy-MM-dd HH:mm:ss")
-                          + "', " + spinLan.Value;
+                string strLenh = "exec sp_tim_thong_tin_thi N'" + cmbTenMH.SelectedValue.ToString()
+                          + "', N'" + dateNgayThi.DateTime.ToString("yyyy-MM-dd")
+                          + "', " + spinLan.Value  + ", '" 
+                          + (cbLop.SelectedValue == null ? maLop : cbLop.SelectedValue.ToString()) + "'";
+
                 Program.myReader = Program.ExecSqlDataReader(strLenh);
-                if (Program.myReader == null) return;
-                if (Program.myReader.Read() == false)
+                if (Program.myReader == null)
                 {
-                    MessageBox.Show("Thông tin đăng ký thi không tồn tại!", "", MessageBoxButtons.OK);
-                }
-                else
+                    return;
+                } else if(Program.myReader.Read() == false)
                 {
-
-                    trinhDo = Program.myReader.GetString(0);
-                    lb14.Text = trinhDo.ToString();
-
-                    soCauThi = Program.myReader.GetInt16(1);
-                    lb16.Text = soCauThi.ToString();
-
-                    thoiGian = Program.myReader.GetInt32(2);
-                    lb18.Text = thoiGian.ToString();
-                    //Int16 time = Program.myReader.GetInt16(2);
-                    //giay = time * 60;
-                    //time_Thi.Text = time.ToString() + ":00";
-
-                    cmbTenMH.Enabled = false;
-                    dateNgayThi.Enabled = false;
-                    spinLan.Enabled = false;
-
+                    MessageBox.Show("Không tìm thấy thông tin đăng ký thi!");
+                    return;
                 }
+
+                trinhDo = Program.myReader.GetString(0);
+                lb14.Text = trinhDo.ToString();
+
+                soCauThi = Program.myReader.GetInt16(1);
+                lb16.Text = soCauThi.ToString();
+
+                thoiGian = Program.myReader.GetInt16(2);
+                lb18.Text = thoiGian.ToString() + " Phút";
+                //Int16 time = Program.myReader.GetInt16(2);
+                //giay = time * 60;
+                //time_Thi.Text = time.ToString() + ":00";
+
+                btnBatDau.Enabled = true;
+                cmbTenMH.Enabled = false;
+                dateNgayThi.Enabled = false;
+                spinLan.Enabled = false;
+                cbLop.Enabled = false;
+
                 Program.myReader.Close();
             }
         }
@@ -208,15 +221,53 @@ namespace TN_CSDLPT
             return da;
         }
 
+        private int loadCauHoiThi()
+        {
+            string maMH = cmbTenMH.SelectedValue.ToString();
+            string strLenh = "exec sp_lay_cau_hoi_thi '" + maMH + "', '" + trinhDo + "', " + soCauThi;
+            Program.myReader = Program.ExecSqlDataReader(strLenh);
+            if (Program.myReader == null) return -1;
+            int cauHoi, stt = 1;
+            string noiDung, a, b, c, d, dapAn;
+           
+             while(Program.myReader.Read())
+             {
+                 cauHoi = Program.myReader.GetInt32(0);
+                 noiDung = Program.myReader.GetString(1);
+                 a = Program.myReader.GetString(2);
+                 b = Program.myReader.GetString(3);
+                 c = Program.myReader.GetString(4);
+                 d = Program.myReader.GetString(5);
+                 dapAn = Program.myReader.GetString(6);
+                 flowCH.Controls.Add(new CauHoi(stt++, cauHoi, noiDung, a, b, c, d, dapAn));
+             }
+            return stt;
+        }
+
         private void btnBatDau_Click(object sender, EventArgs e)
         {
             if (timer1.Enabled == false)
             {
+                int errorCode = loadCauHoiThi();
+                if (errorCode == -1)
+                {
+                    MessageBox.Show("Có lỗi xảy ra, vui lòng thử lại!");
+                    return;
+                }
+                if(errorCode < soCauThi)
+                {
+                    if(MessageBox.Show("Bộ đề thiếu câu hỏi thi, bạn có muốn tiếp tục!", "Xác nhận?", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
+                    {
+                        this.Close();
+                        return;
+                    }
+                }
+                giay = thoiGian * 60;
                 btnBatDau.Text = "NỘP BÀI";
                 timer1.Start();
 
-                //loadCauHoiThi();
                 btnThoat.Enabled = false;
+                btnTim.Enabled = false;
             }
             else
             {
@@ -228,27 +279,6 @@ namespace TN_CSDLPT
                 }
 
             }
-        }
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-       
-
-        private void mONHOCBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
 
        

@@ -55,7 +55,7 @@ namespace TN_CSDLPT
             // 
             // txtTenDN
             // 
-            this.txtTenDN.EditValue = "KDT";
+            this.txtTenDN.EditValue = "001";
             this.txtTenDN.Location = new System.Drawing.Point(218, 124);
             this.txtTenDN.Name = "txtTenDN";
             this.txtTenDN.Size = new System.Drawing.Size(242, 20);
