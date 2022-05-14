@@ -15,10 +15,9 @@ namespace TN_CSDLPT
     public partial class frmLop : DevExpress.XtraEditors.XtraForm
     {
 
-        private String maCoSo = Program.maCoSo;
         private int viTri = 0;  //Khi ấn vào btn phục hồi thì position trong bds sẽ quay về vị trí ban đầu
         private bool doneLoadForm = false; //Fix lỗi khi load form, cbcoso được đổ dữ liệu vào sẽ bị auto gọi hàm indexchanged
-
+        private bool addingNew = false;
         public frmLop()
         {
             InitializeComponent();
@@ -47,7 +46,6 @@ namespace TN_CSDLPT
             this.SINHVIENTableAdapter.Fill(this.DSet.SINHVIEN);
 
             //thiết lập cb cơ sở
-            maCoSo = Program.maCoSo;
 
             cbCoSo.DataSource = Program.bdsDSPM;
             cbCoSo.DisplayMember = "TENCN";
@@ -55,7 +53,7 @@ namespace TN_CSDLPT
             cbCoSo.SelectedIndex = Program.mCoSo;
             
             //đổ dữ liệu vào cb khoa
-            bdsKhoa.Filter = "MACS = '" + maCoSo + "' ";  //lọc ra khoa của cơ sở hiện tại 
+            bdsKhoa.Filter = "MACS = 'CS" + (cbCoSo.SelectedIndex+1) + "' ";  //lọc ra khoa của cơ sở hiện tại 
             cbKhoa.DataSource = bdsKhoa;
             cbKhoa.DisplayMember = "TENKH";
             cbKhoa.ValueMember = "MAKH";
@@ -120,10 +118,11 @@ namespace TN_CSDLPT
                 MessageBox.Show("Chưa Có Khoa, Không Thể Thêm Lớp");
                 return;
             }
+            addingNew = true;
             cbKhoa.SelectedIndex = -1;
             viTri = bdsLop.Position;
             bdsLop.AddNew();
-            cbCoSo.SelectedIndex = 0;
+            //cbCoSo.SelectedIndex = 0;
             //bật tắt các controller khác
             btnGhi.Enabled = btnPhucHoi.Enabled = true;
             panelNhapLieu.Enabled = true;
@@ -187,6 +186,11 @@ namespace TN_CSDLPT
                 MessageBox.Show("Mã Lớp Và Tên Lớp Không Được Để Trống");
                 return;
             }
+            if(txtMaKhoa.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Khoa Không Được Để Trống");
+                return;
+            }
 
             //check trùng mã trên môi trường phân tán
             String cmd = "exec sp_tim_lop '" + txtMaLop.Text + "'";
@@ -236,6 +240,7 @@ namespace TN_CSDLPT
                 MessageBox.Show("Lỗi ghi Lớp: " + ex.Message);
                 LOPTableAdapter.Fill(DSet.LOP);
             }
+            addingNew = false;
             //bật tắt các controller khác
             btnGhi.Enabled = btnPhucHoi.Enabled = false;
             panelNhapLieu.Enabled = false;
@@ -246,7 +251,11 @@ namespace TN_CSDLPT
 
         private void btnPhucHoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            btnReload_ItemClick(sender, e);
+            if (addingNew)
+            {
+                bdsLop.RemoveCurrent();
+                addingNew = false;
+            }
             bdsLop.CancelEdit();
             bdsLop.Position = viTri;
             //bật tắt các controller khác
@@ -263,7 +272,6 @@ namespace TN_CSDLPT
             {
                 this.LOPTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.LOPTableAdapter.Fill(DSet.LOP);
-
                 this.KHOATableAdapter.Fill(DSet.KHOA);
 
 

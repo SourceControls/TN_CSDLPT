@@ -14,9 +14,9 @@ namespace TN_CSDLPT
 {
     public partial class frmKhoa : DevExpress.XtraEditors.XtraForm
     {
-        private String maCoSo = Program.maCoSo;
         private int viTri = 0;  //Khi ấn vào btn phục hồi thì position trong bds sẽ quay về vị trí ban đầu
         private bool doneLoadForm = false; //Fix lỗi khi load form, cbcoso được đổ dữ liệu vào sẽ bị auto gọi hàm indexchanged
+        private bool addingNew = false;
         public frmKhoa()
         {
             InitializeComponent();
@@ -37,7 +37,6 @@ namespace TN_CSDLPT
             this.lopTableAdapter.Fill(this.DSet.LOP);
 
 
-            maCoSo = Program.maCoSo;
 
             cbCoSo.DataSource = Program.bdsDSPM;
             cbCoSo.DisplayMember = "TENCN";
@@ -67,8 +66,9 @@ namespace TN_CSDLPT
         {
             viTri = bdsKhoa.Position;
             bdsKhoa.AddNew();
-            txtMaCoSo.Text = maCoSo;
-
+            addingNew = true;
+            txtMaCoSo.Text = "CS"+(cbCoSo.SelectedIndex+1);
+         
             //bật tắt các controller khác
             btnGhiKhoa.Enabled = btnPhucHoiKhoa.Enabled = true;
             panelKhoa.Enabled = true;
@@ -179,6 +179,8 @@ namespace TN_CSDLPT
                 khoaTableAdapter.Connection.ConnectionString = Program.connstr;
                 khoaTableAdapter.Update(DSet.KHOA);
                 bdsKhoa.ResetCurrentItem();
+                MessageBox.Show("Ghi Khoa Thành Công");
+
             }
             catch (Exception ex)
             {
@@ -186,6 +188,7 @@ namespace TN_CSDLPT
                 khoaTableAdapter.Fill(DSet.KHOA);
             }
             //bật tắt các controller khác
+            addingNew = false;
             btnGhiKhoa.Enabled = btnPhucHoiKhoa.Enabled = false;
             panelKhoa.Enabled = false;
             kHOAGridControl.Enabled = true;
@@ -195,8 +198,14 @@ namespace TN_CSDLPT
 
         private void btnPhucHoiKhoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            btnReloadKhoa_ItemClick(sender, e);
+
+            if (addingNew)
+            {
+                addingNew = false;
+                bdsKhoa.RemoveCurrent();
+            }
             bdsKhoa.CancelEdit();
+            
             bdsKhoa.Position = viTri;
             //bật tắt các controller khác
             btnGhiKhoa.Enabled = btnPhucHoiKhoa.Enabled = false;
@@ -211,7 +220,7 @@ namespace TN_CSDLPT
             {
                 this.khoaTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.khoaTableAdapter.Fill(DSet.KHOA);
-
+                this.lopTableAdapter.Fill(DSet.LOP);
 
             }
             catch (Exception ex)

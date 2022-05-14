@@ -217,7 +217,7 @@ namespace TN_CSDLPT
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
             this.label1.LocationFloat = new DevExpress.Utils.PointFloat(5F, 5F);
             this.label1.Name = "label1";
             this.label1.SizeF = new System.Drawing.SizeF(740F, 24.19433F);
@@ -255,10 +255,10 @@ namespace TN_CSDLPT
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "\': \'+[LAN]")});
             this.xrLabel5.Font = new System.Drawing.Font("Arial", 9.75F);
             this.xrLabel5.ForeColor = System.Drawing.Color.Black;
-            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(292.7004F, 124.9999F);
+            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(700.6801F, 124.9999F);
             this.xrLabel5.Name = "xrLabel5";
             this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(6, 6, 0, 0, 100F);
-            this.xrLabel5.SizeF = new System.Drawing.SizeF(53.48651F, 23.00003F);
+            this.xrLabel5.SizeF = new System.Drawing.SizeF(40.1532F, 23.00003F);
             this.xrLabel5.StylePriority.UseBackColor = false;
             this.xrLabel5.StylePriority.UseBorderColor = false;
             this.xrLabel5.StylePriority.UseBorderDashStyle = false;
@@ -438,7 +438,7 @@ namespace TN_CSDLPT
             // xrLabel16
             // 
             this.xrLabel16.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel16.LocationFloat = new DevExpress.Utils.PointFloat(226.5262F, 124.9999F);
+            this.xrLabel16.LocationFloat = new DevExpress.Utils.PointFloat(634.5058F, 124.9999F);
             this.xrLabel16.Multiline = true;
             this.xrLabel16.Name = "xrLabel16";
             this.xrLabel16.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -492,7 +492,7 @@ namespace TN_CSDLPT
             // 
             this.tableCell11.BackColor = System.Drawing.Color.CornflowerBlue;
             this.tableCell11.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.tableCell11.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableCell11.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableCell11.Name = "tableCell11";
             this.tableCell11.StylePriority.UseBackColor = false;
             this.tableCell11.StylePriority.UseBorders = false;
@@ -505,7 +505,7 @@ namespace TN_CSDLPT
             // tableCell12
             // 
             this.tableCell12.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.tableCell12.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableCell12.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableCell12.Name = "tableCell12";
             this.tableCell12.StylePriority.UseBackColor = false;
             this.tableCell12.StylePriority.UseFont = false;
@@ -517,7 +517,7 @@ namespace TN_CSDLPT
             // tableCell13
             // 
             this.tableCell13.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.tableCell13.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableCell13.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableCell13.Name = "tableCell13";
             this.tableCell13.StylePriority.UseBackColor = false;
             this.tableCell13.StylePriority.UseFont = false;
@@ -529,7 +529,7 @@ namespace TN_CSDLPT
             // tableCell14
             // 
             this.tableCell14.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.tableCell14.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableCell14.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableCell14.Name = "tableCell14";
             this.tableCell14.StylePriority.UseBackColor = false;
             this.tableCell14.StylePriority.UseFont = false;
@@ -541,7 +541,7 @@ namespace TN_CSDLPT
             // tableCell15
             // 
             this.tableCell15.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.tableCell15.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableCell15.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableCell15.Name = "tableCell15";
             this.tableCell15.StylePriority.UseBackColor = false;
             this.tableCell15.StylePriority.UseFont = false;
@@ -553,8 +553,10 @@ namespace TN_CSDLPT
             // tableCell16
             // 
             this.tableCell16.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.tableCell16.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableCell16.Name = "tableCell16";
             this.tableCell16.StylePriority.UseBackColor = false;
+            this.tableCell16.StylePriority.UseFont = false;
             this.tableCell16.StylePriority.UseTextAlignment = false;
             this.tableCell16.Text = "Đã Chọn";
             this.tableCell16.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
@@ -660,7 +662,7 @@ namespace TN_CSDLPT
             this.xrTableCell6.EvenStyleName = "daChonSai";
             this.xrTableCell6.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[DACHON]"),
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "BackColor", "Iif([DACHON] = [DAP_AN],\'white\',\'255,128,128\')")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "BackColor", "Iif([DACHON] = [DAP_AN],\'white\',\'255, 128, 128\')")});
             this.xrTableCell6.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrTableCell6.Multiline = true;
             this.xrTableCell6.Name = "xrTableCell6";

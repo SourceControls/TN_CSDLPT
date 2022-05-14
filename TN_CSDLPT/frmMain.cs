@@ -106,15 +106,19 @@ namespace TN_CSDLPT
             openForm(new frmNhapDe());
         }
 
-<<<<<<< Updated upstream
-        private void ribbonControl1_Click(object sender, EventArgs e)
-        {
-
-=======
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             openForm(new frmChuanBiThi());
->>>>>>> Stashed changes
+        }
+
+        private void barButtonItem7_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }
