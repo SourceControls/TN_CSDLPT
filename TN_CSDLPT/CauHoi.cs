@@ -27,6 +27,26 @@ namespace TN_CSDLPT
         private string dapAn;
         private String svChon;
 
+        public CauHoi(int stt, int cauHoi, string noiDung, string a, string b, string c, string d, string dapAn)
+        {
+            InitializeComponent();
+            this.stt = stt;
+            this.cauHoi = cauHoi;
+            this.noiDung = noiDung;
+            this.a = a;
+            this.b = b;
+            this.c = c;
+            this.d = d;
+            this.dapAn = dapAn;
+
+            lbSTT.Text = "Câu " + stt + ": ";
+            lbNDCH.Text = noiDung;
+            lbTLA.Text = a;
+            lbTLB.Text = b;
+            lbTLC.Text = c;
+            lbTLD.Text = d;
+        }
+
         //dung luon radioButton da keo tha vi co da co group
         //khong can xet them dk
         [Category("Custom props")]
@@ -150,6 +170,11 @@ namespace TN_CSDLPT
         }
 
         private void rdbA_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CauHoi_Load(object sender, EventArgs e)
         {
 
         }

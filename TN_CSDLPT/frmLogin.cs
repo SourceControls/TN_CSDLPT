@@ -74,7 +74,7 @@ namespace TN_CSDLPT
             cbLoaiTaiKhoan.DataSource = new BindingSource(cbLoaiTaiKhoanSource, null);
             cbLoaiTaiKhoan.DisplayMember = "Value";
             cbLoaiTaiKhoan.ValueMember = "Key";
-            cbLoaiTaiKhoan.SelectedIndex = 1;
+            cbLoaiTaiKhoan.SelectedIndex = 0;
             loaiTaiKhoan = cbLoaiTaiKhoan.SelectedValue.ToString();
 
         }
@@ -90,7 +90,7 @@ namespace TN_CSDLPT
             Program.fMain.rbGiangVien.Visible = true;
             Program.fMain.rbBaoCao.Visible = true;
         }
-        private void btnDN_Click(object sender, EventArgs e)
+        public void btnDN_Click(object sender, EventArgs e)
         {
             if (txtTenDN.Text.Trim() == "" || txtPassword.Text.Trim() == "")
             {

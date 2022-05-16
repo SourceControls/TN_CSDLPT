@@ -47,9 +47,10 @@ namespace TN_CSDLPT
             // 
             this.lbNDCH.AutoSize = true;
             this.lbNDCH.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNDCH.Location = new System.Drawing.Point(324, 59);
+            this.lbNDCH.Location = new System.Drawing.Point(228, 0);
+            this.lbNDCH.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbNDCH.Name = "lbNDCH";
-            this.lbNDCH.Size = new System.Drawing.Size(275, 32);
+            this.lbNDCH.Size = new System.Drawing.Size(184, 24);
             this.lbNDCH.TabIndex = 0;
             this.lbNDCH.Text = "NỘI DUNG CÂU HỎI";
             // 
@@ -57,9 +58,10 @@ namespace TN_CSDLPT
             // 
             this.lbSTT.AutoSize = true;
             this.lbSTT.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSTT.Location = new System.Drawing.Point(213, 59);
+            this.lbSTT.Location = new System.Drawing.Point(154, 0);
+            this.lbSTT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbSTT.Name = "lbSTT";
-            this.lbSTT.Size = new System.Drawing.Size(105, 32);
+            this.lbSTT.Size = new System.Drawing.Size(69, 24);
             this.lbSTT.TabIndex = 1;
             this.lbSTT.Text = "CÂU 0:";
             // 
@@ -67,27 +69,30 @@ namespace TN_CSDLPT
             // 
             this.lbTLA.AutoSize = true;
             this.lbTLA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTLA.Location = new System.Drawing.Point(315, 148);
+            this.lbTLA.Location = new System.Drawing.Point(239, 41);
+            this.lbTLA.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTLA.Name = "lbTLA";
-            this.lbTLA.Size = new System.Drawing.Size(306, 29);
+            this.lbTLA.Size = new System.Drawing.Size(208, 20);
             this.lbTLA.TabIndex = 2;
             this.lbTLA.Text = "NỘI DUNG CÂU TRẢ LỜI A";
             this.lbTLA.Click += new System.EventHandler(this.label2_Click);
             // 
             // radioGroup1
             // 
-            this.radioGroup1.Location = new System.Drawing.Point(219, 137);
+            this.radioGroup1.Location = new System.Drawing.Point(175, 34);
+            this.radioGroup1.Margin = new System.Windows.Forms.Padding(2);
             this.radioGroup1.Name = "radioGroup1";
-            this.radioGroup1.Size = new System.Drawing.Size(81, 219);
+            this.radioGroup1.Size = new System.Drawing.Size(54, 142);
             this.radioGroup1.TabIndex = 3;
             // 
             // lbTLB
             // 
             this.lbTLB.AutoSize = true;
             this.lbTLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTLB.Location = new System.Drawing.Point(315, 207);
+            this.lbTLB.Location = new System.Drawing.Point(239, 80);
+            this.lbTLB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTLB.Name = "lbTLB";
-            this.lbTLB.Size = new System.Drawing.Size(307, 29);
+            this.lbTLB.Size = new System.Drawing.Size(208, 20);
             this.lbTLB.TabIndex = 4;
             this.lbTLB.Text = "NỘI DUNG CÂU TRẢ LỜI B";
             // 
@@ -95,9 +100,10 @@ namespace TN_CSDLPT
             // 
             this.lbTLC.AutoSize = true;
             this.lbTLC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTLC.Location = new System.Drawing.Point(315, 260);
+            this.lbTLC.Location = new System.Drawing.Point(239, 114);
+            this.lbTLC.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTLC.Name = "lbTLC";
-            this.lbTLC.Size = new System.Drawing.Size(308, 29);
+            this.lbTLC.Size = new System.Drawing.Size(208, 20);
             this.lbTLC.TabIndex = 5;
             this.lbTLC.Text = "NỘI DUNG CÂU TRẢ LỜI C";
             // 
@@ -105,9 +111,10 @@ namespace TN_CSDLPT
             // 
             this.lbTLD.AutoSize = true;
             this.lbTLD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTLD.Location = new System.Drawing.Point(315, 317);
+            this.lbTLD.Location = new System.Drawing.Point(239, 151);
+            this.lbTLD.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTLD.Name = "lbTLD";
-            this.lbTLD.Size = new System.Drawing.Size(308, 29);
+            this.lbTLD.Size = new System.Drawing.Size(209, 20);
             this.lbTLD.TabIndex = 6;
             this.lbTLD.Text = "NỘI DUNG CÂU TRẢ LỜI D";
             // 
@@ -115,9 +122,10 @@ namespace TN_CSDLPT
             // 
             this.rdbA.AutoSize = true;
             this.rdbA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbA.Location = new System.Drawing.Point(234, 148);
+            this.rdbA.Location = new System.Drawing.Point(185, 41);
+            this.rdbA.Margin = new System.Windows.Forms.Padding(2);
             this.rdbA.Name = "rdbA";
-            this.rdbA.Size = new System.Drawing.Size(53, 33);
+            this.rdbA.Size = new System.Drawing.Size(38, 24);
             this.rdbA.TabIndex = 7;
             this.rdbA.TabStop = true;
             this.rdbA.Text = "A";
@@ -128,9 +136,10 @@ namespace TN_CSDLPT
             // 
             this.rdbB.AutoSize = true;
             this.rdbB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbB.Location = new System.Drawing.Point(235, 203);
+            this.rdbB.Location = new System.Drawing.Point(186, 77);
+            this.rdbB.Margin = new System.Windows.Forms.Padding(2);
             this.rdbB.Name = "rdbB";
-            this.rdbB.Size = new System.Drawing.Size(54, 33);
+            this.rdbB.Size = new System.Drawing.Size(38, 24);
             this.rdbB.TabIndex = 8;
             this.rdbB.TabStop = true;
             this.rdbB.Text = "B";
@@ -140,9 +149,10 @@ namespace TN_CSDLPT
             // 
             this.rdbC.AutoSize = true;
             this.rdbC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbC.Location = new System.Drawing.Point(234, 258);
+            this.rdbC.Location = new System.Drawing.Point(185, 113);
+            this.rdbC.Margin = new System.Windows.Forms.Padding(2);
             this.rdbC.Name = "rdbC";
-            this.rdbC.Size = new System.Drawing.Size(55, 33);
+            this.rdbC.Size = new System.Drawing.Size(38, 24);
             this.rdbC.TabIndex = 9;
             this.rdbC.TabStop = true;
             this.rdbC.Text = "C";
@@ -152,9 +162,10 @@ namespace TN_CSDLPT
             // 
             this.rdbD.AutoSize = true;
             this.rdbD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbD.Location = new System.Drawing.Point(235, 313);
+            this.rdbD.Location = new System.Drawing.Point(186, 148);
+            this.rdbD.Margin = new System.Windows.Forms.Padding(2);
             this.rdbD.Name = "rdbD";
-            this.rdbD.Size = new System.Drawing.Size(55, 33);
+            this.rdbD.Size = new System.Drawing.Size(39, 24);
             this.rdbD.TabIndex = 10;
             this.rdbD.TabStop = true;
             this.rdbD.Text = "D";
@@ -162,7 +173,7 @@ namespace TN_CSDLPT
             // 
             // CauHoi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.rdbD);
             this.Controls.Add(this.rdbC);
@@ -175,8 +186,10 @@ namespace TN_CSDLPT
             this.Controls.Add(this.lbTLA);
             this.Controls.Add(this.lbSTT);
             this.Controls.Add(this.lbNDCH);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CauHoi";
-            this.Size = new System.Drawing.Size(1213, 574);
+            this.Size = new System.Drawing.Size(809, 203);
+            this.Load += new System.EventHandler(this.CauHoi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

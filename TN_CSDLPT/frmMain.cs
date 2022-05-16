@@ -18,7 +18,6 @@ namespace TN_CSDLPT
             {
                 if ( f.GetType() == newFrm.GetType())
                 {
-                    MessageBox.Show("Form đã mở sẵn");  
                     f.Activate();
                     return;
                 }
@@ -73,7 +72,9 @@ namespace TN_CSDLPT
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            
+            frmLogin frmLogin = new frmLogin();
+            openForm(frmLogin);
+            frmLogin.btnDN_Click(sender, e);
         }
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -106,19 +107,18 @@ namespace TN_CSDLPT
             openForm(new frmNhapDe());
         }
 
+
+        private void ribbonControl1_Click(object sender, EventArgs e) { }
+
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             openForm(new frmChuanBiThi());
-        }
-
-        private void barButtonItem7_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
 
         }
 
-        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            openForm(new frmThi());
         }
     }
 }
