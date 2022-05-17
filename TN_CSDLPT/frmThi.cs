@@ -225,6 +225,7 @@ namespace TN_CSDLPT
                 d = Program.myReader.GetString(5);
                 dapAn = Program.myReader.GetString(6);
                 ch = new CauHoi(stt++, cauHoi, noiDung, a, b, c, d, dapAn);
+                ch.Rbtn_A.Select();
                 flowCH.Controls.Add(ch);
             list.Add(ch);
             }
@@ -249,38 +250,6 @@ namespace TN_CSDLPT
             return Math.Round((soCauDung * 10) * 1.0 / soCauThi);
         }
 
-        private bool insertBangDiem(double diem)
-        {
-            //ghi vao bang diem
-            string strLenh = "exec sp_insert_bang_diem N'"
-             + Program.username + "', N'"
-             + cmbTenMH.SelectedValue.ToString() + "', "
-             + cmbLan.SelectedItem + ", N'"
-             + dateNgayThi.DateTime.ToString("yyyy-MM-dd HH:mm:ss") + "', "
-             + diem;
-           
-            SqlCommand sqlCmd = new SqlCommand(strLenh, Program.conn);
-            sqlCmd.CommandType = CommandType.Text;
-            sqlCmd.CommandTimeout = 600;
-            if (Program.conn.State == ConnectionState.Closed) Program.conn.Open();
-            try
-            {
-                sqlCmd.ExecuteNonQuery();
-                MessageBox.Show("Lưu bảng điểm thành công", "", MessageBoxButtons.OK);
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi ghi bảng điểm!", "", MessageBoxButtons.OK);
-                MessageBox.Show(ex.Message);
-                return false;
-            }
-            finally
-            {
-                Program.conn.Close();
-            }
-            return true;
-        }
 
         private void btnBatDau_Click(object sender, EventArgs e)
         {
@@ -323,8 +292,7 @@ namespace TN_CSDLPT
                     timeOut = false;
                     if (Program.mGroup.ToUpper() == "SINHVIEN")
                     {
-                        if (insertBangDiem(diem) == true)
-                        insertBaiThi();
+                        insertBaiThi(diem);
                     }
 
                     btnBatDau.Enabled = false;
@@ -339,7 +307,7 @@ namespace TN_CSDLPT
             }
         }
 
-        private bool insertBaiThi()
+        private bool insertBaiThi(double diem)
         {
             DataTable dt = new DataTable("CT_BAI_THI");
             DataColumn dtColumn;
@@ -421,7 +389,15 @@ namespace TN_CSDLPT
             para3.ParameterName = "@BAITHI";
             para3.Value = dt;
 
+            SqlParameter para4 = new SqlParameter();
+            para4.SqlDbType = SqlDbType.Char;
+            para4.ParameterName = "@NGAYTHI";
+            para4.Value = dateNgayThi.DateTime.ToString("yyyy-MM-dd HH:mm:ss");
 
+            SqlParameter para5 = new SqlParameter();
+            para5.SqlDbType = SqlDbType.Float;
+            para5.ParameterName = "@DIEM";
+            para5.Value = (float) diem;
 
 
             Program.connectToDB();
@@ -432,17 +408,18 @@ namespace TN_CSDLPT
             Sqlcmd.Parameters.Add(para1);
             Sqlcmd.Parameters.Add(para2);
             Sqlcmd.Parameters.Add(para3);
-
+            Sqlcmd.Parameters.Add(para4);
+            Sqlcmd.Parameters.Add(para5);
 
             try
             {
                 Sqlcmd.ExecuteNonQuery();
-                MessageBox.Show("Lưu bài thi thành công");
+                MessageBox.Show("Lưu bảng điểm và bài thi thành công");
                 return true;
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Lưu bài thi thất bại: " + ex.Message);
+                MessageBox.Show("Lưu bảng điểm và bài thi thất bại: " + ex.Message);
                 return false;
             }
         }
