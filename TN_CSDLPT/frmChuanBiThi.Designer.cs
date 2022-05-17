@@ -402,6 +402,7 @@ namespace TN_CSDLPT
             this.cmbCoSo.Name = "cmbCoSo";
             this.cmbCoSo.Size = new System.Drawing.Size(314, 27);
             this.cmbCoSo.TabIndex = 1;
+            this.cmbCoSo.SelectedIndexChanged += new System.EventHandler(this.cmbCoSo_SelectedIndexChanged);
             // 
             // DSet
             // 
@@ -429,6 +430,7 @@ namespace TN_CSDLPT
             this.TableAdapterManager.LOPTableAdapter = null;
             this.TableAdapterManager.MONHOCTableAdapter = null;
             this.TableAdapterManager.SINHVIENTableAdapter = null;
+            this.TableAdapterManager.SP_SELECT_BO_DETableAdapter = null;
             this.TableAdapterManager.UpdateOrder = TN_CSDLPT.DSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // gcGVDK
