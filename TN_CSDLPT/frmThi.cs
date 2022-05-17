@@ -214,19 +214,20 @@ namespace TN_CSDLPT
             int cauHoi, stt = 1;
             string noiDung, a, b, c, d, dapAn;
             CauHoi ch;
-             while(Program.myReader.Read())
-             {
-                 cauHoi = Program.myReader.GetInt32(0);
-                 noiDung = Program.myReader.GetString(1);
-                 a = Program.myReader.GetString(2);
-                 b = Program.myReader.GetString(3);
-                 c = Program.myReader.GetString(4);
-                 d = Program.myReader.GetString(5);
-                 dapAn = Program.myReader.GetString(6);
+            flowCH.Controls.Clear();
+            while(Program.myReader.Read())
+            {
+                cauHoi = Program.myReader.GetInt32(0);
+                noiDung = Program.myReader.GetString(1);
+                a = Program.myReader.GetString(2);
+                b = Program.myReader.GetString(3);
+                c = Program.myReader.GetString(4);
+                d = Program.myReader.GetString(5);
+                dapAn = Program.myReader.GetString(6);
                 ch = new CauHoi(stt++, cauHoi, noiDung, a, b, c, d, dapAn);
-                 flowCH.Controls.Add(ch);
-                list.Add(ch);
-             }
+                flowCH.Controls.Add(ch);
+            list.Add(ch);
+            }
             return stt;
         }
         private double tinhDiem()
@@ -248,7 +249,7 @@ namespace TN_CSDLPT
             return Math.Round((soCauDung * 10) * 1.0 / soCauThi);
         }
 
-        private int insertBangDiem(double diem)
+        private bool insertBangDiem(double diem)
         {
             //ghi vao bang diem
             string strLenh = "exec sp_insert_bang_diem N'"
@@ -257,13 +258,28 @@ namespace TN_CSDLPT
              + cmbLan.SelectedItem + ", N'"
              + dateNgayThi.DateTime.ToString("yyyy-MM-dd HH:mm:ss") + "', "
              + diem;
+           
+            SqlCommand sqlCmd = new SqlCommand(strLenh, Program.conn);
+            sqlCmd.CommandType = CommandType.Text;
+            sqlCmd.CommandTimeout = 600;
+            if (Program.conn.State == ConnectionState.Closed) Program.conn.Open();
+            try
+            {
+                sqlCmd.ExecuteNonQuery();
+                MessageBox.Show("Lưu bảng điểm thành công", "", MessageBoxButtons.OK);
 
-            int kq = Program.ExecSqlNonQuery(strLenh);
-            if (kq != 0)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Lỗi ghi bảng điểm!", "", MessageBoxButtons.OK);
+                MessageBox.Show(ex.Message);
+                return false;
             }
-            return kq;
+            finally
+            {
+                Program.conn.Close();
+            }
+            return true;
         }
 
         private void btnBatDau_Click(object sender, EventArgs e)
@@ -307,7 +323,7 @@ namespace TN_CSDLPT
                     timeOut = false;
                     if (Program.mGroup.ToUpper() == "SINHVIEN")
                     {
-                        if (insertBangDiem(diem) == 0)
+                        if (insertBangDiem(diem) == true)
                         insertBaiThi();
                     }
 
@@ -434,6 +450,11 @@ namespace TN_CSDLPT
         private void lb1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
