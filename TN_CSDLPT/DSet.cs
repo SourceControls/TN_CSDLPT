@@ -8,7 +8,7 @@
         {
         }
 
-        partial class DataTable1DataTable
+        partial class BAITHIDataTable
         {
         }
     }

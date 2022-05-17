@@ -16,6 +16,7 @@ namespace TN_CSDLPT
         /// The main entry point for the application.
         /// </summary>
         /// 
+        public static String maCoSo = "CS1";
 
         public static SqlConnection conn = new SqlConnection();
         public static String connstr;

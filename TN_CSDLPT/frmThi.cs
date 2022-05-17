@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -212,7 +213,7 @@ namespace TN_CSDLPT
             if (Program.myReader == null) return -1;
             int cauHoi, stt = 1;
             string noiDung, a, b, c, d, dapAn;
-           
+            CauHoi ch;
              while(Program.myReader.Read())
              {
                  cauHoi = Program.myReader.GetInt32(0);
@@ -222,7 +223,9 @@ namespace TN_CSDLPT
                  c = Program.myReader.GetString(4);
                  d = Program.myReader.GetString(5);
                  dapAn = Program.myReader.GetString(6);
-                 flowCH.Controls.Add(new CauHoi(stt++, cauHoi, noiDung, a, b, c, d, dapAn));
+                ch = new CauHoi(stt++, cauHoi, noiDung, a, b, c, d, dapAn);
+                 flowCH.Controls.Add(ch);
+                list.Add(ch);
              }
             return stt;
         }
@@ -300,27 +303,15 @@ namespace TN_CSDLPT
                     btnBatDau.Text = "BẮT ĐẦU";
                     timer1.Stop();
                     double diem = tinhDiem();
-
-                    if (Program.mGroup == "GIANGVIEN" || Program.mGroup == "COSO")
-                    {
-                        MessageBox.Show("Bạn đã đạt được " + diem + " điểm!", "", MessageBoxButtons.OK);
-                        timeOut = false;
-
-                    }
-                    else
+                    MessageBox.Show("Bạn đã đạt được " + diem + " điểm!", "", MessageBoxButtons.OK);
+                    timeOut = false;
+                    if (Program.mGroup.ToUpper() == "SINHVIEN")
                     {
                         if (insertBangDiem(diem) == 0)
-                        {
-                            //ghi chi tiet bai thi
-                         //   insertBaiThi();
-
-                        }
-
-                        MessageBox.Show("Bạn đã đạt được " + diem + " điểm!", "", MessageBoxButtons.OK);
-                        timeOut = false;
+                        insertBaiThi();
                     }
-                    btnBatDau.Enabled = false;
 
+                    btnBatDau.Enabled = false;
                     cmbTenMH.Enabled = true;
                     dateNgayThi.Enabled = true;
                     cmbLan.Enabled = true;
@@ -329,6 +320,114 @@ namespace TN_CSDLPT
                     btnThoat.Enabled = true;
                 }
 
+            }
+        }
+
+        private bool insertBaiThi()
+        {
+            DataTable dt = new DataTable("CT_BAI_THI");
+            DataColumn dtColumn;
+            DataRow myDataRow;
+
+            // Create id column
+            dtColumn = new DataColumn();
+            dtColumn.DataType = typeof(Int16);
+            dtColumn.ColumnName = "CAUSO";
+            dt.Columns.Add(dtColumn);
+
+            dtColumn = new DataColumn();
+            dtColumn.DataType = typeof(String);
+            dtColumn.ColumnName = "NOIDUNG";
+            dt.Columns.Add(dtColumn);
+
+            dtColumn = new DataColumn();
+            dtColumn.DataType = typeof(String);
+            dtColumn.ColumnName = "A";
+            dt.Columns.Add(dtColumn);
+
+            dtColumn = new DataColumn();
+            dtColumn.DataType = typeof(String);
+            dtColumn.ColumnName = "B";
+            dt.Columns.Add(dtColumn);
+
+            dtColumn = new DataColumn();
+            dtColumn.DataType = typeof(String);
+            dtColumn.ColumnName = "C";
+            dt.Columns.Add(dtColumn);
+
+            dtColumn = new DataColumn();
+            dtColumn.DataType = typeof(String);
+            dtColumn.ColumnName = "D";
+            dt.Columns.Add(dtColumn);
+
+            dtColumn = new DataColumn();
+            dtColumn.DataType = typeof(String);
+            dtColumn.ColumnName = "DAP_AN";
+            dt.Columns.Add(dtColumn);
+
+            dtColumn = new DataColumn();
+            dtColumn.DataType = typeof(String);
+            dtColumn.ColumnName = "DA_CHON";
+            dt.Columns.Add(dtColumn);
+            int i = 1;
+            foreach(CauHoi c in list)   
+            {
+                myDataRow = dt.NewRow();
+                myDataRow["CAUSO"] = i++;
+                myDataRow["NOIDUNG"] = c.NoiDung;
+                myDataRow["A"] = c.A;
+                myDataRow["B"] = c.B;
+                myDataRow["C"] = c.C;
+                myDataRow["D"] = c.D;
+                myDataRow["DAP_AN"] = c.DapAn;
+                myDataRow["DA_CHON"] = getDapAn(c);
+                dt.Rows.Add(myDataRow);
+            }
+
+            SqlParameter para0 = new SqlParameter();
+            para0.SqlDbType = SqlDbType.Char;
+            para0.ParameterName = "@MASV";
+            para0.Value = lb2.Text;
+
+            SqlParameter para1 = new SqlParameter();
+            para1.SqlDbType = SqlDbType.Char;
+            para1.ParameterName = "@MAMH";
+            para1.Value = cmbTenMH.SelectedValue.ToString();
+
+            SqlParameter para2 = new SqlParameter();
+            para2.SqlDbType = SqlDbType.Char;
+            para2.ParameterName = "@LAN";
+            para2.Value = cmbLan.SelectedItem;
+
+            SqlParameter para3 = new SqlParameter();
+            para3.SqlDbType = SqlDbType.Structured;
+            para3.TypeName = "dbo.TYPE_BAI_THI";
+            para3.ParameterName = "@BAITHI";
+            para3.Value = dt;
+
+
+
+
+            Program.connectToDB();
+            SqlCommand Sqlcmd = new SqlCommand("SP_INSERT_CT_BAI_THI", Program.conn);
+            Sqlcmd.Parameters.Clear();
+            Sqlcmd.CommandType = CommandType.StoredProcedure;
+            Sqlcmd.Parameters.Add(para0);
+            Sqlcmd.Parameters.Add(para1);
+            Sqlcmd.Parameters.Add(para2);
+            Sqlcmd.Parameters.Add(para3);
+
+
+            try
+            {
+                Sqlcmd.ExecuteNonQuery();
+                MessageBox.Show("Lưu bài thi thành công");
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Lưu bài thi thất bại: " + ex.Message);
+                return false;
             }
         }
 
