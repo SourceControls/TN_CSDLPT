@@ -15,7 +15,7 @@ create TYPE [dbo].[TYPE_BO_DE] AS TABLE(
 )
 GO
 
-
+--
 create PROC [dbo].[SP_INSERT_BODE]
   @BODE TYPE_BO_DE READONLY,
   @MAGV CHAR(10),
@@ -38,7 +38,7 @@ END
 
 GO
 --SELECT BO DE
-alter PROC SP_SELECT_BO_DE
+create PROC SP_SELECT_BO_DE
   @MAGV CHAR(5),
   @MAMH CHAR(8)
   AS
