@@ -32,9 +32,8 @@ namespace TN_CSDLPT
             {
                 f.Close();
             }
-            this.rbGiangVien.Visible = false;
-            this.rbBaoCao.Visible = false;
-            //this.rbNghiepVu.Visible = false;
+            this.rbGV.Visible = this.rbSV.Visible
+                = this.rbQL.Visible = this.rbBaoCao.Visible = false;
         }
 
 
@@ -102,12 +101,6 @@ namespace TN_CSDLPT
             openForm(new frmDanhSachDKThi());
         }
 
-        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            openForm(new frmNhapDe());
-        }
-
-
         private void ribbonControl1_Click(object sender, EventArgs e) { }
 
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -119,6 +112,11 @@ namespace TN_CSDLPT
         private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             openForm(new frmThi());
+        }
+
+        private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(new frmNhapDe());
         }
     }
 }

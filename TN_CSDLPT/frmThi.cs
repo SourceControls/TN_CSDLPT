@@ -167,7 +167,6 @@ namespace TN_CSDLPT
             if (x.DapAn == "A")
             {
                 x.Rbtn_A.ForeColor = c;
-
             }
             else if (x.DapAn == "B")
             {
@@ -253,6 +252,11 @@ namespace TN_CSDLPT
 
         private void btnBatDau_Click(object sender, EventArgs e)
         {
+            string strLenh = "exec sp_kt_sv_da_thi '" + Program.username + "', '" + cmbTenMH.SelectedValue.ToString() + "', " + cmbLan.SelectedItem;
+            if (Program.mGroup.Equals("SinhVien") && Program.ExecSqlNonQuery(strLenh) == 1)
+            {
+                return;
+            }
             if (timer1.Enabled == false)
             {
                 int errorCode = loadCauHoiThi();

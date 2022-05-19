@@ -78,18 +78,18 @@ namespace TN_CSDLPT
             // tENMHLabel
             // 
             tENMHLabel.AutoSize = true;
-            tENMHLabel.Location = new System.Drawing.Point(66, 69);
+            tENMHLabel.Location = new System.Drawing.Point(57, 56);
             tENMHLabel.Name = "tENMHLabel";
-            tENMHLabel.Size = new System.Drawing.Size(89, 17);
+            tENMHLabel.Size = new System.Drawing.Size(69, 13);
             tENMHLabel.TabIndex = 0;
             tENMHLabel.Text = "Tên Môn Học";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(66, 39);
+            label1.Location = new System.Drawing.Point(57, 32);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(61, 17);
+            label1.Size = new System.Drawing.Size(48, 13);
             label1.TabIndex = 11;
             label1.Text = "Trình Độ";
             // 
@@ -100,8 +100,9 @@ namespace TN_CSDLPT
             this.pn1.Controls.Add(this.btnBatDauNhap);
             this.pn1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pn1.Location = new System.Drawing.Point(0, 0);
+            this.pn1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pn1.Name = "pn1";
-            this.pn1.Size = new System.Drawing.Size(984, 99);
+            this.pn1.Size = new System.Drawing.Size(843, 80);
             this.pn1.TabIndex = 0;
             // 
             // cbMonHoc
@@ -109,9 +110,10 @@ namespace TN_CSDLPT
             this.cbMonHoc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsMonHoc, "TENMH", true));
             this.cbMonHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMonHoc.FormattingEnabled = true;
-            this.cbMonHoc.Location = new System.Drawing.Point(169, 66);
+            this.cbMonHoc.Location = new System.Drawing.Point(145, 54);
+            this.cbMonHoc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbMonHoc.Name = "cbMonHoc";
-            this.cbMonHoc.Size = new System.Drawing.Size(324, 24);
+            this.cbMonHoc.Size = new System.Drawing.Size(278, 21);
             this.cbMonHoc.TabIndex = 1;
             // 
             // bdsMonHoc
@@ -126,9 +128,10 @@ namespace TN_CSDLPT
             // 
             // btnBatDauNhap
             // 
-            this.btnBatDauNhap.Location = new System.Drawing.Point(599, 60);
+            this.btnBatDauNhap.Location = new System.Drawing.Point(513, 49);
+            this.btnBatDauNhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBatDauNhap.Name = "btnBatDauNhap";
-            this.btnBatDauNhap.Size = new System.Drawing.Size(206, 33);
+            this.btnBatDauNhap.Size = new System.Drawing.Size(177, 27);
             this.btnBatDauNhap.TabIndex = 4;
             this.btnBatDauNhap.Text = "Bắt Đầu Nhập / Chỉnh Sửa";
             this.btnBatDauNhap.UseVisualStyleBackColor = true;
@@ -178,9 +181,10 @@ namespace TN_CSDLPT
             this.pn2.Controls.Add(this.btnLuuBoDe);
             this.pn2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pn2.Enabled = false;
-            this.pn2.Location = new System.Drawing.Point(0, 99);
+            this.pn2.Location = new System.Drawing.Point(0, 80);
+            this.pn2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pn2.Name = "pn2";
-            this.pn2.Size = new System.Drawing.Size(984, 634);
+            this.pn2.Size = new System.Drawing.Size(843, 516);
             this.pn2.TabIndex = 14;
             // 
             // sP_SELECT_BO_DEGridControl
@@ -188,12 +192,14 @@ namespace TN_CSDLPT
             this.sP_SELECT_BO_DEGridControl.DataMember = "SP_SELECT_BO_DE";
             this.sP_SELECT_BO_DEGridControl.DataSource = this.dSet1;
             this.sP_SELECT_BO_DEGridControl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.sP_SELECT_BO_DEGridControl.Location = new System.Drawing.Point(0, 119);
+            this.sP_SELECT_BO_DEGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.sP_SELECT_BO_DEGridControl.Location = new System.Drawing.Point(0, 98);
             this.sP_SELECT_BO_DEGridControl.MainView = this.gridView1;
+            this.sP_SELECT_BO_DEGridControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sP_SELECT_BO_DEGridControl.Name = "sP_SELECT_BO_DEGridControl";
             this.sP_SELECT_BO_DEGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemComboBox1});
-            this.sP_SELECT_BO_DEGridControl.Size = new System.Drawing.Size(984, 515);
+            this.sP_SELECT_BO_DEGridControl.Size = new System.Drawing.Size(843, 418);
             this.sP_SELECT_BO_DEGridControl.TabIndex = 3;
             this.sP_SELECT_BO_DEGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -210,6 +216,7 @@ namespace TN_CSDLPT
             this.colC,
             this.colD,
             this.colDAP_AN});
+            this.gridView1.DetailHeight = 284;
             this.gridView1.GridControl = this.sP_SELECT_BO_DEGridControl;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
@@ -222,19 +229,19 @@ namespace TN_CSDLPT
             this.colSTT.AppearanceHeader.Options.UseTextOptions = true;
             this.colSTT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colSTT.FieldName = "STT";
-            this.colSTT.MaxWidth = 100;
-            this.colSTT.MinWidth = 25;
+            this.colSTT.MaxWidth = 86;
+            this.colSTT.MinWidth = 21;
             this.colSTT.Name = "colSTT";
             this.colSTT.Visible = true;
             this.colSTT.VisibleIndex = 0;
-            this.colSTT.Width = 51;
+            this.colSTT.Width = 44;
             // 
             // colCAUHOI
             // 
             this.colCAUHOI.FieldName = "CAUHOI";
-            this.colCAUHOI.MinWidth = 25;
+            this.colCAUHOI.MinWidth = 21;
             this.colCAUHOI.Name = "colCAUHOI";
-            this.colCAUHOI.Width = 94;
+            this.colCAUHOI.Width = 81;
             // 
             // colTRINHDO
             // 
@@ -242,12 +249,12 @@ namespace TN_CSDLPT
             this.colTRINHDO.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colTRINHDO.Caption = "Trình Độ";
             this.colTRINHDO.FieldName = "TRINHDO";
-            this.colTRINHDO.MaxWidth = 100;
-            this.colTRINHDO.MinWidth = 25;
+            this.colTRINHDO.MaxWidth = 86;
+            this.colTRINHDO.MinWidth = 21;
             this.colTRINHDO.Name = "colTRINHDO";
             this.colTRINHDO.Visible = true;
             this.colTRINHDO.VisibleIndex = 1;
-            this.colTRINHDO.Width = 68;
+            this.colTRINHDO.Width = 58;
             // 
             // colNOIDUNG
             // 
@@ -255,55 +262,55 @@ namespace TN_CSDLPT
             this.colNOIDUNG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colNOIDUNG.Caption = "Nội Dung";
             this.colNOIDUNG.FieldName = "NOIDUNG";
-            this.colNOIDUNG.MinWidth = 25;
+            this.colNOIDUNG.MinWidth = 21;
             this.colNOIDUNG.Name = "colNOIDUNG";
             this.colNOIDUNG.Visible = true;
             this.colNOIDUNG.VisibleIndex = 2;
-            this.colNOIDUNG.Width = 337;
+            this.colNOIDUNG.Width = 289;
             // 
             // colA
             // 
             this.colA.AppearanceHeader.Options.UseTextOptions = true;
             this.colA.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colA.FieldName = "A";
-            this.colA.MinWidth = 25;
+            this.colA.MinWidth = 21;
             this.colA.Name = "colA";
             this.colA.Visible = true;
             this.colA.VisibleIndex = 3;
-            this.colA.Width = 109;
+            this.colA.Width = 93;
             // 
             // colB
             // 
             this.colB.AppearanceHeader.Options.UseTextOptions = true;
             this.colB.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colB.FieldName = "B";
-            this.colB.MinWidth = 25;
+            this.colB.MinWidth = 21;
             this.colB.Name = "colB";
             this.colB.Visible = true;
             this.colB.VisibleIndex = 4;
-            this.colB.Width = 108;
+            this.colB.Width = 93;
             // 
             // colC
             // 
             this.colC.AppearanceHeader.Options.UseTextOptions = true;
             this.colC.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colC.FieldName = "C";
-            this.colC.MinWidth = 25;
+            this.colC.MinWidth = 21;
             this.colC.Name = "colC";
             this.colC.Visible = true;
             this.colC.VisibleIndex = 5;
-            this.colC.Width = 115;
+            this.colC.Width = 99;
             // 
             // colD
             // 
             this.colD.AppearanceHeader.Options.UseTextOptions = true;
             this.colD.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colD.FieldName = "D";
-            this.colD.MinWidth = 25;
+            this.colD.MinWidth = 21;
             this.colD.Name = "colD";
             this.colD.Visible = true;
             this.colD.VisibleIndex = 6;
-            this.colD.Width = 103;
+            this.colD.Width = 88;
             // 
             // colDAP_AN
             // 
@@ -311,12 +318,12 @@ namespace TN_CSDLPT
             this.colDAP_AN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colDAP_AN.Caption = "Đáp Án";
             this.colDAP_AN.FieldName = "DAP_AN";
-            this.colDAP_AN.MaxWidth = 100;
-            this.colDAP_AN.MinWidth = 25;
+            this.colDAP_AN.MaxWidth = 86;
+            this.colDAP_AN.MinWidth = 21;
             this.colDAP_AN.Name = "colDAP_AN";
             this.colDAP_AN.Visible = true;
             this.colDAP_AN.VisibleIndex = 7;
-            this.colDAP_AN.Width = 63;
+            this.colDAP_AN.Width = 54;
             // 
             // repositoryItemComboBox1
             // 
@@ -338,17 +345,19 @@ namespace TN_CSDLPT
             "A - Đại học,chuyên ngành",
             "B - Đại học,không chuyên ngành",
             "C - Cao Đẳng"});
-            this.cbTrinhDo1.Location = new System.Drawing.Point(169, 36);
+            this.cbTrinhDo1.Location = new System.Drawing.Point(145, 29);
+            this.cbTrinhDo1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbTrinhDo1.Name = "cbTrinhDo1";
-            this.cbTrinhDo1.Size = new System.Drawing.Size(324, 24);
+            this.cbTrinhDo1.Size = new System.Drawing.Size(278, 21);
             this.cbTrinhDo1.TabIndex = 12;
             this.cbTrinhDo1.SelectedIndexChanged += new System.EventHandler(this.cbTrinhDo1_SelectedIndexChanged);
             // 
             // btnHuyNhap
             // 
-            this.btnHuyNhap.Location = new System.Drawing.Point(599, 9);
+            this.btnHuyNhap.Location = new System.Drawing.Point(513, 7);
+            this.btnHuyNhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHuyNhap.Name = "btnHuyNhap";
-            this.btnHuyNhap.Size = new System.Drawing.Size(206, 33);
+            this.btnHuyNhap.Size = new System.Drawing.Size(177, 27);
             this.btnHuyNhap.TabIndex = 8;
             this.btnHuyNhap.Text = "Hủy Nhập / Chỉnh Sửa";
             this.btnHuyNhap.UseVisualStyleBackColor = true;
@@ -356,9 +365,10 @@ namespace TN_CSDLPT
             // 
             // btnThemCauHoi
             // 
-            this.btnThemCauHoi.Location = new System.Drawing.Point(601, 57);
+            this.btnThemCauHoi.Location = new System.Drawing.Point(515, 46);
+            this.btnThemCauHoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThemCauHoi.Name = "btnThemCauHoi";
-            this.btnThemCauHoi.Size = new System.Drawing.Size(104, 33);
+            this.btnThemCauHoi.Size = new System.Drawing.Size(89, 27);
             this.btnThemCauHoi.TabIndex = 9;
             this.btnThemCauHoi.Text = "Thêm Câu Hỏi";
             this.btnThemCauHoi.UseVisualStyleBackColor = true;
@@ -366,9 +376,10 @@ namespace TN_CSDLPT
             // 
             // btnLuuBoDe
             // 
-            this.btnLuuBoDe.Location = new System.Drawing.Point(711, 57);
+            this.btnLuuBoDe.Location = new System.Drawing.Point(609, 46);
+            this.btnLuuBoDe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLuuBoDe.Name = "btnLuuBoDe";
-            this.btnLuuBoDe.Size = new System.Drawing.Size(94, 33);
+            this.btnLuuBoDe.Size = new System.Drawing.Size(81, 27);
             this.btnLuuBoDe.TabIndex = 5;
             this.btnLuuBoDe.Text = "Lưu Bộ Đề";
             this.btnLuuBoDe.UseVisualStyleBackColor = true;
@@ -376,13 +387,14 @@ namespace TN_CSDLPT
             // 
             // frmNhapDe
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 733);
+            this.ClientSize = new System.Drawing.Size(843, 596);
             this.Controls.Add(this.pn2);
             this.Controls.Add(this.pn1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmNhapDe";
-            this.Text = "frmNhapDe";
+            this.Text = "Nhập đề";
             this.Load += new System.EventHandler(this.frmNhapDe_Load);
             this.pn1.ResumeLayout(false);
             this.pn1.PerformLayout();

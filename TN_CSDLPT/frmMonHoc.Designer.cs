@@ -89,7 +89,7 @@ namespace TN_CSDLPT
             mAMHLabel.AutoSize = true;
             mAMHLabel.Location = new System.Drawing.Point(109, 37);
             mAMHLabel.Name = "mAMHLabel";
-            mAMHLabel.Size = new System.Drawing.Size(61, 19);
+            mAMHLabel.Size = new System.Drawing.Size(41, 13);
             mAMHLabel.TabIndex = 0;
             mAMHLabel.Text = "MAMH:";
             // 
@@ -98,7 +98,7 @@ namespace TN_CSDLPT
             tENMHLabel.AutoSize = true;
             tENMHLabel.Location = new System.Drawing.Point(109, 107);
             tENMHLabel.Name = "tENMHLabel";
-            tENMHLabel.Size = new System.Drawing.Size(68, 19);
+            tENMHLabel.Size = new System.Drawing.Size(45, 13);
             tENMHLabel.TabIndex = 2;
             tENMHLabel.Text = "TENMH:";
             tENMHLabel.Click += new System.EventHandler(this.tENMHLabel_Click);
@@ -216,7 +216,7 @@ namespace TN_CSDLPT
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlTop.Size = new System.Drawing.Size(1078, 34);
+            this.barDockControlTop.Size = new System.Drawing.Size(1078, 24);
             // 
             // barDockControlBottom
             // 
@@ -231,19 +231,19 @@ namespace TN_CSDLPT
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 34);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 626);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 636);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1078, 34);
+            this.barDockControlRight.Location = new System.Drawing.Point(1078, 24);
             this.barDockControlRight.Manager = this.barManager;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 626);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 636);
             // 
             // barButtonItem2
             // 
@@ -280,6 +280,7 @@ namespace TN_CSDLPT
             this.tableAdapterManager1.LOPTableAdapter = null;
             this.tableAdapterManager1.MONHOCTableAdapter = this.MONHOCTableAdapter;
             this.tableAdapterManager1.SINHVIENTableAdapter = null;
+            this.tableAdapterManager1.SP_SELECT_BO_DETableAdapter = null;
             this.tableAdapterManager1.UpdateOrder = TN_CSDLPT.DSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // BANGDIEMTableAdapter
@@ -298,7 +299,7 @@ namespace TN_CSDLPT
             // 
             this.gcMONHOC.DataSource = this.bdsMonHoc;
             this.gcMONHOC.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gcMONHOC.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(1);
+            this.gcMONHOC.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(0, 1, 0, 1);
             gridLevelNode1.RelationName = "FK_BANGDIEM_MONHOC";
             gridLevelNode2.RelationName = "FK_BODE_MONHOC";
             gridLevelNode3.RelationName = "FK_GIAOVIEN_DANGKY_MONHOC1";
@@ -306,7 +307,7 @@ namespace TN_CSDLPT
             gridLevelNode1,
             gridLevelNode2,
             gridLevelNode3});
-            this.gcMONHOC.Location = new System.Drawing.Point(0, 34);
+            this.gcMONHOC.Location = new System.Drawing.Point(0, 24);
             this.gcMONHOC.MainView = this.gridView1;
             this.gcMONHOC.MenuManager = this.barManager;
             this.gcMONHOC.Name = "gcMONHOC";
@@ -351,9 +352,9 @@ namespace TN_CSDLPT
             this.panelMonHoc.Controls.Add(mAMHLabel);
             this.panelMonHoc.Controls.Add(this.txtMAMH);
             this.panelMonHoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMonHoc.Location = new System.Drawing.Point(0, 534);
+            this.panelMonHoc.Location = new System.Drawing.Point(0, 524);
             this.panelMonHoc.Name = "panelMonHoc";
-            this.panelMonHoc.Size = new System.Drawing.Size(1078, 126);
+            this.panelMonHoc.Size = new System.Drawing.Size(1078, 136);
             this.panelMonHoc.TabIndex = 6;
             // 
             // txtTENMH
@@ -362,7 +363,7 @@ namespace TN_CSDLPT
             this.txtTENMH.Location = new System.Drawing.Point(210, 98);
             this.txtTENMH.MenuManager = this.barManager;
             this.txtTENMH.Name = "txtTENMH";
-            this.txtTENMH.Size = new System.Drawing.Size(281, 28);
+            this.txtTENMH.Size = new System.Drawing.Size(281, 20);
             this.txtTENMH.TabIndex = 3;
             // 
             // txtMAMH
@@ -371,7 +372,7 @@ namespace TN_CSDLPT
             this.txtMAMH.Location = new System.Drawing.Point(210, 28);
             this.txtMAMH.MenuManager = this.barManager;
             this.txtMAMH.Name = "txtMAMH";
-            this.txtMAMH.Size = new System.Drawing.Size(281, 28);
+            this.txtMAMH.Size = new System.Drawing.Size(281, 20);
             this.txtMAMH.TabIndex = 1;
             // 
             // bdsBangDiem
@@ -392,7 +393,7 @@ namespace TN_CSDLPT
             // frmMonHoc
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1078, 680);
             this.Controls.Add(this.panelMonHoc);
@@ -404,7 +405,7 @@ namespace TN_CSDLPT
             this.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMonHoc";
-            this.Text = "frmMonHoc";
+            this.Text = "Môn học";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMonHoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager)).EndInit();

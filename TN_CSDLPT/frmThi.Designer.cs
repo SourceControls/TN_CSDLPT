@@ -118,7 +118,7 @@ namespace TN_CSDLPT
             this.panelTTSV.Controls.Add(this.lb1);
             this.panelTTSV.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTTSV.Location = new System.Drawing.Point(0, 0);
-            this.panelTTSV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelTTSV.Margin = new System.Windows.Forms.Padding(2);
             this.panelTTSV.Name = "panelTTSV";
             this.panelTTSV.Size = new System.Drawing.Size(1010, 67);
             this.panelTTSV.TabIndex = 0;
@@ -127,7 +127,7 @@ namespace TN_CSDLPT
             // 
             this.btnThoat.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.Location = new System.Drawing.Point(882, 20);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(2);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(90, 31);
             this.btnThoat.TabIndex = 10;
@@ -258,7 +258,7 @@ namespace TN_CSDLPT
             this.panelGVDK.Controls.Add(this.cmbTenMH);
             this.panelGVDK.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelGVDK.Location = new System.Drawing.Point(0, 67);
-            this.panelGVDK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelGVDK.Margin = new System.Windows.Forms.Padding(2);
             this.panelGVDK.Name = "panelGVDK";
             this.panelGVDK.Size = new System.Drawing.Size(1010, 109);
             this.panelGVDK.TabIndex = 1;
@@ -271,7 +271,7 @@ namespace TN_CSDLPT
             "1",
             "2"});
             this.cmbLan.Location = new System.Drawing.Point(564, 11);
-            this.cmbLan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbLan.Margin = new System.Windows.Forms.Padding(2);
             this.cmbLan.Name = "cmbLan";
             this.cmbLan.Size = new System.Drawing.Size(82, 21);
             this.cmbLan.TabIndex = 16;
@@ -303,7 +303,7 @@ namespace TN_CSDLPT
             // 
             this.btnBatDau.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBatDau.Location = new System.Drawing.Point(872, 24);
-            this.btnBatDau.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBatDau.Margin = new System.Windows.Forms.Padding(2);
             this.btnBatDau.Name = "btnBatDau";
             this.btnBatDau.Size = new System.Drawing.Size(100, 41);
             this.btnBatDau.TabIndex = 13;
@@ -315,7 +315,7 @@ namespace TN_CSDLPT
             // 
             this.btnTim.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTim.Location = new System.Drawing.Point(724, 11);
-            this.btnTim.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTim.Margin = new System.Windows.Forms.Padding(2);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(58, 27);
             this.btnTim.TabIndex = 12;
@@ -327,7 +327,7 @@ namespace TN_CSDLPT
             // 
             this.dateNgayThi.EditValue = null;
             this.dateNgayThi.Location = new System.Drawing.Point(376, 11);
-            this.dateNgayThi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateNgayThi.Margin = new System.Windows.Forms.Padding(2);
             this.dateNgayThi.Name = "dateNgayThi";
             this.dateNgayThi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -423,7 +423,7 @@ namespace TN_CSDLPT
             this.cmbTenMH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTenMH.FormattingEnabled = true;
             this.cmbTenMH.Location = new System.Drawing.Point(80, 11);
-            this.cmbTenMH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbTenMH.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTenMH.Name = "cmbTenMH";
             this.cmbTenMH.Size = new System.Drawing.Size(177, 21);
             this.cmbTenMH.TabIndex = 1;
@@ -485,9 +485,9 @@ namespace TN_CSDLPT
             this.Controls.Add(this.flowCH);
             this.Controls.Add(this.panelGVDK);
             this.Controls.Add(this.panelTTSV);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmThi";
-            this.Text = "frmThi";
+            this.Text = "Thi";
             this.Load += new System.EventHandler(this.frmThi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelTTSV)).EndInit();
             this.panelTTSV.ResumeLayout(false);
