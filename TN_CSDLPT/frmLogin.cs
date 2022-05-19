@@ -84,12 +84,6 @@ namespace TN_CSDLPT
             Program.serverName = cbCoSo.SelectedValue.ToString();
         }
 
-        private void visibleRibbon()
-        {
-            //Program.fMain.rbNghiepVu.Visible = true;
-            Program.fMain.rbGiangVien.Visible = true;
-            Program.fMain.rbBaoCao.Visible = true;
-        }
         public void btnDN_Click(object sender, EventArgs e)
         {
             if (txtTenDN.Text.Trim() == "" || txtPassword.Text.Trim() == "")
@@ -136,14 +130,23 @@ namespace TN_CSDLPT
             Program.fMain.statusID.Text = Program.username;
             Program.fMain.statusHoTen.Text = Program.mHoTen;
             Program.fMain.statusNhom.Text = Program.mGroup;
-            visibleRibbon();
-            if(Program.mGroup != "SinhVien" && Program.mGroup != "GiangVien") 
-                Program.fMain.btnDangKy.Enabled = true;
-            else
+
+            if(Program.mGroup == "SinhVien")
             {
-                Program.fMain.btnDangKy.Enabled = false;
-                Program.fMain.rbBaoCao.Visible = false;
+                Program.fMain.btnDangKy.Enabled = Program.fMain.rbBaoCao.Visible
+                    = Program.fMain.rbGV.Visible = Program.fMain.rbQL.Visible = false;
+                Program.fMain.rbSV.Visible = true;
+            } else if(Program.mGroup == "GiangVien")
+            {
+                Program.fMain.btnDangKy.Enabled = Program.fMain.rbBaoCao.Visible
+                   = Program.fMain.rbQL.Visible = false;
+                Program.fMain.rbSV.Visible = Program.fMain.rbGV.Visible = true;
+            } else
+            {
+                Program.fMain.btnDangKy.Enabled = Program.fMain.rbBaoCao.Visible
+                   = Program.fMain.rbQL.Visible = Program.fMain.rbGV.Visible = Program.fMain.rbSV.Visible = true;
             }
+            
             foreach(Form f in Program.fMain.MdiChildren)
             {
                 if (f.GetType() == typeof(frmLogin)) continue;
