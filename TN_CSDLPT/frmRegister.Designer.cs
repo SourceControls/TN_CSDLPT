@@ -48,7 +48,7 @@ namespace TN_CSDLPT
             // 
             this.cbNhom.Enabled = false;
             this.cbNhom.FormattingEnabled = true;
-            this.cbNhom.Location = new System.Drawing.Point(323, 62);
+            this.cbNhom.Location = new System.Drawing.Point(443, 63);
             this.cbNhom.Name = "cbNhom";
             this.cbNhom.Size = new System.Drawing.Size(195, 21);
             this.cbNhom.TabIndex = 0;
@@ -57,7 +57,7 @@ namespace TN_CSDLPT
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(228, 65);
+            this.label1.Location = new System.Drawing.Point(348, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 13);
             this.label1.TabIndex = 1;
@@ -66,21 +66,21 @@ namespace TN_CSDLPT
             // 
             // txtMa
             // 
-            this.txtMa.Location = new System.Drawing.Point(323, 110);
+            this.txtMa.Location = new System.Drawing.Point(443, 111);
             this.txtMa.Name = "txtMa";
             this.txtMa.Size = new System.Drawing.Size(195, 20);
             this.txtMa.TabIndex = 1;
             // 
             // txtTenDangNhap
             // 
-            this.txtTenDangNhap.Location = new System.Drawing.Point(323, 157);
+            this.txtTenDangNhap.Location = new System.Drawing.Point(443, 158);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
             this.txtTenDangNhap.Size = new System.Drawing.Size(195, 20);
             this.txtTenDangNhap.TabIndex = 2;
             // 
             // txtMatKhau
             // 
-            this.txtMatKhau.Location = new System.Drawing.Point(323, 206);
+            this.txtMatKhau.Location = new System.Drawing.Point(443, 207);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Properties.UseSystemPasswordChar = true;
             this.txtMatKhau.Size = new System.Drawing.Size(195, 20);
@@ -89,7 +89,7 @@ namespace TN_CSDLPT
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(228, 113);
+            this.label2.Location = new System.Drawing.Point(348, 114);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(21, 13);
             this.label2.TabIndex = 1;
@@ -99,7 +99,7 @@ namespace TN_CSDLPT
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(228, 160);
+            this.label3.Location = new System.Drawing.Point(348, 161);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 13);
             this.label3.TabIndex = 1;
@@ -109,7 +109,7 @@ namespace TN_CSDLPT
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(228, 209);
+            this.label4.Location = new System.Drawing.Point(348, 210);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 13);
             this.label4.TabIndex = 1;
@@ -118,7 +118,7 @@ namespace TN_CSDLPT
             // 
             // btnDangKy
             // 
-            this.btnDangKy.Location = new System.Drawing.Point(323, 269);
+            this.btnDangKy.Location = new System.Drawing.Point(443, 270);
             this.btnDangKy.Name = "btnDangKy";
             this.btnDangKy.Size = new System.Drawing.Size(75, 23);
             this.btnDangKy.TabIndex = 4;
@@ -128,7 +128,7 @@ namespace TN_CSDLPT
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(443, 269);
+            this.btnHuy.Location = new System.Drawing.Point(563, 270);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(75, 23);
             this.btnHuy.TabIndex = 5;
@@ -140,7 +140,7 @@ namespace TN_CSDLPT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(785, 414);
+            this.ClientSize = new System.Drawing.Size(1068, 414);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnDangKy);
             this.Controls.Add(this.txtMatKhau);

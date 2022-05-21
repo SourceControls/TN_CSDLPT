@@ -115,18 +115,18 @@ namespace TN_CSDLPT
             mAKHLabel.AutoSize = true;
             mAKHLabel.Location = new System.Drawing.Point(251, 115);
             mAKHLabel.Name = "mAKHLabel";
-            mAKHLabel.Size = new System.Drawing.Size(39, 13);
+            mAKHLabel.Size = new System.Drawing.Size(51, 13);
             mAKHLabel.TabIndex = 24;
-            mAKHLabel.Text = "MAKH:";
+            mAKHLabel.Text = "Mã khoa:";
             // 
             // tENKHLabel
             // 
             tENKHLabel.AutoSize = true;
             tENKHLabel.Location = new System.Drawing.Point(12, 112);
             tENKHLabel.Name = "tENKHLabel";
-            tENKHLabel.Size = new System.Drawing.Size(43, 13);
+            tENKHLabel.Size = new System.Drawing.Size(55, 13);
             tENKHLabel.TabIndex = 23;
-            tENKHLabel.Text = "TENKH:";
+            tENKHLabel.Text = "Tên khoa:";
             // 
             // tENLOPLabel
             // 
@@ -331,6 +331,7 @@ namespace TN_CSDLPT
             this.tableAdapterManager.LOPTableAdapter = this.lOPTableAdapter;
             this.tableAdapterManager.MONHOCTableAdapter = null;
             this.tableAdapterManager.SINHVIENTableAdapter = null;
+            this.tableAdapterManager.SP_SELECT_BO_DETableAdapter = null;
             this.tableAdapterManager.UpdateOrder = TN_CSDLPT.DSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // bdsGV_DK
@@ -509,7 +510,7 @@ namespace TN_CSDLPT
             // 
             this.sINHVIENGridControl.DataSource = this.bdsSinhVien;
             this.sINHVIENGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sINHVIENGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sINHVIENGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
             this.sINHVIENGridControl.Location = new System.Drawing.Point(613, 419);
             this.sINHVIENGridControl.MainView = this.gvSinhVien;
             this.sINHVIENGridControl.MenuManager = this.barManager1;

@@ -102,7 +102,7 @@ namespace TN_CSDLPT
             this.pn1.Location = new System.Drawing.Point(0, 0);
             this.pn1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pn1.Name = "pn1";
-            this.pn1.Size = new System.Drawing.Size(843, 80);
+            this.pn1.Size = new System.Drawing.Size(1052, 80);
             this.pn1.TabIndex = 0;
             // 
             // cbMonHoc
@@ -184,7 +184,7 @@ namespace TN_CSDLPT
             this.pn2.Location = new System.Drawing.Point(0, 80);
             this.pn2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pn2.Name = "pn2";
-            this.pn2.Size = new System.Drawing.Size(843, 516);
+            this.pn2.Size = new System.Drawing.Size(1052, 516);
             this.pn2.TabIndex = 14;
             // 
             // sP_SELECT_BO_DEGridControl
@@ -193,13 +193,13 @@ namespace TN_CSDLPT
             this.sP_SELECT_BO_DEGridControl.DataSource = this.dSet1;
             this.sP_SELECT_BO_DEGridControl.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.sP_SELECT_BO_DEGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.sP_SELECT_BO_DEGridControl.Location = new System.Drawing.Point(0, 98);
+            this.sP_SELECT_BO_DEGridControl.Location = new System.Drawing.Point(0, 174);
             this.sP_SELECT_BO_DEGridControl.MainView = this.gridView1;
             this.sP_SELECT_BO_DEGridControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sP_SELECT_BO_DEGridControl.Name = "sP_SELECT_BO_DEGridControl";
             this.sP_SELECT_BO_DEGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemComboBox1});
-            this.sP_SELECT_BO_DEGridControl.Size = new System.Drawing.Size(843, 418);
+            this.sP_SELECT_BO_DEGridControl.Size = new System.Drawing.Size(1052, 342);
             this.sP_SELECT_BO_DEGridControl.TabIndex = 3;
             this.sP_SELECT_BO_DEGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -389,7 +389,7 @@ namespace TN_CSDLPT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(843, 596);
+            this.ClientSize = new System.Drawing.Size(1052, 596);
             this.Controls.Add(this.pn2);
             this.Controls.Add(this.pn1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

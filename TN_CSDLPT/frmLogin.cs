@@ -101,7 +101,7 @@ namespace TN_CSDLPT
             else
             {
                 Program.mlogin = txtTenDN.Text.Trim();
-                Program.password = txtPassword.Text.Trim();     
+                Program.password = txtPassword.Text.Trim();
                 cmd = "exec sp_get_infor_user '" + Program.mlogin + "', ''";
             }
             if (Program.connectToDB() == 0) return;
@@ -131,20 +131,24 @@ namespace TN_CSDLPT
             Program.fMain.statusHoTen.Text = Program.mHoTen;
             Program.fMain.statusNhom.Text = Program.mGroup;
 
-            if(Program.mGroup == "SinhVien")
+            if (Program.mGroup == "SinhVien")
             {
                 Program.fMain.btnDangKy.Enabled = Program.fMain.rbBaoCao.Visible
                     = Program.fMain.rbGV.Visible = Program.fMain.rbQL.Visible = false;
                 Program.fMain.rbSV.Visible = true;
-            } else if(Program.mGroup == "GiangVien")
+            } else if (Program.mGroup == "GiangVien")
             {
                 Program.fMain.btnDangKy.Enabled = Program.fMain.rbBaoCao.Visible
                    = Program.fMain.rbQL.Visible = false;
                 Program.fMain.rbSV.Visible = Program.fMain.rbGV.Visible = true;
-            } else
+            } else if (Program.mGroup == "Truong") {
+                Program.fMain.btnDangKy.Enabled = Program.fMain.rbBaoCao.Visible
+                     = Program.fMain.rbQL.Visible = true;
+                Program.fMain.rbGV.Visible = Program.fMain.rbSV.Visible = false;
+            }  else
             {
                 Program.fMain.btnDangKy.Enabled = Program.fMain.rbBaoCao.Visible
-                   = Program.fMain.rbQL.Visible = Program.fMain.rbGV.Visible = Program.fMain.rbSV.Visible = true;
+                  = Program.fMain.rbQL.Visible = Program.fMain.rbGV.Visible = Program.fMain.rbSV.Visible = true;
             }
             
             foreach(Form f in Program.fMain.MdiChildren)

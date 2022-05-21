@@ -138,7 +138,7 @@ namespace TN_CSDLPT
             SqlParameter para1 = new SqlParameter();
             para1.SqlDbType = SqlDbType.Char;
             para1.ParameterName = "@MAGV";
-            para1.Value = Program.mloginDN;
+            para1.Value = Program.username;
 
             SqlParameter para2 = new SqlParameter();
             para2.SqlDbType = SqlDbType.Char;

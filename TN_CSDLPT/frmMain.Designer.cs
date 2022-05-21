@@ -384,13 +384,13 @@ namespace TN_CSDLPT
             // 
             this.Appearance.FontSizeDelta = 15;
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(177F, 338F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(190F, 362F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1384, 787);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.ribbonControl1);
-            this.Font = new System.Drawing.Font("Tahoma", 210F, System.Drawing.FontStyle.Bold);
+            this.Font = new System.Drawing.Font("Tahoma", 225F, System.Drawing.FontStyle.Bold);
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(12, 14, 12, 14);
             this.Name = "frmMain";
