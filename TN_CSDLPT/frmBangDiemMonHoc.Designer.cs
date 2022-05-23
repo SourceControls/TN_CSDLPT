@@ -85,9 +85,10 @@ namespace TN_CSDLPT
             // cbCoSo
             // 
             this.cbCoSo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCoSo.Enabled = false;
             this.cbCoSo.FormattingEnabled = true;
             this.cbCoSo.Location = new System.Drawing.Point(141, 11);
-            this.cbCoSo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbCoSo.Margin = new System.Windows.Forms.Padding(4);
             this.cbCoSo.Name = "cbCoSo";
             this.cbCoSo.Size = new System.Drawing.Size(473, 21);
             this.cbCoSo.TabIndex = 2;
@@ -209,6 +210,7 @@ namespace TN_CSDLPT
             this.tableAdapterManager.LOPTableAdapter = null;
             this.tableAdapterManager.MONHOCTableAdapter = this.mONHOCTableAdapter;
             this.tableAdapterManager.SINHVIENTableAdapter = null;
+            this.tableAdapterManager.SP_SELECT_BO_DETableAdapter = null;
             this.tableAdapterManager.UpdateOrder = TN_CSDLPT.DSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // mONHOCTableAdapter

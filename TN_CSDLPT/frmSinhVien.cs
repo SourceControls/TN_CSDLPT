@@ -20,7 +20,6 @@ namespace TN_CSDLPT
         private static int slLop;
         private static int slSv;
         private static bool isAssignSlSv = true;
-        private static string defaultPassword = "123";
         public frmSinhVien()
         {
             InitializeComponent();
@@ -70,22 +69,17 @@ namespace TN_CSDLPT
             cbCoSo.ValueMember = "TENSERVER";
             cbCoSo.SelectedIndex = Program.mCoSo;
 
-            if(Program.mGroup.ToUpper().Equals("TRUONG") || Program.mGroup.ToUpper().Equals("GIANGVIEN"))
-            {
-                cbCoSo.Enabled = true;
-            } else
-            {
-                cbCoSo.Enabled = false;
-            }
 
             if(Program.mGroup.ToUpper().Equals("TRUONG"))
             {
                 btnThemLop.Enabled = btnHieuChinhLop.Enabled =
                 btnXoaLop.Enabled = btnGhiLop.Enabled = btnPhucHoiLop.Enabled = false;
                 contextMenuStrip1.Enabled = false;
+                cbCoSo.Enabled = true;
             } else
             {
                 btnGhiLop.Enabled = btnPhucHoiLop.Enabled = false;
+                cbCoSo.Enabled = false;
             }
 
             if(bdsKhoa.Count == 0)
@@ -96,6 +90,7 @@ namespace TN_CSDLPT
 
             panelLop.Enabled = false;
             slLop = bdsLop.Count;
+            slSv = bdsSinhVien.Count;
         }
 
         private void btnThemLop_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -108,7 +103,8 @@ namespace TN_CSDLPT
             btnGhiLop.Enabled = btnPhucHoiLop.Enabled = true;
             panelLop.Enabled = true;
             gcLop.Enabled = false;
-            btnThemLop.Enabled = btnHieuChinhLop.Enabled = btnXoaLop.Enabled = btnReloadLop.Enabled = btnThoatLop.Enabled = false;
+            btnThemLop.Enabled = btnHieuChinhLop.Enabled = 
+                btnXoaLop.Enabled = btnReloadLop.Enabled = btnThoatLop.Enabled = false;
         }
 
         private void cbTenKhoa_SelectedIndexChanged(object sender, EventArgs e)
@@ -132,7 +128,8 @@ namespace TN_CSDLPT
             btnGhiLop.Enabled = btnPhucHoiLop.Enabled = true;
             panelLop.Enabled = true;
             gcLop.Enabled = false;
-            btnThemLop.Enabled = btnHieuChinhLop.Enabled = btnXoaLop.Enabled = btnReloadLop.Enabled = btnThoatLop.Enabled = false;
+            btnThemLop.Enabled = btnHieuChinhLop.Enabled =
+                btnXoaLop.Enabled = btnReloadLop.Enabled = btnThoatLop.Enabled = false;
 
         }
 
@@ -275,7 +272,7 @@ namespace TN_CSDLPT
 
         private void ghiSinhViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (bdsSinhVien.Count == 0)
+            if (bdsSinhVien.Count == 0 || slSv == bdsSinhVien.Count)
             {
                 return;
             }
@@ -303,7 +300,6 @@ namespace TN_CSDLPT
                     return;
                 }
             }
-           
             try
             {
                 bdsSinhVien.EndEdit();

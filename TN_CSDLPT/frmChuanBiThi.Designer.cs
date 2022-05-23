@@ -83,7 +83,6 @@ namespace TN_CSDLPT
             this.txtMAGV = new System.Windows.Forms.TextBox();
             this.spinTHOIGIAN = new DevExpress.XtraEditors.SpinEdit();
             this.spinSOCAUTHI = new DevExpress.XtraEditors.SpinEdit();
-            this.spinLAN = new DevExpress.XtraEditors.SpinEdit();
             this.dateNGAYTHI = new DevExpress.XtraEditors.DateEdit();
             this.txtMALOP = new System.Windows.Forms.TextBox();
             this.cmbTENLOP = new System.Windows.Forms.ComboBox();
@@ -92,6 +91,7 @@ namespace TN_CSDLPT
             this.MONHOCTableAdapter = new TN_CSDLPT.DSetTableAdapters.MONHOCTableAdapter();
             this.LOPTableAdapter = new TN_CSDLPT.DSetTableAdapters.LOPTableAdapter();
             this.HOTENGVTableAdapter = new TN_CSDLPT.DSetTableAdapters.HOTENGVTableAdapter();
+            this.spinLAN = new DevExpress.XtraEditors.SpinEdit();
             mAMHLabel = new System.Windows.Forms.Label();
             tENLOPLabel = new System.Windows.Forms.Label();
             mALOPLabel = new System.Windows.Forms.Label();
@@ -116,10 +116,10 @@ namespace TN_CSDLPT
             ((System.ComponentModel.ISupportInitialize)(this.bdsHOTENGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinTHOIGIAN.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinSOCAUTHI.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinLAN.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNGAYTHI.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNGAYTHI.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsLOP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinLAN.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // mAMHLabel
@@ -437,7 +437,7 @@ namespace TN_CSDLPT
             // 
             this.gcGVDK.DataSource = this.bdsGVDK;
             this.gcGVDK.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gcGVDK.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.gcGVDK.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(1);
             this.gcGVDK.Location = new System.Drawing.Point(0, 72);
             this.gcGVDK.MainView = this.gridView1;
             this.gcGVDK.MenuManager = this.barManager;
@@ -673,23 +673,6 @@ namespace TN_CSDLPT
             this.spinSOCAUTHI.Size = new System.Drawing.Size(150, 20);
             this.spinSOCAUTHI.TabIndex = 17;
             // 
-            // spinLAN
-            // 
-            this.spinLAN.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGVDK, "LAN", true));
-            this.spinLAN.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.spinLAN.Location = new System.Drawing.Point(689, 187);
-            this.spinLAN.MenuManager = this.barManager;
-            this.spinLAN.Name = "spinLAN";
-            this.spinLAN.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spinLAN.Size = new System.Drawing.Size(150, 20);
-            this.spinLAN.TabIndex = 15;
-            this.spinLAN.EditValueChanged += new System.EventHandler(this.lANSpinEdit_EditValueChanged);
-            // 
             // dateNGAYTHI
             // 
             this.dateNGAYTHI.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGVDK, "NGAYTHI", true));
@@ -754,6 +737,23 @@ namespace TN_CSDLPT
             // 
             this.HOTENGVTableAdapter.ClearBeforeFill = true;
             // 
+            // spinLAN
+            // 
+            this.spinLAN.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGVDK, "LAN", true));
+            this.spinLAN.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.spinLAN.Location = new System.Drawing.Point(689, 187);
+            this.spinLAN.MenuManager = this.barManager;
+            this.spinLAN.Name = "spinLAN";
+            this.spinLAN.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spinLAN.Size = new System.Drawing.Size(150, 20);
+            this.spinLAN.TabIndex = 15;
+            this.spinLAN.EditValueChanged += new System.EventHandler(this.lANSpinEdit_EditValueChanged);
+            // 
             // frmChuanBiThi
             // 
             this.Appearance.Options.UseFont = true;
@@ -787,10 +787,10 @@ namespace TN_CSDLPT
             ((System.ComponentModel.ISupportInitialize)(this.bdsHOTENGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinTHOIGIAN.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinSOCAUTHI.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinLAN.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNGAYTHI.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNGAYTHI.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsLOP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinLAN.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -839,7 +839,6 @@ namespace TN_CSDLPT
         private System.Windows.Forms.TextBox txtMALOP;
         private System.Windows.Forms.ComboBox cmbTENLOP;
         private DevExpress.XtraEditors.DateEdit dateNGAYTHI;
-        private DevExpress.XtraEditors.SpinEdit spinLAN;
         private DevExpress.XtraEditors.SpinEdit spinTHOIGIAN;
         private DevExpress.XtraEditors.SpinEdit spinSOCAUTHI;
         private System.Windows.Forms.TextBox txtMAGV;
@@ -848,5 +847,6 @@ namespace TN_CSDLPT
         private System.Windows.Forms.ComboBox cmbHoTen;
         private System.Windows.Forms.ComboBox cmbTENMH;
         private System.Windows.Forms.ComboBox cmbTrinhDo;
+        private DevExpress.XtraEditors.SpinEdit spinLAN;
     }
 }

@@ -118,5 +118,10 @@ namespace TN_CSDLPT
         {
             openForm(new frmNhapDe());
         }
+
+        private void barButtonItem11_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(new frmChuanBiThi());
+        }
     }
 }

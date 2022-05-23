@@ -144,12 +144,12 @@ namespace TN_CSDLPT
         {
             if(cbTuyChon.SelectedIndex == 1)
             {
-                cbCoSo.Enabled = cbLanThi.Enabled = cbMonHoc.Enabled = cbLop.Enabled = false;
-             btnTaiDSSV.Enabled = true;
+                 cbLanThi.Enabled = cbMonHoc.Enabled = cbLop.Enabled = false;
+                 btnTaiDSSV.Enabled = true;
             }
             else
             {
-                cbCoSo.Enabled = cbLanThi.Enabled = cbMonHoc.Enabled = cbLop.Enabled = true;
+                cbLanThi.Enabled = cbMonHoc.Enabled = cbLop.Enabled = true;
                 btnTaiDSSV.Enabled = false;
             }
 
