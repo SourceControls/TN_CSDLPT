@@ -16,22 +16,21 @@ namespace TN_CSDLPT
         /// The main entry point for the application.
         /// </summary>
         /// 
-        public static String maCoSo = "CS1";
 
         public static SqlConnection conn = new SqlConnection();
         public static String connstr;
         public static String connstrPublisher = "Data Source=MYLAPTOP;Initial Catalog=TN_CSDLPT;Integrated Security=true";
         public static SqlDataReader myReader;
         public static String serverName = "";
-        public static String username = "";
-        public static String mlogin = "";
-        public static String password = "";
+        public static String username = "";   //user trong DB
+        public static String mlogin = ""; //user Server
+        public static String password = "";  //password Server
 
         public static String database = "TN_CSDLPT";
         public static String remoteLogin = "HTKN";
         public static String remotePassword = "123";
-        public static String mloginDN = "";
-        public static String passwordDN = "";
+        public static String mloginDN = "";  //để quay về site ban đầu
+        public static String passwordDN = ""; //để quay về site ban đầu
         public static String mGroup = "";
         public static String mHoTen = "";
         public static int mCoSo = 0;
@@ -56,7 +55,7 @@ namespace TN_CSDLPT
         }
         public static int connectToOtherSite(String serverName)
         {
-            if (Program.serverName.Equals(serverName))  //cần thiết vì cbox bị lỗi
+            if (Program.serverName.Equals(serverName))  //nếu vẫn là server hiện tại
                 return 0;
             if (mlogin.Equals("HTKN"))  //từ site khác về site ban đầu
             {
@@ -90,7 +89,7 @@ namespace TN_CSDLPT
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi kết nối server Connect to database!" + ex.Message);
+                MessageBox.Show("Lỗi kết nối server!" + ex.Message);
                 return 0;
             }
             return 1;
